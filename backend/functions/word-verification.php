@@ -3,9 +3,9 @@
 #Verifikationsdatei - ordnet Wort von w_verification nach word oder sortiert Wort aus
 
 #Variablen initialisieren
-$wordtoverificate = $wordid;
-$bewertung = $_POST['button'];
-$verificator = $verificator
+$wordtoverificate = $_GET['wordid'];
+$bewertung = $_GET['validation']; #kann Werte 1 und 0 annehmen
+$verificator_id = $_GET['verificator'];
 
 #Datenbankverbindung
 require_once("../inc/db.php");
@@ -25,14 +25,15 @@ $erg = $db->query($sql);
 #Neuer Datensatz in Tabelle word
 $db->query("SET NAMES 'utf8'");
 $sql = "INSERT INTO word (word, translation, w_code, t_code, creator_id, verificator_id)
-VALUES ($row["word"], $row["translation"], $row["w_code"],$row["t_code"],$row["creator_id"],$verificator)";
+VALUES ('{$row["word"]}', '{$row["translation"]}', '{$row["w_code"]}','{$row["t_code"]}','{$row["creator_id"]}','{$verificator_id}')";
 
 #Datensatz aus w_verification löschen
 $sql ="DELETE FROM w_verification
-WHERE id = $row["id"]"
+WHERE id = ".$row["id"];
 
 
 }
 
 
  ?>
+}'

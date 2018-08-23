@@ -1,42 +1,34 @@
 <?php
-
-#Verifikationsdatei - ordnet Wort von w_verification nach word oder sortiert Wort aus
+#fügt Wörter in die Datenbank hinzu
+#gibt 1 bei Erfolg (Wort noch nicht eingetragen), sonst 0 zurück
 
 #Variablen initialisieren
-$wordtoverificate = $_GET['wordid'];
-$bewertung = $_GET['validation']; #kann Werte 1 und 0 annehmen
-$verificator_id = $_GET['verificator'];
+$newword = $_POST['word'];
+$translation = $_POST['translation'];
+$w_code = $_POST['w_code'];
+$t_code= $_POST['t_code'];
+$creator_id = $_POST['creator_id'];
 
 #Datenbankverbindung
 require_once("../inc/db.php");
 
-#Abfrage: Bewertung positiv oder negativ
-
-if ($bewertung == 1){
-#Neues Wort zu word hinzufügen
+#Prüfe, ob Wort bereits existiert
 $db->query("SET NAMES 'utf8'");
-$sql = "SELECT * FROM w_verification WHERE id='{$wordtoverificate}'";
+$sql = "SELECT * FROM words WHERE word='{$newword}'";
 $erg = $db->query($sql);
     if (!$erg){
-    die ('Etwas stimmte mit der Abfrage nicht: '.$db->error);
-  }
-  $row = $erg->fetch_assoc();
+      $sql = "INSERT INTO w_verification (word, translation, w_code, t_code, creator_id)
+      VALUES ('{$newword}', '{$translation}', '{$w_code}','{$t_code}','{$creator_id}')";
+      $success = True;
 
-#Neuer Datensatz in Tabelle word
-$db->query("SET NAMES 'utf8'");
-$sql = "INSERT INTO word (word, translation, w_code, t_code, creator_id, verificator_id)
-VALUES ('{$row["word"]}', '{$row["translation"]}', '{$row["w_code"]}','{$row["t_code"]}','{$row["creator_id"]}','{$verificator_id}')";
-$erg = $db->query($sql);
-if (!$erg){
-die ('Etwas stimmte mit der Abfrage nicht: '.$db->error);
-}}
+    }
+    else{
+      die ('Dieses Wort ist bereits in der Datenbank '.$db->error);
+    }
+$row = $erg->fetch_assoc();
 
-#Datensatz aus w_verification löschen
-$sql ="DELETE FROM w_verification
-WHERE id = ".$row["id"];
-$erg = $db->query($sql);
-if (!$erg){
-die ('Etwas stimmte mit der Abfrage nicht: '.$db->error);
 
-}
- ?>
+#Erfolg?
+if($success == True) print("1");
+else print("0");
+?>

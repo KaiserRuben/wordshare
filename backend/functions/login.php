@@ -10,7 +10,7 @@ require_once("../inc/db.php");
 
 #Daten aus der Datenbank holen
 $db->query("SET NAMES 'utf8'");
-$sql = "SELECT COUNT(*) FROM user WHERE username='{$username}'";
+$sql = "SELECT * FROM user WHERE username='{$username}'";
 $erg = $db->query($sql);
     if (!$erg){
     die ('Etwas stimmte mit der Abfrage nicht: '.$db->error);
@@ -18,7 +18,7 @@ $erg = $db->query($sql);
   $row = $erg->fetch_assoc();
 
 #Validation
-if($row['COUNT(*)']==1) print("1");
+if($pw_hash == row["pwhash"]) print("1");
 else print("0");
 
 

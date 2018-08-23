@@ -3,8 +3,8 @@
 #LoginDatei für unsere Anwenung, gibt 1 oder 0 zurück.
 
 #Variablen initialisieren
-$username = $_POST['name'];
-$pw_hash = password_hash($_POST['pw']);
+$username = $_GET['name'];
+$pw= $_GET['pw'];
 #Datenbankverbindung
 require_once("../inc/db.php");
 
@@ -18,7 +18,7 @@ $erg = $db->query($sql);
   $row = $erg->fetch_assoc();
 
 #Validation
-if($pw_hash == row["pwhash"]) print("1");
+if(password_verify($pw, $row["pwhash"])) print("1");
 else print("0");
 
 

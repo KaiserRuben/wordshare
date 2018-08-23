@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+
+  <title>WordShare | Yor daily word to use</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--  CSS inplementierung in externer Datei-->
+    <link rel="stylesheet" href="css/daily_word.css" type="text/css">
+      <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu|Cabin|PT+Sans+Narrow" rel="stylesheet">
+    <script>
+    // When the user clicks on <div>, open the popup
+    function myFunction() {
+        var popup = document.getElementById("myPopup");
+        popup.classList.toggle("show");
+    }
+    </script>
+
+  </head>
+<body><center>
+<h1> Daily word</h1><br>
+<h2>use your word in your quests</h2>
+</center>
+<div class="daily_word">
+  <center>house<span id="word"></span></center>
+</div><br><center>
+<div class="popup" onclick="myFunction()"><i class= "white fa fa-info"></i>
+  <span class="popuptext" id="myPopup">Use the word "<span id="word"></span>" in different contexts to improve your <span class="lang"></span> skills!
+</div></center>
+</body>
+</html>

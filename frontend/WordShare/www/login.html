@@ -1,26 +1,56 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!--  CSS inplementierung in externer Datei-->
+    <link rel="stylesheet" href="css/main.css" type="text/css">
     <link rel="stylesheet" href="css/login.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu|Cabin|PT+Sans+Narrow" rel="stylesheet">
 
     <title>WordShare - Login</title>
-  </head>
-  <body>
+</head>
 
-    <h1 class="Name">Name</h1>
-    <h2 class="logo">Logo</h2>
+<body>
+    <div class="content">
 
-    <input type="text" class="usernametextfield" placeholder="Username"><br />
-    <input type="password" class="passwordtextfield" placeholder="Password"><br />
-    <button type="button" class="button" name="anmelden">Anmelden</button><br />
-    <button type="button" class="button" name="registrieren">Registrieren</button><br />
+        <img src="pics/logo.png" width="100%"/>
 
-  </body>
+            <input type="text" class="input" id="name" placeholder="Username" required><br />
+            <input type="password" class="input last" id="pw" placeholder="Password" required><br />
+            <button type="submit" class="button" name="anmelden" onclick="anmelden()">Log-In</button><br />
+
+        <a href="regster.html"><button type="button" class="button" name="registrieren">Sign Up</button> </a><br />
+    </div>
+
+    <script type="text/javascript">
+
+    function anmelden(){
+      var username = document.getElementById("name").value;
+      var pw = document.getElementById("pw").value;
+      var url = "http://wordshare.kaiseritea.de/server/functions/login.php?name=" + username + "&&pw=" + pw;
+      var success = httpGet(url);
+      console.log(success);
+      if(success == "1"){
+        location="https://www.bing.de";
+      }
+      else{
+        alert("Wrong Password or Username!");
+      }
+    }
+
+    function httpGet(theUrl){
+      var xmlHttp = new XMLHttpRequest();
+      xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+      xmlHttp.send( null );
+      return xmlHttp.responseText;
+    }
+
+  </script>
+</body>
+
 </html>
 <footer>
   <!-- Add icon library -->

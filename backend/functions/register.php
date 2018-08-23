@@ -1,13 +1,13 @@
 <?php
-$username = $_POST['username'];
-$name = $_POST['name'];
-$lastname = $_POST['lastname'];
-$mail = $_POST['mail'];
-$age = $_POST['age'];
-$mt = $_POST['mt'];
-$nl = $_POST['nl'];
-$pwhash = password_hash($_POST['pwhash']);
-$homecity = $_POST['homecity'];
+$username = $_GET['username'];
+$name = $_GET['name'];
+$lastname = $_GET['lastname'];
+$mail = $_GET['mail'];
+$age = $_GET['age'];
+$mt = $_GET['mt'];
+$nl = $_GET['nl'];
+$pwhash = password_hash($_GET['pwhash']);
+$homecity = $_GET['homecity'];
 
 require_once("../inc/db.php");
 

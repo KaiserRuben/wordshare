@@ -1,27 +1,39 @@
 <?php
-
 #fügt Wörter in die Datenbank hinzu
+#gibt 1 bei Erfolg (Wort noch nicht eingetragen), sonst 0 zurück
 
 #Variablen initialisieren
-$word = $_POST['name'];
-//aus Mangel an besseren Ideen:
-$schonDa = True;
+$newword = $_POST['word'];
+$translation = $_POST['translation'];
+$w_code = $_GET['w_code'];
+$t_code= $_GET['t_code'];
+$creator_id = $_GET['creator_id'];
+
 #Datenbankverbindung
 require_once("../inc/db.php");
 
-#Daten aus der Datenbank holen
+#Prüfe, ob Wort bereits existiert
 $db->query("SET NAMES 'utf8'");
 $sql = "SELECT * FROM words WHERE word='{$newword}'";
 $erg = $db->query($sql);
-    if (!$erg)
-    {
-      $schonDa = False;
+    if (!$erg){
+      $sql = "SELECT * FROM w_verification WHERE word='{$newword}'";
+      $erg = $db->query($sql);
+          if (!$erg){
+            $sql = "INSERT INTO w_verification (word, translation, w_code, t_code, creator_id)
+            VALUES ('{$newword}', '{$translation}', '{$w_code}','{$t_code}','{$creator_id}')";
+            $erg = $db->query($sql);
+            if ($erg){
+              $success = true;
+            }
+          }
     }
-  $row = $erg->fetch_assoc(); //??????
+    else{
+      die ('Dieses Wort ist bereits in der Datenbank '.$db->error);
+    }
 
-#Validation
-if($pw_hash == row["pwhash"]) print("1");
+
+#Erfolg?
+if($success == true) print("1");
 else print("0");
-
-
- ?>
+?>

@@ -5,9 +5,9 @@
 #Variablen initialisieren
 $newword = $_POST['word'];
 $translation = $_POST['translation'];
-$w_code = $_POST['w_code'];
-$t_code= $_POST['t_code'];
-$creator_id = $_POST['creator_id'];
+$w_code = $_GET['w_code'];
+$t_code= $_GET['t_code'];
+$creator_id = $_GET['creator_id'];
 
 #Datenbankverbindung
 require_once("../inc/db.php");

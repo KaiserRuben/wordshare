@@ -24,8 +24,8 @@
 
   <div class="dropdown">
   <button onclick="motherlanguageChoser()" class="dropbtn">Mother Language</button>
-    <div id="myDropdown" class="dropdown-content" id = "language">
-      <a>English</a>
+    <div id="myDropdown" class="dropdown-content">
+      <a onclick="mt('EN')">English</a>
       <a>German</a>
       <a>Spanish</a>
     </div>
@@ -33,8 +33,8 @@
 
   <div class="dropdown">
   <button onclick="learninglanuageChoser()" class="dropbtn">Language I want to learn</button>
-    <div id="myDropdown2" class="dropdown-content" id = "language">
-      <a>English</a>
+    <div id="myDropdown2" class="dropdown-content" >
+      <a onclick="">English</a>
       <a>German</a>
       <a>Spanish</a>
     </div>
@@ -48,8 +48,25 @@
 
 
   <script type="text/javascript">
+  var mt = "";
+  var nl = "";
+
+  function mt(pmt){
+    mt = pmt;
+  }
+  function nl(nl){
+
+  }
     function registrieren(){
       var username = document.getElementById("uname").value;
+      var fname = document.getElementById("fname").value;
+      var lname = document.getElementById("lname").value;
+      var age = document.getElementById("age").value;
+      var city = document.getElementById("city").value;
+      var  = document.getElementById("").value;
+      var  = document.getElementById("").value;
+      var  = document.getElementById("").value;
+      var  = document.getElementById("").value;
       var pw = document.getElementById("pw").value;
       var url = "http://wordshare.kaiseritea.de/server/functions/register.php?name=" + username + "&&pw=" + pw;
       var success = httpGet(url);

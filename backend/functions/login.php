@@ -5,7 +5,6 @@
 #Variablen initialisieren
 $username = $_GET['name'];
 $pw= $_GET['pw'];
-print($pw_hash);
 #Datenbankverbindung
 require_once("../inc/db.php");
 

@@ -26,13 +26,18 @@ $erg = $db->query($sql);
 $db->query("SET NAMES 'utf8'");
 $sql = "INSERT INTO word (word, translation, w_code, t_code, creator_id, verificator_id)
 VALUES ('{$row["word"]}', '{$row["translation"]}', '{$row["w_code"]}','{$row["t_code"]}','{$row["creator_id"]}','{$verificator_id}')";
-
+$erg = $db->query($sql);
+if (!$erg){
+die ('Etwas stimmte mit der Abfrage nicht: '.$db->error);
+}}
 #Datensatz aus w_verification löschen
 $sql ="DELETE FROM w_verification
 WHERE id = ".$row["id"];
-
-
+$erg = $db->query($sql);
+if (!$erg){
+die ('Etwas stimmte mit der Abfrage nicht: '.$db->error);
 }
+
 
 
  ?>

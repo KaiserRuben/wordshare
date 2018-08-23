@@ -22,19 +22,48 @@
 
             <input type="text" class="input" id="name" placeholder="Username" required><br />
             <input type="password" class="input last" id="pw" placeholder="Password" required><br />
-            <button type="submit" class="button" name="anmelden" onclick="anmelden()">Log-In</button><br />
+            <div>
+          <input type="checkbox" class="last" id="check" value="check" checked> <label for="check">Remeber me?  </label>
+      </div>
+            <button type="submit" class="button" name="anmelden" onclick="datenSammeln()">Log-In</button><br />
 
         <a href="regster.html"><button type="button" class="button" name="registrieren">Sign Up</button> </a><br />
     </div>
 
     <script type="text/javascript">
 
-    function anmelden(){
-      var username = document.getElementById("name").value;
-      var pw = document.getElementById("pw").value;
+    function datenSammeln(){
+
+      if(checkCookie("username")&&checkCookie("password")){
+
+        var username = getCookie("username");
+        var pw = getCookie("password");
+
+      anmelden(username, password);
+
+      }
+      else{
+
+        var username = document.getElementById("name").value;
+        var pw = document.getElementById("pw").value;
+
+        anmelden(username, password);
+
+      }
+    }
+
+
+    function anmelden(username, password){
+
       var url = "http://wordshare.kaiseritea.de/server/functions/login.php?name=" + username + "&&pw=" + pw;
       var success = httpGet(url);
       console.log(success);
+
+      if(document.getElementById("pw").checked == true){
+        setCookie("username", username);
+        setCookie("password", pw);
+      }
+
       if(success == "1"){
         location="https://www.bing.de";
       }
@@ -54,12 +83,3 @@
 </body>
 
 </html>
-<footer>
-  <!-- Add icon library -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-  <div class="icon-bar">
-    <a class="active" href="#"><i class="fa fa-plus"></i></a>
-    <a href="#"><i class="fa fa-aA">aA</i></a>
-    <a href="#"><i class="fa fa-pencil"></i></a>
-  </div>

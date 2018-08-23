@@ -31,7 +31,6 @@ $erg = $db->query($sql);
     else{
       die ('Dieses Wort ist bereits in der Datenbank '.$db->error);
     }
-$row = $erg->fetch_assoc();
 
 
 #Erfolg?

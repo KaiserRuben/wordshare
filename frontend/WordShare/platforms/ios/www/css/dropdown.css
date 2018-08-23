@@ -21,9 +21,9 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-pack: start;
+    /*-webkit-box-pack: start;
         -ms-flex-pack: start;
-            justify-content: flex-start;
+            justify-content: flex-start;*/
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
 
@@ -36,7 +36,7 @@
 
 /* Dropdown button on hover & focus */
 .dropbtn:hover, .dropbtn:focus {
-    background-color: white;
+    background-color: #d4d8d8;
 }
 
 /* The container <div> - needed to position the dropdown content */

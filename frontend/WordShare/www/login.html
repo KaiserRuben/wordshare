@@ -18,11 +18,37 @@
 
         <h1 class="Name">WordShare</h1>
 
-        <input type="text" class="input" placeholder="Username"><br />
-        <input type="password" class="input last" placeholder="Password"><br />
-        <button type="button" class="button" name="anmelden">Log-In</button><br />
+            <input type="text" class="input" id="name" placeholder="Username" required><br />
+            <input type="password" class="input last" id="pw" placeholder="Password" required><br />
+            <button type="submit" class="button" name="anmelden" onclick="anmelden()">Log-In</button><br />
+
         <button type="button" class="button" name="registrieren">Sign Up</button><br />
     </div>
+
+    <script type="text/javascript">
+
+    function anmelden(){
+      var username = document.getElementById("name").value;
+      var pw = document.getElementById("pw").value;
+      var url = "http://wordshare.kaiseritea.de/server/functions/login.php?name=" + username + "&&pw=" + pw;
+      var success = httpGet(url);
+      console.log(success);
+      if(success == "1"){
+        location="https://www.bing.de";
+      }
+      else{
+        alert("DU BIST SCHEIßE!");
+      }
+    }
+
+    function httpGet(theUrl){
+      var xmlHttp = new XMLHttpRequest();
+      xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+      xmlHttp.send( null );
+      return xmlHttp.responseText;
+    }
+
+  </script>
 </body>
 
 </html>

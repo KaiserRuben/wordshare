@@ -38,5 +38,4 @@ $erg = $db->query($sql);
 if (!$erg){
 die ('Etwas stimmte mit der Abfrage nicht: '.$db->error);
 }
-
  ?>

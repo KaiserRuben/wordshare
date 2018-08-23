@@ -22,7 +22,10 @@ $erg = $db->query($sql);
           if (!$erg){
             $sql = "INSERT INTO w_verification (word, translation, w_code, t_code, creator_id)
             VALUES ('{$newword}', '{$translation}', '{$w_code}','{$t_code}','{$creator_id}')";
-            $success = True;
+            $erg = $db->query($sql);
+            if ($erg){
+              $success = True;
+            }
           }
     }
     else{

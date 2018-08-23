@@ -7,21 +7,22 @@
 
   <!--  CSS inplementierung in externer Datei-->
   <link rel="stylesheet" href="css/dropdown.css" type="text/css">
+  <link rel="stylesheet" href="css/main.css" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Ubuntu|Cabin|PT+Sans+Narrow" rel="stylesheet">
 
   <title>WordShare - Register</title>
 </head>
 
 <body>
-  <h1 class="Name">Name</h1>
+  <h1 class="Name">Register Now!</h1>
 
-  <input type="text" class="usernametextfield" placeholder="Username"><br />
-  <input type="text" class="nametextfield" placeholder="First Name"><br />
-  <input type="text" class="nametextfield" placeholder="Last Name"><br />
-  <input type="number" class="agetextfield" placeholder="Age"><br />
-  <input type="text" class="citytextfield" placeholder="Home City"><br />
+  <input type="text" class="input" placeholder="Username"><br />
+  <input type="text" class="input" placeholder="First Name"><br />
+  <input type="text" class="input" placeholder="Last Name"><br />
+  <input type="number" class="input" placeholder="Age"><br />
+  <input type="text" class="input" placeholder="Home City"><br />
   <div class="dropdown">
-  <button onclick="myFunction()" class="dropbtn">Mother Language</button>
+  <button onclick="motherlanguageChoser()" class="dropbtn">Mother Language</button>
     <div id="myDropdown" class="dropdown-content">
       <a>English</a>
       <a>German</a>
@@ -29,24 +30,43 @@
     </div>
   </div><br />
   <div class="dropdown">
-  <button onclick="myFunction()" class="dropbtn">Language I want to learn</button>
-    <div id="myDropdown" class="dropdown-content">
+  <button onclick="learninglanuageChoser()" class="dropbtn">Language I want to learn</button>
+    <div id="myDropdown2" class="dropdown-content">
       <a>English</a>
       <a>German</a>
       <a>Spanish</a>
     </div>
   </div><br />
-  <input type="text" class="emailtextfield" placeholder="eMail"><br />
-  <input type="password" class="passwordtextfield" placeholder="Password"><br />
-  <input type="password" class="passwordtextfield" placeholder="Repeat Password"><br />
+  <input type="text" class="input" placeholder="eMail"><br />
+  <input type="password" class="input" placeholder="Password"><br />
+  <input type="password" class="input" placeholder="Repeat Password"><br />
   <input type="checkbox" class="agbcheckbox">I agree to the terms of service<br />
   <button type="button" class="button" name="registrieren">Register</button><br />
 </body>
 <script>
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
-function myFunction() {
+function motherlanguageChoser() {
     document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+function learninglanuageChoser() {
+    document.getElementById("myDropdown2").classList.toggle("show");
 }
 
 // Close the dropdown menu if the user clicks outside of it

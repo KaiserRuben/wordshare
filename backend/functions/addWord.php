@@ -24,7 +24,7 @@ $erg = $db->query($sql);
             VALUES ('{$newword}', '{$translation}', '{$w_code}','{$t_code}','{$creator_id}')";
             $erg = $db->query($sql);
             if ($erg){
-              $success = True;
+              $success = true;
             }
           }
     }
@@ -34,6 +34,6 @@ $erg = $db->query($sql);
 
 
 #Erfolg?
-if($success == True) print("1");
+if($success == true) print("1");
 else print("0");
 ?>

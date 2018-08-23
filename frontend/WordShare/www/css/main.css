@@ -21,6 +21,12 @@ body {
     background-color: #29a7ff;
 }
 
+.Name {
+    color: #29a7ff;
+    font-size: 2.5em;
+    margin-bottom: 10%;
+}
+
 .button:hover {
     background-color: #707070;
     color: white;

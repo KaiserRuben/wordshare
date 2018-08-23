@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: rdbms
--- Erstellungszeit: 23. Aug 2018 um 12:55
+-- Erstellungszeit: 23. Aug 2018 um 15:02
 -- Server-Version: 5.6.40-log
 -- PHP-Version: 7.2.7
 
@@ -38,38 +38,8 @@ CREATE TABLE `user` (
   `mt` varchar(3) NOT NULL,
   `nl` varchar(3) NOT NULL,
   `pwhash` mediumtext NOT NULL,
-  `homecity` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Tabellenstruktur für Tabelle `words`
---
-
-CREATE TABLE `words` (
-  `id` int(11) NOT NULL,
-  `word` varchar(50) NOT NULL,
-  `translation` varchar(50) NOT NULL,
-  `w_code` varchar(3) NOT NULL,
-  `t_code` varchar(3) NOT NULL,
-  `creator_id` int(225) NOT NULL,
-  `verificator_id` int(225) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Tabellenstruktur für Tabelle `w_verification`
---
-
-CREATE TABLE `w_verification` (
-  `id` int(11) NOT NULL,
-  `word` varchar(50) NOT NULL,
-  `translation` varchar(50) NOT NULL,
-  `w_code` varchar(3) NOT NULL,
-  `t_code` varchar(3) NOT NULL,
-  `creator_id` int(225) NOT NULL
+  `homecity` varchar(30) NOT NULL,
+  `id_words` mediumtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -83,18 +53,6 @@ ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indizes für die Tabelle `words`
---
-ALTER TABLE `words`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indizes für die Tabelle `w_verification`
---
-ALTER TABLE `w_verification`
-  ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT für exportierte Tabellen
 --
 
@@ -102,18 +60,6 @@ ALTER TABLE `w_verification`
 -- AUTO_INCREMENT für Tabelle `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT für Tabelle `words`
---
-ALTER TABLE `words`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT für Tabelle `w_verification`
---
-ALTER TABLE `w_verification`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 

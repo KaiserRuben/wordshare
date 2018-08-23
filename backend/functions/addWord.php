@@ -17,10 +17,13 @@ $db->query("SET NAMES 'utf8'");
 $sql = "SELECT * FROM words WHERE word='{$newword}'";
 $erg = $db->query($sql);
     if (!$erg){
-      $sql = "INSERT INTO w_verification (word, translation, w_code, t_code, creator_id)
-      VALUES ('{$newword}', '{$translation}', '{$w_code}','{$t_code}','{$creator_id}')";
-      $success = True;
-
+      $sql = "SELECT * FROM w_verification WHERE word='{$newword}'";
+      $erg = $db->query($sql);
+          if (!$erg){
+            $sql = "INSERT INTO w_verification (word, translation, w_code, t_code, creator_id)
+            VALUES ('{$newword}', '{$translation}', '{$w_code}','{$t_code}','{$creator_id}')";
+            $success = True;
+          }
     }
     else{
       die ('Dieses Wort ist bereits in der Datenbank '.$db->error);

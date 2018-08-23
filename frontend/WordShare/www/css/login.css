@@ -1,3 +1,32 @@
-.Name{
-  color:green;
+body {
+    background: #3f3f3f;
+    font-family: "Ubuntu", sans-serif;
+    text-align: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+  margin-top:20%;
+
+}
+
+.Name {
+    color: #29a7ff;
+}
+.button {
+  font-size: 100%;
+  font-family: inherit;
+  border: 0;
+  padding: 15;
+  border-radius: 20px;
+  background-color: white;
+
+  -webkit-transition-duration: 1s; /* Safari */
+  transition-duration: 1s;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: #707070;
+  color: white;
 }

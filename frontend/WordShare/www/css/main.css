@@ -32,3 +32,33 @@ input {
     font-family: inherit;
     background-color: inherit;
 }
+.input {
+    font-size: 1em;
+    margin: 0% 50px 0% 50px;
+    text-align: center;
+
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+
+    border: 1px solid #62798f;
+    border-radius: 5px;
+    padding: 0.5em;
+    margin-top: 0.2em;
+    color: #4864fe;
+}
+
+.input:hover {
+    background-color: #d4d8d8;
+}

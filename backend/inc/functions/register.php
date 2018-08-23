@@ -6,7 +6,7 @@ $mail = $_GET['mail'];
 $age = $_GET['age'];
 $mt = $_GET['mt'];
 $nl = $_GET['nl'];
-$pwhash = password_hash($_GET['pw']);
+$pwhash = password_hash($_GET['pwhash']);
 $homecity = $_GET['homecity'];
 
 require_once("../inc/db.php");

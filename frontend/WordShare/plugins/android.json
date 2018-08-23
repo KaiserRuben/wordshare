@@ -8,12 +8,6 @@
   },
   "installed_plugins": {},
   "dependent_plugins": {
-    "com.cordova.plugins.cookiemaster": {
-      "PACKAGE_NAME": "com.wordshare.WordShare"
-    },
-    "cordova-plugin-cookieemperor": {
-      "PACKAGE_NAME": "com.wordshare.WordShare"
-    },
     "cordova-plugin-statusbar": {
       "PACKAGE_NAME": "com.wordshare.WordShare"
     },

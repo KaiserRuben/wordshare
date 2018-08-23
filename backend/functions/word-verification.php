@@ -30,6 +30,7 @@ $erg = $db->query($sql);
 if (!$erg){
 die ('Etwas stimmte mit der Abfrage nicht: '.$db->error);
 }}
+
 #Datensatz aus w_verification löschen
 $sql ="DELETE FROM w_verification
 WHERE id = ".$row["id"];
@@ -38,7 +39,4 @@ if (!$erg){
 die ('Etwas stimmte mit der Abfrage nicht: '.$db->error);
 }
 
-
-
  ?>
-}'

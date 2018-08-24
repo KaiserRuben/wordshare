@@ -31,6 +31,28 @@
   <span class="popuptext" id="myPopup">Use the word "<span id="word"></span>" in different contexts to improve your <span class="lang"></span> skills!
 </div></center>
 </body>
+<<<<<<< HEAD
+=======
+<script>
+
+var url = "http://wordshare.kaiseritea.de/server/functions/getWord.php?username=" + getCookie("username");
+var wordsJSON = JSON.parse(httpGet(url));
+
+
+// When the user clicks on <div>, open the popup
+function popupShow() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+}
+
+function httpGet(theUrl){
+  var xmlHttp = new XMLHttpRequest();
+  xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+  xmlHttp.send( null );
+  return xmlHttp.responseText;
+}
+</script>
+>>>>>>> 955f3cbcd819bfbaf750ec9cdd13cb8323e5d566
 </html>
 <footer><menu>
 

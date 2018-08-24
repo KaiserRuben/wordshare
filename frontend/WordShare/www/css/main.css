@@ -70,3 +70,7 @@ input {
 .input:hover {
     background-color: #d4d8d8;
 }
+
+.boxed {
+    border: 1px solid white ;
+  } 

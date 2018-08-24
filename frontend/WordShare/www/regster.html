@@ -16,80 +16,34 @@
 <body>
   <h1 class="Name">Register Now!</h1>
 
-  <input type="text" class="input" id = "uname" placeholder="Username"><br />
-  <input type="text" class="input" id = "fname" placeholder="First Name"><br />
-  <input type="text" class="input" id = "lname" placeholder="Last Name"><br />
-  <input type="number" class="input" id = "age" placeholder="Age"><br />
-  <input type="text" class="input" id = "city" placeholder="Home City"><br />
-
+  <input type="text" class="input" placeholder="Username"><br />
+  <input type="text" class="input" placeholder="First Name"><br />
+  <input type="text" class="input" placeholder="Last Name"><br />
+  <input type="number" class="input" placeholder="Age"><br />
+  <input type="text" class="input" placeholder="Home City"><br />
   <div class="dropdown">
   <button onclick="motherlanguageChoser()" class="dropbtn">Mother Language</button>
     <div id="myDropdown" class="dropdown-content">
-      <a onclick="fmt('EN')">English</a>
-      <a onclick="fmt('DE')">German</a>
-      <a onclick="fmt('ES')">Spanish</a>
+      <a>English</a>
+      <a>German</a>
+      <a>Spanish</a>
     </div>
   </div><br />
-
   <div class="dropdown">
   <button onclick="learninglanuageChoser()" class="dropbtn">Language I want to learn</button>
-    <div id="myDropdown2" class="dropdown-content" >
-      <a onclick="fnl('EN')">English</a>
-      <a onclick="fnl('DE')">German</a>
-      <a onclick="fnl('ES')">Spanish</a>
+    <div id="myDropdown2" class="dropdown-content">
+      <a>English</a>
+      <a>German</a>
+      <a>Spanish</a>
     </div>
   </div><br />
-
-  <input type="text" class="input" id = "mail" placeholder="eMail"><br />
-  <input type="password" class="input" id = "pw" placeholder="Password"><br />
+  <input type="text" class="input" placeholder="eMail"><br />
+  <input type="password" class="input" placeholder="Password"><br />
   <input type="password" class="input" placeholder="Repeat Password"><br />
   <input type="checkbox" class="agbcheckbox">I agree to the terms of service<br />
-  <button type="button" class="button" onclick = "registrieren()" name="registrieren">Register</button><br />
-
-
-  <script type="text/javascript">
-  var mt = "";
-  var nl = "";
-
-  function fmt(pmt){
-    mt = pmt;
-  }
-  function fnl(pnl){
-    nl = pnl;
-  }
-    function registrieren(){
-      var username = document.getElementById("uname").value;
-      var fname = document.getElementById("fname").value;
-      var lname = document.getElementById("lname").value;
-      var age = document.getElementById("age").value;
-      var city = document.getElementById("city").value;
-      //var ml= document.getElementById("mt").value;
-      //var nl= document.getElementById("nl").value;
-      var mail= document.getElementById("mail").value;
-      var pw = document.getElementById("pw").value;
-      var url = "http://wordshare.kaiseritea.de/server/functions/register.php?username=" + username + "&&name=" + fname + "&&lastname=" + lname + "&&mail=" + mail + "&&age=" + age + "&&mt=" + mt + "&&nl=" + nl + "&&pw=" + pw + "&&homecity=" + city;
-
-      console.log(url);
-      var success = httpGet(url);
-      console.log(success);
-      if(success == "1"){
-        location="https://www.bing.de";
-      }
-      else{
-        alert("DU BIST SCHEIßE!");
-      }
-    }
-
-    function httpGet(theUrl){
-      var xmlHttp = new XMLHttpRequest();
-      xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
-      xmlHttp.send( null );
-      return xmlHttp.responseText;
-    }
-
-  </script>
-
+  <button type="button" class="button" name="registrieren">Register</button><br />
 </body>
+
 
 <script>
 /* When the user clicks on the button,

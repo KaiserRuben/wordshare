@@ -19,7 +19,7 @@ $strlenght = strlen ( $input );
 
 //Worte mit selbem Anfang ermitteln
 $counter = 0;
-$result = "";
+$result = " ";
 while (!$counter == $wordnumber){
 $w_beginn = substr (  $words[$counter] , 0 , $strlenght );
 if ( $w_beginn == $words[$counter]){

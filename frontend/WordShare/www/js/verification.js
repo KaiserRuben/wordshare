@@ -3,22 +3,21 @@
 function registrieren(){
   var username = document.getElementById("uname").value;
 
-  var url = "http://wordshare.kaiseritea.de/server/functions/register.php?username=" + username + "&&name=" + fname + "&&lastname=" + lname + "&&mail=" + mail + "&&age=" + age + "&&mt=" + mt + "&&nl=" + nl + "&&pw=" + pw + "&&homecity=" + city;
+  var url = "http://wordshare.kaiseritea.de/server/functions/register.php?username=" + username + "&&validation=" + val + "&&word=" + word;
 
-  if (username!='' && fname!='' && lname!='' && age!='' && city!='' && mail!='' && pw!='' && mt!='' && nl!=''){
+  if (username!='' && val!='' && word!=''){
       console.log(url);
-      console.log("." + pw + "..");
       var success = httpGet(url);
       console.log(success);
       if(success == "1"){
-        location="/daily-word.html";
+        alert("Erfolg!")
       }
       else{
-        alert("Die Registrierung war leider nicht erfolgreich. Bitte versuchen sie es erneut.");
+        alert("Nein. Einfach nur nein.");
       }
     }
     else{
-      alert("Die Registrierung war leider nicht erfolgreich. Bitte versuchen sie es erneut.");
+      alert("Nope");
     }
   }
 

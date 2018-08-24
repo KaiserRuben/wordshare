@@ -1,4 +1,4 @@
-.input {
+/*.input {
     width: 30%;
     font-size: 1em;
     margin-left: 34%;
@@ -7,17 +7,21 @@
     border-radius: 5px;
     padding: 0.4em;
     color: #4864fe;
-}
+}*/
 
 h1 {
     margin: 30% 15% 0% 15%;
     width: 70%
 }
 
-.button {
+.text {
+  display: -ms-flexbox;
+  display: -webkit-box;
+}
+
+/*.button {
     width: 30%;
     margin-left: 30%;
     margin-right: 30%;
     height: 1.6em;
-}
-
+}*/

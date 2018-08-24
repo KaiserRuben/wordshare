@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-
-=======
 .content {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -14,7 +11,8 @@
 }
 
 img {
-    margin-bottom: 30%;
+    margin-top: 15%;
+    margin-bottom:10%;
 }
 
 .button {
@@ -60,4 +58,3 @@ img {
 .last{
   margin-bottom:30%;
 }
->>>>>>> 1472c88a20d59de952552813b9414bdfabf607ef

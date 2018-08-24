@@ -2,13 +2,11 @@ function sendword() {
 //get Eingaben des Benutzers
   var word  = document.getElementById('word');
   var transword  = document.getElementById('transword');
-  //var w_code = "EN";
-  //var t_code = "DE";
   var user = getCookie("username");
 
 //sende Daten an addWord  function httpGet(theUrl){
 var success = gethtml("http://wordshare.kaiseritea.de/server/functions/addWord.php?word=" + word + "&&transword=" + transword + "&&user=" + user);
-if (success == 1){
+if (success == "1"){
 alert("Danke für dein Word. Es wird nun noch verifiziert.");
 
 } else {

@@ -10,7 +10,6 @@
     <!--  CSS inplementierung in externer Datei-->
     <link rel="stylesheet" href="css/daily_word.css" type="text/css">
       <link rel="stylesheet" href="css/main.css" type="text/css">
-      <script language="javascript" type="text/javascript" src="js/cookiefunctions.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu|Cabin|PT+Sans+Narrow" rel="stylesheet">
     <script>
     // When the user clicks on <div>, open the popup
@@ -26,8 +25,7 @@
 <h2>use your word in your quests</h2>
 </center>
 <div class="daily_word">
-  <center><span id="word"></span></center>
-  <center><span id="translation"></span></center>
+  <center>house<span id="word"></span></center>
 </div><br><center>
 <div class="popup" onclick="myFunction()"><i class= "white fa fa-info"></i>
   <span class="popuptext" id="myPopup">Use the word "<span id="word"></span>" in different contexts to improve your <span class="lang"></span> skills!
@@ -36,15 +34,14 @@
 <script>
 
 var url = "http://wordshare.kaiseritea.de/server/functions/getWord.php?username=" + getCookie("username");
-var response = httpGet(url);
-console.log(response);
+var wordsJSON = JSON.parse(httpGet(url));
 
-var wordsJSON = JSON.parse(response);
 
-console.log(wordsJSON);
-
-document.getElementById('word').innerHTML = wordsJSON[0].word;
-document.getElementById('translation').innerHTML = wordsJSON[0].translation;
+// When the user clicks on <div>, open the popup
+function popupShow() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+}
 
 function httpGet(theUrl){
   var xmlHttp = new XMLHttpRequest();

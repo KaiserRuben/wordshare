@@ -2,27 +2,25 @@
 
 <html lang="de">
 
+<<<<<<< HEAD
     <head>
-        <meta charset="utf-8">
-        <title>Word Share - New word</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+        <title>Word Share - New word</title>
+<script src="/js/sendword.js" type="text/javascript"></script>
         <link href="css/main.css" rel=stylesheet>
         <link href="css/newword.css" rel=stylesheet>
         <link href="https://fonts.googleapis.com/css?family=Ubuntu|Cabin|PT+Sans+Narrow" rel="stylesheet">
     </head>
-
-    <body>
-        <h1 class="Name">Add a new word!</h1>
-        <main>
-             <input type="text" id="word" class="input" placeholder="Native language" required>
-            <p><input type="text" id="transword" class="input" placeholder="Second language" required> </p> <br>
-<<<<<<< HEAD
-            <p> <button onclick="js/sendword.js" type="submit" class="button" id="Hinzufügen"> Add </button></p>
-=======
-            <a href="daily-word.html"><p> <button onclick="js/sendword.js" type="submit" class="button" id="Hinzufügen"> Add </button></a>
->>>>>>> da0edb11a0e544e3180f388336b88afb92a1245e
-        </main>
-
-    </body>
-
+  <body>
+      <h1 class="Name">Add a new word!</h1>
+      <main>
+        <a class="text"> Please enter a word in your native languge you want to share with the Wordsharecommunity </a>
+          <input type="text" id="word" class="input" placeholder="Word" required>
+          <input type="text" id="transword" class="input" placeholder="Translation" required> <br>
+          <!--  <a href="daily-word.html"><p> <button onclick="js/sendword.js" type="submit" class="button" id="Hinzufügen"> Add </button></a>-->
+          <button onclick="js/sendword.js" type="submit" class="button" id="Hinzufügen"> Add </button>
+      </main>
+  </body>
 </html>

@@ -15,7 +15,6 @@ alert("Entweder es gibt dein Wort bereits, oder wir haben Mist gebaut.")
 }
 
 function gethtml(theU){
-  alert("gethtml wird ausgeführt.")
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
     xmlHttp.send( null );

@@ -35,7 +35,7 @@
 </body>
 <script>
 
-var url = "http://wordshare.kaiseritea.de/server/functions/getWord.php?username=" + getCookie("username");
+var url = "http://wordshare.kaiseritea.de/server/functions/getWord.php?username=" + getCookie("username") + "&&type=word";
 var response = httpGet(url);
 var wordsJSON = JSON.parse(response);
 

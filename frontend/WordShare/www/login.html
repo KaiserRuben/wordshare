@@ -32,6 +32,8 @@
 
     <script type="text/javascript">
 
+    datenSammeln();
+
     function datenSammeln(){
 
       if(checkCookie("username")&&checkCookie("password")){
@@ -47,7 +49,9 @@
         var username = document.getElementById("name").value;
         var pw = document.getElementById("pw").value;
 
-        anmelden(username, password);
+        if(pw!=""&&username!=""){
+          anmelden(username, password);
+        }
 
       }
     }
@@ -59,7 +63,7 @@
       var success = httpGet(url);
       console.log(success);
 
-      if(document.getElementById("pw").checked == true){
+      if(document.getElementById("check").checked == true){
         setCookie("username", username);
         setCookie("password", pw);
       }

@@ -4,7 +4,6 @@ function setCookie(cname, cvalue) {
 
 function getCookie(cname) {
   return(window.localStorage.getItem(cname));
-  }
 
 }
 

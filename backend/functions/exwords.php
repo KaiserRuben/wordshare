@@ -7,7 +7,7 @@ require_once("../inc/db.php");
 
 #Datenbanken nach existierenden Worten durchsuchen
 $db->query("SET NAMES 'utf8'");
-$sql = "SELECT word FROM words WHERE *;"
+$sql = "SELECT word FROM words WHERE *";
 $erg = $db->query($sql);
 $words = $erg->fetch_assoc();
 

@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+
+=======
 .content {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -6,14 +9,12 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    margin: 30% 15% 0% 15%;
+    margin: 40% 15% 0% 15%;
     width: 70%
 }
 
-.Name {
-    color: #29a7ff;
-    font-size: 2.5em;
-    margin-bottom: 10%;
+img {
+    margin-bottom: 30%;
 }
 
 .button {
@@ -57,5 +58,6 @@
 }
 
 .last{
-  margin-bottom:10%;
+  margin-bottom:30%;
 }
+>>>>>>> 1472c88a20d59de952552813b9414bdfabf607ef

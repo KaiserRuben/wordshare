@@ -2,8 +2,8 @@ function sendword() {
 //get Eingaben des Benutzers
   var word  = document.getElementById('word');
   var transword  = document.getElementById('transword');
-  var user = getCookie("username");
-
+//  var user = getCookie("username");
+var user = "1"
 //sende Daten an addWord  function httpGet(theUrl){
 var success = gethtml("http://wordshare.kaiseritea.de/server/functions/addWord.php?word=" + word + "&&transword=" + transword + "&&user=" + user);
 if (success == "1"){

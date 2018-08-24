@@ -76,7 +76,10 @@ input {
   }
 
 .text {
-  font-size: 1.5em;
+  font-size: 1.2em;
   color: #62798f;
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  padding: 0.5em;
 }

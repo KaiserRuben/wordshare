@@ -36,9 +36,15 @@
 <script>
 
 var url = "http://wordshare.kaiseritea.de/server/functions/getWord.php?username=" + getCookie("username");
-var wordsJSON = JSON.parse(httpGet(url));
+var response = httpGet(url);
+console.log(response);
+
+var wordsJSON = JSON.parse(response);
+
+console.log(wordsJSON);
+
 document.getElementById('word').innerHTML = wordsJSON[0].word;
-document.getElementById('translation').innerHTML = wordsJSON[0].translate;
+document.getElementById('translation').innerHTML = wordsJSON[0].translation;
 
 function httpGet(theUrl){
   var xmlHttp = new XMLHttpRequest();

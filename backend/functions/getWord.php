@@ -34,7 +34,7 @@ $bekannteWorterArray = explode(";", $row["id_words"]);
 
 #und jeeetzt bereiten wir den sql dynamisch praktisch gut vor
 $db->query("SET NAMES 'utf8'");
-$sql = "SELECT * FROM words WHERE w_code='{$nl}' AND t_code='{$mt}' ORDER BY id DESC";
+$sql = "SELECT * FROM words WHERE w_code='{$nl}' AND t_code='{$mt}' ORDER BY id DESC LIMIT 10";
 #Das führen wir dann mal aus...
 $erg = $db->query($sql);
   if (!$erg){

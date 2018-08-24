@@ -14,6 +14,7 @@ Windows ist wie ein U-Boot,sobalt man ein Fenster öffnet,fangen die Probleme an
 
 #Variablen initialisieren
 $username = $_GET['username'];
+$type = $_GET['type'];
 
 #Datenbankverbindung
 require_once("../inc/db.php");
@@ -33,9 +34,13 @@ $nl = $row["nl"];
 $bekannteWorterArray = explode(";", $row["id_words"]);
 
 #und jeeetzt bereiten wir den sql dynamisch praktisch gut vor
-$db->query("SET NAMES 'utf8'");
-$sql = "SELECT * FROM words WHERE w_code='{$nl}' AND t_code='{$mt}' ORDER BY id DESC LIMIT 10";
+if($type == "word"){
+  $sql = "SELECT * FROM words WHERE w_code='{$nl}' AND t_code='{$mt}' ORDER BY id DESC LIMIT 10";
+}elseif ($type=="verification") {
+  $sql = "SELECT * FROM w_verification WHERE w_code='{$nl}' AND t_code='{$mt}' ORDER BY id LIMIT 1";
+}
 #Das führen wir dann mal aus...
+$db->query("SET NAMES 'utf8'");
 $erg = $db->query($sql);
   if (!$erg){
     die ('Nutzer ist wahrscheinlich nicht in der Datenbank: '.$db->error);

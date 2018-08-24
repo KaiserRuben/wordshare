@@ -20,46 +20,47 @@
     </script> -->
 
   </head>
-<body><center>
-<h1>Verify new vocabulary</h1><br>
-<h4><font color="white">Help our community by verifying new entries to the vocabulary.</font></h4>
-</center>
-<hr>
-<div class="new_word"><div class="boxed">
-  <center><font color="white"><h1>Vehicle</h1><span id="word"></span></font></center>
-</div>
-<div class="new_word_translated">
-    <center><font color="white"><h2>Fahrzeug</h2><span id="word_trans"></span></font></center>
-  </div><br>
+<body>
+
+  <center>
+    <h1>Verify new vocabulary</h1><br>
+    <h4><font color="white">Help our community by verifying new entries to the vocabulary.</font></h4>
+  </center>
+
+  <hr>
+
+  <div class="new_word">
+    <div class="boxed">
+      <center><font color="white"><h1>Vehicle</h1><span id="word"></span></font></center>
+    </div>
+    <div class="new_word_translated">
+      <center><font color="white"><h2>Fahrzeug</h2><span id="word_trans"></span></font></center>
+    </div>
+    <br>
   </div>
 
-<center>
-
-
+  <center>
+    <div class="button-group">
+      <img src="../www/pics/decline.png" alt="decline" style="width:20%"> &emsp; <img src="../www/pics/unknown.png" alt="unknown" style="width:20%"> &emsp; <img src="../www/pics/accept.png" alt="accept" style="width:20%">
       <div class="button-group">
-<<<<<<< HEAD
-          <img src="../www/pics/decline.png" alt="decline" style="width:20%"> &emsp; <img src="../www/pics/unknown.png" alt="unknown" style="width:20%"> &emsp; <img src="../www/pics/accept.png" alt="accept" style="width:20%">
-    
-=======
-          <img src="../www/pics/decline.png" alt="decline" onclick="verify(0)" style="width:25%"> &emsp;
-          <img src="../www/pics/unknown.png" alt="unknown" onclick="newword()" style="width:25%"> &emsp;
-          <img src="../www/pics/accept.png" alt="accept" onclick="verify(1)" style="width:25%">
+      <img src="../www/pics/decline.png" alt="decline" onclick="verify(0)" style="width:25%"> &emsp;
+      <img src="../www/pics/unknown.png" alt="unknown" onclick="newword()" style="width:25%"> &emsp;
+      <img src="../www/pics/accept.png" alt="accept" onclick="verify(1)" style="width:25%">
+    </div>
+  </center>
 
->>>>>>> 849323c7d1ed2a0634591fadcd7eb72b68f57379
-      </div></center>
-      <!-- Hier sind die ursprünglichen Buttons
-      <div class="button-group">
+  <!-- Hier sind die ursprünglichen Buttons
+    <div class="button-group">
       <button type="button" class="button" name="decline">Decline</button><button type="button" class="button" name="accept">Accept</button><br />
+    </div>-->
 
-      </div>
-    -->
-
-    <!-- Hier ist ein Info-Pop-Up
-  </div><br><center>
+  <!-- Hier ist ein Info-Pop-Up
+    </div><br><center>
       <div class="popup" onclick="myFunction()"><i class= "white fa fa-info"></i>
         <span class="popuptext" id="myPopup">Swipe left or right to accept or decline a new entry. Use the middle button if you don't know a word.
-      </div></center>
-    -->
+      </div>
+    </center>-->
+    
 </body>
 
 <script>
@@ -67,10 +68,31 @@
 Ja, ich weiß dass JS nicht hier intergireiert wird, aber es muss nach der implemention sein.
 Einfach nicht fragen!
 
-
-Funktion verify gibt mit getHttp benötigte Daten weiter an word-verify.php.
-Funktion newword holt ein neues Word aus der datenbank. Hierzu habe ich eine Idee, das kann ich recht schnell machen (Ruben).
+newwor() holt ein neues Wort und zeigt es an. Wird am Anfang einmal ausgeführt und jedes mal, wenn der Nutzer das Wort nicht kennt.
 */
+
+
+function newword(){
+
+  document.getElementById('word').innerHTML ="loading...";
+
+  var url = "http://wordshare.kaiseritea.de/server/functions/getWord.php?username=" + getCookie("username") + "&&type=verification";
+  var response = httpGet(url);
+  var wordsJSON = JSON.parse(response);
+
+  document.getElementById('word').innerHTML = wordsJSON[0].word;
+  document.getElementById('translation').innerHTML = wordsJSON[0].translation;
+
+}
+
+function httpGet(theUrl){
+
+  var xmlHttp = new XMLHttpRequest();
+  xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+  xmlHttp.send( null );
+  return xmlHttp.responseText;
+
+}
 
 </script>
 

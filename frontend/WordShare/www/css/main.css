@@ -28,7 +28,7 @@ body {
 }
 
 .button:hover {
-    background-color: blue;
+    background-color: #707070;
     color: white;
 }
 
@@ -79,10 +79,7 @@ input {
   font-size: 1.2em;
   color: #62798f;
   text-align: center;
-<<<<<<< HEAD
-=======
-  display: -webkit-box;
-  display: -ms-flexbox;
+  /*display: -webkit-box;*/
+  /*display: -ms-flexbox;*/
   padding: 0.5em;
->>>>>>> b652ac48b5a3a23ab7894ac3def17aa3a311ed08
 }

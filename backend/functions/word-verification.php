@@ -15,7 +15,7 @@ require_once("../inc/db.php");
 if ($bewertung == 1){
 #Neues Wort zu word hinzufügen
 $db->query("SET NAMES 'utf8'");
-$sql = "SELECT * FROM w_verification WHERE id='{$wordtoverificate}'";
+$sql = "SELECT * FROM w_verification WHERE word='{$wordtoverificate}'";
 $erg = $db->query($sql);
     if (!$erg){
     die ('Etwas stimmte mit der Abfrage nicht: '.$db->error);

@@ -14,7 +14,7 @@ $words = $erg->fetch_assoc();
 // Worte zählen
 $wordnumber = count ( $words );
 
-//länge input
+//Länge input
 $strlenght = strlen ( $input );
 
 //Worte mit selbem Anfang ermitteln
@@ -22,12 +22,12 @@ $counter = 0;
 $result = " ";
 while (!$counter == $wordnumber){
 $w_beginn = substr ($words[$counter] , 0 , $strlenght);
+
 // Worte aneinander fügen
 if ( $w_beginn == $words[$counter]){
   $result = $result + ", "+ $words[$counter];
   $counter = $counter + 1;
 }
-
 }
 print ($result);
 

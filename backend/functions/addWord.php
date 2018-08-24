@@ -3,10 +3,9 @@
 #gibt 1 bei Erfolg (Wort noch nicht eingetragen), sonst 0 zurück
 
 #Variablen initialisieren
-$newword = $_POST['word'];
-$translation = $_POST['transword'];
-$w_code = $_GET['w_code'];
-$t_code= $_GET['t_code'];
+$newword = $_GET['word'];
+$translation = $_GET['transword'];
+
 $user = $_GET['user'];
 
 #Datenbankverbindung
@@ -14,9 +13,12 @@ require_once("../inc/db.php");
 
 #Finde id des users heraus
 $db->query("SET NAMES 'utf8'");
-$sql = "SELECT id FROM user WHERE username='{$user}'";
+$sql = "SELECT id, mt, nl FROM user WHERE username='{$user}'";
 $erg = $db->query($sql);
-$creator_id = $erg;
+$row = $erg->fetch_assoc();
+$creator_id = $row["id"];
+$w_code = $row["mt"];
+$t_code= $row["nl"];
 
 #Prüfe, ob Wort bereits existiert
 $db->query("SET NAMES 'utf8'");

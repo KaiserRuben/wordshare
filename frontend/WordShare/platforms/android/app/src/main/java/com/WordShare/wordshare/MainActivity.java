@@ -17,7 +17,7 @@
        under the License.
  */
 
-package com.WordShare.wordshare;
+package com.wordshare.WordShare;
 
 import android.os.Bundle;
 import org.apache.cordova.*;

@@ -1,0 +1,23 @@
+.input {
+    width: 30%;
+    font-size: 1em;
+    margin-left: 34%;
+    text-align: center;
+    border: 1px solid #62798f;
+    border-radius: 5px;
+    padding: 0.4em;
+    color: #4864fe;
+}
+
+h1 {
+    margin: 30% 15% 0% 15%;
+    width: 70%
+}
+
+.button {
+    width: 30%;
+    margin-left: 30%;
+    margin-right: 30%;
+    height: 1.6em;
+}
+

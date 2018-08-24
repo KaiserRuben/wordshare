@@ -97,18 +97,50 @@
 
 
 
-<script>
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-function motherlanguageChoser() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
+<script type="text/javascript">
 
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
+  // Close the dropdown menu if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
+
+  function learninglanuageChoser() {
+      document.getElementById("myDropdown2").classList.toggle("show");
+  }
+  function motherlanguageChoser() {
+      document.getElementById("myDropdown").classList.toggle("show");
+  }
+
+
+  // Close the dropdown menu if the user clicks outside of it
+  /*window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }*/
+
+  // Close the dropdown menu if the user clicks outside of it
+  window.onclick = function(event) {
   if (!event.target.matches('.dropbtn')) {
-
-    var dropdowns = document.getElementsByClassName("dropdown-content");
+     var dropdowns = document.getElementsByClassName("dropdown-content");
     var i;
     for (i = 0; i < dropdowns.length; i++) {
       var openDropdown = dropdowns[i];
@@ -117,25 +149,11 @@ window.onclick = function(event) {
       }
     }
   }
-}
-
-function learninglanuageChoser() {
+  }
+  function learninglanuageChoser() {
     document.getElementById("myDropdown2").classList.toggle("show");
-}
-
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
   }
-}
-</s>
-<a href="daily-word.html"><button type="button" class="button" name="registrieren">Sign Up</button></a>
+</script>
+
+<!--</s>
+a href="daily-word.html"><button type="button" class="button" name="registrieren">Sign Up</button></a>-->

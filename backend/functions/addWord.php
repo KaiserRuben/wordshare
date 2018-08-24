@@ -7,10 +7,16 @@ $newword = $_POST['word'];
 $translation = $_POST['transword'];
 $w_code = $_GET['w_code'];
 $t_code= $_GET['t_code'];
-$creator_id = $_GET['creator_id'];
+$user = $_GET['user'];
 
 #Datenbankverbindung
 require_once("../inc/db.php");
+
+#Finde id des users heraus
+$db->query("SET NAMES 'utf8'");
+$sql = "SELECT id FROM user WHERE username='{$user}'";
+$erg = $db->query($sql);
+$creator_id = $erg;
 
 #Prüfe, ob Wort bereits existiert
 $db->query("SET NAMES 'utf8'");

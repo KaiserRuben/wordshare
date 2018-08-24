@@ -21,7 +21,7 @@ $strlenght = strlen ( $input );
 $counter = 0;
 $result = " ";
 while (!$counter == $wordnumber){
-$w_beginn = substr (  $words[$counter] , 0 , $strlenght );
+$w_beginn = substr ($words[$counter] , 0 , $strlenght);
 if ( $w_beginn == $words[$counter]){
   $result = $result + ", "+ $words[$counter];
   $counter = $counter + 1;

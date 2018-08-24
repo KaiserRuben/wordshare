@@ -7,23 +7,25 @@ require_once("../inc/db.php");
 
 #Datenbanken nach existierenden Worten durchsuchen
 $db->query("SET NAMES 'utf8'");
-$sql = "SELECT word FROM words WHERE *;"
+$sql = "SELECT word FROM words WHERE *";
 $erg = $db->query($sql);
 $words = $erg->fetch_assoc();
 
 // Worte zählen
-$wordnumber = int count ( mixed $words [, int $mode = COUNT_NORMAL ] );
+$wordnumber = count ( $words );
 
-//länge input
-$strlenght = int strlen ( string $input );
+//Länge input
+$strlenght = strlen ( $input );
 
 //Worte mit selbem Anfang ermitteln
-$counter = int 0;
-$result = "";
+$counter = 0;
+$result = " ";
 while (!$counter == $wordnumber){
-$w_beginn = string substr ( string $words[$counter] , int 0 [, int $strlenght] );
+$w_beginn = substr ($words[$counter] , 0 , $strlenght);
+
+// Worte aneinander fügen
 if ( $w_beginn == $words[$counter]){
-  $result = $result + ", " $words[$counter];
+  $result = $result + ", "+ $words[$counter];
   $counter = $counter + 1;
 }
 }

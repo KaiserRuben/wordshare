@@ -28,7 +28,7 @@ body {
 }
 
 .button:hover {
-    background-color: blue;
+    background-color: #707070;
     color: white;
 }
 

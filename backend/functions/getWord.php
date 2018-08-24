@@ -15,7 +15,6 @@ Windows ist wie ein U-Boot,sobalt man ein Fenster öffnet,fangen die Probleme an
 #Variablen initialisieren
 $username = $_GET['username'];
 
-
 #Datenbankverbindung
 require_once("../inc/db.php");
 
@@ -31,19 +30,23 @@ $row = $erg->fetch_assoc();
 #Userpräferenzen festlegen um passende Wörter zu finden
 $mt = $row["mt"];
 $nl = $row["nl"];
-$bekannteWorterArray = explode(";", $row["nl"];)
+$bekannteWorterArray = explode(";", $row["id_words"]);
 
 #und jeeetzt bereiten wir den sql dynamisch praktisch gut vor
 $db->query("SET NAMES 'utf8'");
-$sql = "SELECT * FROM words WHERE w_code='{$nl}' AND t_code='{$ml}' ORDER BY id DESC LIMIT 10";
+$sql = "SELECT * FROM words WHERE w_code='{$nl}' AND t_code='{$mt}' ORDER BY id DESC LIMIT 10";
 #Das führen wir dann mal aus...
 $erg = $db->query($sql);
   if (!$erg){
     die ('Nutzer ist wahrscheinlich nicht in der Datenbank: '.$db->error);
   }
-$row = $erg->fetch_assoc();
+#Der Array ist mehrdimensional (hat mich n bisschen Zeit gekostet to realise it) daher müssen wir ihn stufenweisen hinzufügen
+$daten = array();
+while ($row = $erg->fetch_assoc()) {
+  array_push($daten, $row);
+}
 
 #Und da wir es gerne als JSON hätten convertieren wir es noch und geben es dann aus.
-$resultJSON = json_encode($row);
+$resultJSON = json_encode($daten);
 print($resultJSON);
 ?>

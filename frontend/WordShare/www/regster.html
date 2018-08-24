@@ -16,29 +16,32 @@
 <body>
   <h1 class="Name">Register Now!</h1>
 
-  <input type="text" class="input" placeholder="Username"><br />
-  <input type="text" class="input" placeholder="First Name"><br />
-  <input type="text" class="input" placeholder="Last Name"><br />
-  <input type="number" class="input" placeholder="Age"><br />
-  <input type="text" class="input" placeholder="Home City"><br />
+  <input type="text" class="input" id = "uname" placeholder="Username"><br />
+  <input type="text" class="input" id = "fname" placeholder="First Name"><br />
+  <input type="text" class="input" id = "lname" placeholder="Last Name"><br />
+  <input type="number" class="input" id = "age" placeholder="Age"><br />
+  <input type="text" class="input" id = "city" placeholder="Home City"><br />
+
   <div class="dropdown">
   <button onclick="motherlanguageChoser()" class="dropbtn">Mother Language</button>
     <div id="myDropdown" class="dropdown-content">
-      <a>English</a>
-      <a>German</a>
-      <a>Spanish</a>
+      <a onclick="fmt('EN')">English</a>
+      <a onclick="fmt('DE')">German</a>
+      <a onclick="fmt('ES')">Spanish</a>
     </div>
   </div><br />
+
   <div class="dropdown">
   <button onclick="learninglanuageChoser()" class="dropbtn">Language I want to learn</button>
-    <div id="myDropdown2" class="dropdown-content">
-      <a>English</a>
-      <a>German</a>
-      <a>Spanish</a>
+    <div id="myDropdown2" class="dropdown-content" >
+      <a onclick="fnl('EN')">English</a>
+      <a onclick="fnl('DE')">German</a>
+      <a onclick="fnl('ES')">Spanish</a>
     </div>
   </div><br />
-  <input type="text" class="input" placeholder="eMail"><br />
-  <input type="password" class="input" placeholder="Password"><br />
+
+  <input type="text" class="input" id = "mail" placeholder="eMail"><br />
+  <input type="password" class="input" id = "pw" placeholder="Password"><br />
   <input type="password" class="input" placeholder="Repeat Password"><br />
   <input type="checkbox" class="agbcheckbox" id = "agb">I agree to the terms of service<br />
   <button type="button" class="button" onclick = "registrieren()" name="registrieren">Register</button><br />
@@ -90,22 +93,54 @@
 
   </script>
 
-</body>
+</body> <a href="daily-word.html"><button type="button" class="button" name="registrieren">Sign Up</button></a>
 
 
 
-<script>
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-function motherlanguageChoser() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
+<script type="text/javascript">
 
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
+  // Close the dropdown menu if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
+
+  function learninglanuageChoser() {
+      document.getElementById("myDropdown2").classList.toggle("show");
+  }
+  function motherlanguageChoser() {
+      document.getElementById("myDropdown").classList.toggle("show");
+  }
+
+
+  // Close the dropdown menu if the user clicks outside of it
+  /*window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }*/
+
+  // Close the dropdown menu if the user clicks outside of it
+  window.onclick = function(event) {
   if (!event.target.matches('.dropbtn')) {
-
-    var dropdowns = document.getElementsByClassName("dropdown-content");
+     var dropdowns = document.getElementsByClassName("dropdown-content");
     var i;
     for (i = 0; i < dropdowns.length; i++) {
       var openDropdown = dropdowns[i];
@@ -114,25 +149,26 @@ window.onclick = function(event) {
       }
     }
   }
-}
-
-function learninglanuageChoser() {
-    document.getElementById("myDropdown2").classList.toggle("show");
-}
-
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
+<<<<<<< HEAD
 }
 </s>
-<a href="daily-word.html"><button type="button" class="button" name="registrieren">Sign Up</button></a>
+<footer>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="icon-bar">
+  <a class="active" href="#"><i class="fa fa-home"></i></a>
+  <a href="#"><i class="fa fa-search"></i></a>
+  <a href="#"><i class="fa fa-envelope"></i></a>
+  <a href="#"><i class="fa fa-globe"></i></a>
+  <a href="#"><i class="fa fa-trash"></i></a>
+</div></footer>
+=======
+  }
+  function learninglanuageChoser() {
+    document.getElementById("myDropdown2").classList.toggle("show");
+  }
+</script>
+
+<!--</s>
+a href="daily-word.html"><button type="button" class="button" name="registrieren">Sign Up</button></a>-->
+>>>>>>> 9dcab7f8c7369fabc332bb24466c56764a0f3e86

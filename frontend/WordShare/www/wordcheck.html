@@ -11,13 +11,13 @@
     <link rel="stylesheet" href="css/daily_word.css" type="text/css">
       <link rel="stylesheet" href="css/main.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu|Cabin|PT+Sans+Narrow" rel="stylesheet">
-    <script>
+    <!-- <script>
     // When the user clicks on <div>, open the popup
     function myFunction() {
         var popup = document.getElementById("myPopup");
         popup.classList.toggle("show");
     }
-    </script>
+    </script> -->
 
   </head>
 <body><center>
@@ -33,16 +33,18 @@
   </div><br>
 
 <center>
-    
-      
+
+
       <div class="button-group">
-          <img src="../www/pics/decline.png" alt="decline" style="width:25%"> &emsp; <img src="../www/pics/unknown.png" alt="unknown" style="width:25%"> &emsp; <img src="../www/pics/accept.png" alt="accept" style="width:25%">
-    
+          <img src="../www/pics/decline.png" alt="decline" onclick="verify(0)" style="width:25%"> &emsp;
+          <img src="../www/pics/unknown.png" alt="unknown" onclick="newword()" style="width:25%"> &emsp;
+          <img src="../www/pics/accept.png" alt="accept" onclick="verify(1)" style="width:25%">
+
       </div></center>
       <!-- Hier sind die ursprünglichen Buttons
       <div class="button-group">
       <button type="button" class="button" name="decline">Decline</button><button type="button" class="button" name="accept">Accept</button><br />
-      
+
       </div>
     -->
 
@@ -53,4 +55,18 @@
       </div></center>
     -->
 </body>
+
+<script>
+/*
+Ja, ich weiß dass JS nicht hier intergireiert wird, aber es muss nach der implemention sein.
+Einfach nicht fragen!
+
+
+Funktion verify gibt mit getHttp benötigte Daten weiter an word-verify.php.
+Funktion newword holt ein neues Word aus der datenbank. Hierzu habe ich eine Idee, das kann ich recht schnell machen (Ruben).
+*/
+
+</script>
+
+
 </html>

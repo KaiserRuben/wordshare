@@ -3,9 +3,9 @@
 #Verifikationsdatei - ordnet Wort von w_verification nach word oder sortiert Wort aus
 
 #Variablen initialisieren
-$wordtoverificate = $_GET['wordid'];
+$wordtoverificate = $_GET['word'];
 $bewertung = $_GET['validation']; #kann Werte 1 und 0 annehmen
-$verificator_id = $_GET['verificator'];
+$verificator = $_GET['verificator'];
 
 #Datenbankverbindung
 require_once("../inc/db.php");

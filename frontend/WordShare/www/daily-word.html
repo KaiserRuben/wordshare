@@ -26,7 +26,7 @@
 <h2>use your word in your quests</h2>
 </center>
 <div class="daily_word">
-  <center><span id="word"></span></center>
+  <center><span id="word">loading...</span></center>
   <center><span id="translation"></span></center>
 </div><br><center>
 <div class="popup" onclick="myFunction()"><i class= "white fa fa-info"></i>
@@ -37,8 +37,6 @@
 
 var url = "http://wordshare.kaiseritea.de/server/functions/getWord.php?username=" + getCookie("username");
 var response = httpGet(url);
-console.log(response);
-
 var wordsJSON = JSON.parse(response);
 
 console.log(wordsJSON);

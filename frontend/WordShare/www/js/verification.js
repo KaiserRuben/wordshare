@@ -1,7 +1,11 @@
 
+//Username wird als Cookie gespeiert
+setCookie("username", username);
 
 function registrieren(){
   var username = document.getElementById("uname").value;
+  var val = document.getElementById("").value;
+  var word = document.getElementById("").value;
 
   var url = "http://wordshare.kaiseritea.de/server/functions/register.php?username=" + username + "&&validation=" + val + "&&word=" + word;
 

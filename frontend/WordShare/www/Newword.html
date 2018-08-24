@@ -19,9 +19,23 @@
           <input type="text" id="transword" class="input" placeholder="Translation" required> <br>
           <!--  <a href="daily-word.html"><p> <button onclick="js/sendword.js" type="submit" class="button" id="Hinzufügen"> Add </button></a>-->
           <button onclick="sendword();" type="submit" class="button" id="Hinzufügen"> Add </button>
+          <div class="exwords">
+<p>Already existing: <span id="txtHint"></span></p>
+          </div>
       </main>
   </body>
 <script type="text/javascript">
+function showHint(input){
+  //Eingabe vorhanden?
+  if (input.length == 0) {
+        document.getElementById("txtHint").innerHTML = "";
+        return;
+//Ausgabe der vorhandenen Worte
+      }else{
+var exwords = gethtml("http://wordshare.kaiseritea.de/server/functions/exwords.php?=" + input)
+document.getElementById("txtHint").innerHTML = exwords;
+}
+}
 
   function sendword() {
     //get Eingaben des Benutzers

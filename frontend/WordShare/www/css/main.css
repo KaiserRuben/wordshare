@@ -64,7 +64,7 @@ input {
     border-radius: 5px;
     padding: 0.5em;
     margin-top: 0.2em;
-    color: #4864fe;
+    color: #29a7ff;
 }
 
 .input:hover {
@@ -73,4 +73,10 @@ input {
 
 .boxed {
     border: 1px solid white ;
-  } 
+  }
+
+.text {
+  font-size: 1.5em;
+  color: #62798f;
+  text-align: center;
+}

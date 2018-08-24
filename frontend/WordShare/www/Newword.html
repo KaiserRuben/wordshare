@@ -22,25 +22,25 @@
       </main>
   </body>
 <script type="text/javascript">
-function sendword() {
-//get Eingaben des Benutzers
-  var word  = document.getElementById('word').value;
-  var transword  = document.getElementById('transword').value;
-//  var user = getCookie("username");
-var user = "1"
-//sende Daten an addWord  function httpGet(theUrl){
-var success = gethtml("http://wordshare.kaiseritea.de/server/functions/addWord.php?word=" + word + "&&transword=" + transword + "&&user=" + user);
-console.log(success);
-if (success == "1"){
-alert("Danke für dein Word. Es wird nun noch verifiziert.");
 
-} else {
-alert("Entweder es gibt dein Wort bereits, oder wir haben Mist gebaut.")
+  function sendword() {
+    //get Eingaben des Benutzers
+    var word  = document.getElementById('word').value;
+    var transword  = document.getElementById('transword').value;
+    //  var user = getCookie("username");
+    var user = "1"
+    //sende Daten an addWord  function httpGet(theUrl){
+    var success = gethtml("http://wordshare.kaiseritea.de/server/functions/addWord.php?word=" + word + "&&transword=" + transword + "&&user=" + user);
+    console.log(success);
+    if (success == "1"){
+        alert("Danke für dein Word. Es wird nun noch verifiziert.");
+    }
+    else {
+      alert("Entweder es gibt dein Wort bereits, oder wir haben Mist gebaut.")
+    }
+  }
 
-}
-}
-
-function gethtml(theU){
+  function gethtml(theU){
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", theU, false ); // false for synchronous request
     xmlHttp.send( null );
@@ -48,5 +48,7 @@ function gethtml(theU){
   }
 
 </script>
+
   <!-- <script src="/js/sendword.js" type="text/javascript"></script> -->
+
 </html>

@@ -25,7 +25,8 @@
 <h2>use your word in your quests</h2>
 </center>
 <div class="daily_word">
-  <center>house<span id="word"></span></center>
+  <center><span id="word"></span></center>
+  <center><span id="translation"></span></center>
 </div><br><center>
 <div class="popup" onclick="myFunction()"><i class= "white fa fa-info"></i>
   <span class="popuptext" id="myPopup">Use the word "<span id="word"></span>" in different contexts to improve your <span class="lang"></span> skills!
@@ -37,7 +38,8 @@
 
 var url = "http://wordshare.kaiseritea.de/server/functions/getWord.php?username=" + getCookie("username");
 var wordsJSON = JSON.parse(httpGet(url));
-
+document.getElementById('word').innerHTML = wordsJSON[0].word;
+document.getElementById('translation').innerHTML = wordsJSON[0].translate;
 
 // When the user clicks on <div>, open the popup
 function popupShow() {

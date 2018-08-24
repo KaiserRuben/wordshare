@@ -16,45 +16,131 @@
 <body>
   <h1 class="Name">Register Now!</h1>
 
-  <input type="text" class="input" placeholder="Username"><br />
-  <input type="text" class="input" placeholder="First Name"><br />
-  <input type="text" class="input" placeholder="Last Name"><br />
-  <input type="number" class="input" placeholder="Age"><br />
-  <input type="text" class="input" placeholder="Home City"><br />
+  <input type="text" class="input" id = "uname" placeholder="Username"><br />
+  <input type="text" class="input" id = "fname" placeholder="First Name"><br />
+  <input type="text" class="input" id = "lname" placeholder="Last Name"><br />
+  <input type="number" class="input" id = "age" placeholder="Age"><br />
+  <input type="text" class="input" id = "city" placeholder="Home City"><br />
+
   <div class="dropdown">
   <button onclick="motherlanguageChoser()" class="dropbtn">Mother Language</button>
     <div id="myDropdown" class="dropdown-content">
-      <a>English</a>
-      <a>German</a>
-      <a>Spanish</a>
+      <a onclick="fmt('EN')">English</a>
+      <a onclick="fmt('DE')">German</a>
+      <a onclick="fmt('ES')">Spanish</a>
     </div>
   </div><br />
+
   <div class="dropdown">
   <button onclick="learninglanuageChoser()" class="dropbtn">Language I want to learn</button>
-    <div id="myDropdown2" class="dropdown-content">
-      <a>English</a>
-      <a>German</a>
-      <a>Spanish</a>
+    <div id="myDropdown2" class="dropdown-content" >
+      <a onclick="fnl('EN')">English</a>
+      <a onclick="fnl('DE')">German</a>
+      <a onclick="fnl('ES')">Spanish</a>
     </div>
   </div><br />
-  <input type="text" class="input" placeholder="eMail"><br />
-  <input type="password" class="input" placeholder="Password"><br />
+
+  <input type="text" class="input" id = "mail" placeholder="eMail"><br />
+  <input type="password" class="input" id = "pw" placeholder="Password"><br />
   <input type="password" class="input" placeholder="Repeat Password"><br />
-  <input type="checkbox" class="agbcheckbox">I agree to the terms of service<br />
-  <button type="button" class="button" name="registrieren">Register</button><br />
-</body>
-<script>
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-function motherlanguageChoser() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
+  <input type="checkbox" class="agbcheckbox" id = "agb">I agree to the terms of service<br />
+  <button type="button" class="button" onclick = "registrieren()" name="registrieren">Register</button><br />
 
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
+
+  <script type="text/javascript">
+  var mt = "";
+  var nl = "";
+
+  function fmt(pmt){
+    mt = pmt;
+  }
+  function fnl(pnl){
+    nl = pnl;
+  }
+  function registrieren(){
+    var username = document.getElementById("uname").value;
+    var fname = document.getElementById("fname").value;
+    var lname = document.getElementById("lname").value;
+    var age = document.getElementById("age").value;
+    var city = document.getElementById("city").value;
+    var mail= document.getElementById("mail").value;
+    var pw = document.getElementById("pw").value;
+    var url = "http://wordshare.kaiseritea.de/server/functions/register.php?username=" + username + "&&name=" + fname + "&&lastname=" + lname + "&&mail=" + mail + "&&age=" + age + "&&mt=" + mt + "&&nl=" + nl + "&&pw=" + pw + "&&homecity=" + city;
+
+    if (username!='' && fname!='' && lname!='' && age!='' && city!='' && mail!='' && pw!='' && mt!='' && nl!=''){
+        console.log(url);
+        console.log("." + pw + "..");
+        var success = httpGet(url);
+        console.log(success);
+        if(success == "1"){
+          location="/daily-word.html";
+        }
+        else{
+          alert("Die Registrierung war leider nicht erfolgreich. Bitte versuchen sie es erneut.");
+        }
+      }
+      else{
+        alert("Die Registrierung war leider nicht erfolgreich. Bitte versuchen sie es erneut.");
+      }
+    }
+
+   function httpGet(theUrl){
+      var xmlHttp = new XMLHttpRequest();
+      xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+      xmlHttp.send( null );
+      return xmlHttp.responseText;
+    }
+
+  </script>
+
+</body> <a href="daily-word.html"><button type="button" class="button" name="registrieren">Sign Up</button></a>
+
+
+
+<script type="text/javascript">
+
+  // Close the dropdown menu if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
+
+  function learninglanuageChoser() {
+      document.getElementById("myDropdown2").classList.toggle("show");
+  }
+  function motherlanguageChoser() {
+      document.getElementById("myDropdown").classList.toggle("show");
+  }
+
+
+  // Close the dropdown menu if the user clicks outside of it
+  /*window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }*/
+
+  // Close the dropdown menu if the user clicks outside of it
+  window.onclick = function(event) {
   if (!event.target.matches('.dropbtn')) {
-
-    var dropdowns = document.getElementsByClassName("dropdown-content");
+     var dropdowns = document.getElementsByClassName("dropdown-content");
     var i;
     for (i = 0; i < dropdowns.length; i++) {
       var openDropdown = dropdowns[i];
@@ -63,24 +149,11 @@ window.onclick = function(event) {
       }
     }
   }
-}
-
-function learninglanuageChoser() {
+  }
+  function learninglanuageChoser() {
     document.getElementById("myDropdown2").classList.toggle("show");
-}
-
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
   }
-}
 </script>
+
+<!--</s>
+a href="daily-word.html"><button type="button" class="button" name="registrieren">Sign Up</button></a>-->

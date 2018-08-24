@@ -5,9 +5,10 @@
 }
 
 h2 {
-    color: #29a7ff;
-    font-size: 1.8em;
-    margin-bottom: 10%;
+    color: white;
+    font-size: 1.4em;
+    margin-top: 6%;
+    margin-bottom: 3%;
 }
 
 .white {
@@ -23,6 +24,10 @@ h2 {
     cursor: pointer;
 }
 
+.white fa fa-info {
+    margin-left: 80%;
+}
+
 /* The actual popup (appears on top) */
 .popup .popuptext {
     visibility: hidden;
@@ -30,7 +35,7 @@ h2 {
     background-color: #555;
     color: #fff;
     text-align: center;
-    border-radius: 6px;
+    border-radius: 8px;
     padding: 8px 0;
     position: absolute;
     z-index: 1;
@@ -49,6 +54,28 @@ h2 {
     border-width: 5px;
     border-style: solid;
     border-color: #555 transparent transparent transparent;
+}
+
+.daily_word {
+    border: 1px solid #62798f;
+    border-radius: 5px;
+    padding: 0.5em;
+    margin-top: 20%;
+    margin-left: 10%;
+    width: 80%;
+}
+
+#word {
+    color: #29a7ff;
+    font-size: 3em;
+    text-align: center;
+    position: relative;
+    margin: 150px 0px 0p 0px;
+}
+
+#translation {
+    color: white;
+    font-size: 2em;
 }
 
 /* Toggle this class when clicking on the popup container (hide and show the popup) */

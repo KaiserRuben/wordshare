@@ -10,6 +10,7 @@
     <!--  CSS inplementierung in externer Datei-->
     <link rel="stylesheet" href="css/daily_word.css" type="text/css">
       <link rel="stylesheet" href="css/main.css" type="text/css">
+      <script language="javascript" type="text/javascript" src="js/cookiefunctions.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu|Cabin|PT+Sans+Narrow" rel="stylesheet">
     <script>
     // When the user clicks on <div>, open the popup
@@ -22,13 +23,34 @@
   </head>
 <body><center>
 <h1> Daily word</h1><br>
-<h2>use your word in your quests</h2>
+<h2>use your word in your quests</h2> <hr>
 </center>
-<div class="daily_word">
-  <center>house<span id="word"></span></center>
+  <center><span id="word">loading...</span></center>
+  <center><span id="translation"></span></center>
 </div><br><center>
-<div class="popup" onclick="myFunction()"><i class= "white fa fa-info"></i>
-  <span class="popuptext" id="myPopup">Use the word "<span id="word"></span>" in different contexts to improve your <span class="lang"></span> skills!
+<div class="popup" onclick="myFunction()">  <i class= "white fa fa-info"></i> 
+    <span class="popuptext" id="myPopup">Use the word "<span id="word"></span>" in different contexts to improve your <span class="lang"></span> skills!
 </div></center>
 </body>
+<script>
+
+var url = "http://wordshare.kaiseritea.de/server/functions/getWord.php?username=" + getCookie("username") + "&&type=word";
+var response = httpGet(url);
+var wordsJSON = JSON.parse(response);
+
+console.log(wordsJSON);
+
+document.getElementById('word').innerHTML = wordsJSON[0].word;
+document.getElementById('translation').innerHTML = wordsJSON[0].translation;
+
+function httpGet(theUrl){
+  var xmlHttp = new XMLHttpRequest();
+  xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+  xmlHttp.send( null );
+  return xmlHttp.responseText;
+}
+</script>
 </html>
+<footer><menu>
+
+</menu></footer>

@@ -6,14 +6,13 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    margin: 30% 15% 0% 15%;
+    margin: 40% 15% 0% 15%;
     width: 70%
 }
 
-.Name {
-    color: #29a7ff;
-    font-size: 2.5em;
-    margin-bottom: 10%;
+img {
+    margin-top: 15%;
+    margin-bottom:10%;
 }
 
 .button {
@@ -57,5 +56,5 @@
 }
 
 .last{
-  margin-bottom:10%;
+  margin-bottom:30%;
 }

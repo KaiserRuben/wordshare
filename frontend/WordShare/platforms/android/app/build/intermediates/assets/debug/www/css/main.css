@@ -24,7 +24,7 @@ body {
 .Name {
     color: #29a7ff;
     font-size: 2.5em;
-    margin-bottom: 10%;
+    margin-bottom: 3%;
 }
 
 .button:hover {
@@ -64,9 +64,22 @@ input {
     border-radius: 5px;
     padding: 0.5em;
     margin-top: 0.2em;
-    color: #4864fe;
+    color: #29a7ff;
 }
 
 .input:hover {
     background-color: #d4d8d8;
+}
+
+.boxed {
+    border: 1px solid white ;
+  }
+
+.text {
+  font-size: 1.2em;
+  color: #62798f;
+  text-align: center;
+  /*display: -webkit-box;*/
+  /*display: -ms-flexbox;*/
+  padding: 0.5em;
 }

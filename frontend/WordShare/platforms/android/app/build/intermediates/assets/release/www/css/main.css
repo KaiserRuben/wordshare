@@ -1,0 +1,85 @@
+body {
+    background: #3f3f3f;
+    font-family: "Ubuntu", sans-serif;
+    text-align: center;
+}
+
+
+.button {
+    font-size: 100%;
+    font-family: inherit;
+    border: 0;
+    padding: 15;
+    border-radius: 20px;
+    background-color: white;
+
+    -webkit-transition-duration: 1s;
+    /* Safari */
+    transition-duration: 1s;
+    cursor: pointer;
+
+    background-color: #29a7ff;
+}
+
+.Name {
+    color: #29a7ff;
+    font-size: 2.5em;
+    margin-bottom: 3%;
+}
+
+.button:hover {
+    background-color: #707070;
+    color: white;
+}
+
+input {
+    border: 0;
+    font-size: 1em;
+    font-family: inherit;
+    background-color: inherit;
+    position: relative;
+}
+.input {
+    font-size: 1em;
+    margin: 0% 50px 0% 50px;
+    position: relative;
+    text-align: center;
+
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+
+    border: 1px solid #62798f;
+    border-radius: 5px;
+    padding: 0.5em;
+    margin-top: 0.2em;
+    color: #29a7ff;
+}
+
+.input:hover {
+    background-color: #d4d8d8;
+}
+
+.boxed {
+    border: 1px solid white ;
+  }
+
+.text {
+  font-size: 1.2em;
+  color: #62798f;
+  text-align: center;
+  /*display: -webkit-box;*/
+  /*display: -ms-flexbox;*/
+  padding: 0.5em;
+}

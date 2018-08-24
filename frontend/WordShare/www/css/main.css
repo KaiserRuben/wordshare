@@ -86,6 +86,6 @@ input {
 }
 
 .icon-bar {
-  position:relative;
-  bottom:0%;
+  position:absolute;
+  bottom:0px;
 }

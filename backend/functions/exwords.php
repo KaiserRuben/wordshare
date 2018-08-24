@@ -12,18 +12,18 @@ $erg = $db->query($sql);
 $words = $erg->fetch_assoc();
 
 // Worte zählen
-$wordnumber = int count ( mixed $words [, int $mode = COUNT_NORMAL ] );
+$wordnumber = count ( $words );
 
 //länge input
-$strlenght = int strlen ( string $input );
+$strlenght = strlen ( $input );
 
 //Worte mit selbem Anfang ermitteln
-$counter = int 0;
+$counter = 0;
 $result = "";
 while (!$counter == $wordnumber){
-$w_beginn = string substr ( string $words[$counter] , int 0 [, int $strlenght] );
+$w_beginn = substr (  $words[$counter] , 0 , $strlenght );
 if ( $w_beginn == $words[$counter]){
-  $result = $result + ", " $words[$counter];
+  $result = $result + ", "+ $words[$counter];
   $counter = $counter + 1;
 }
 }

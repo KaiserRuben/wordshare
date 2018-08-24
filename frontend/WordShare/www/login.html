@@ -59,12 +59,14 @@
 
     function anmelden(username, password){
 
+      //Username wird als Cookie gespeiert
+      setCookie("username", username);
+
       var url = "http://wordshare.kaiseritea.de/server/functions/login.php?name=" + username + "&&pw=" + pw;
       var success = httpGet(url);
       console.log(success);
 
       if(document.getElementById("check").checked == true){
-        setCookie("username", username);
         setCookie("password", pw);
       }
 

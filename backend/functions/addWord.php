@@ -4,7 +4,7 @@
 
 #Variablen initialisieren
 $newword = $_POST['word'];
-$translation = $_POST['translation'];
+$translation = $_POST['transword'];
 $w_code = $_GET['w_code'];
 $t_code= $_GET['t_code'];
 $creator_id = $_GET['creator_id'];

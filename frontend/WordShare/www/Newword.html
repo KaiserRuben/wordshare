@@ -11,7 +11,9 @@
         <link href="css/newword.css" rel=stylesheet>
         <link href="https://fonts.googleapis.com/css?family=Ubuntu|Cabin|PT+Sans+Narrow" rel="stylesheet">
     </head>
-  <body>
+
+    <body>
+
       <h1 class="Name">Add a new word!</h1>
       <main>
         <a class="text"> Please enter a word in your native languge to share it with the WordShare community! </a>
@@ -23,7 +25,12 @@
 <p>Already existing: <span id="txtHint"></span></p>
           </div>
       </main>
-  </body>
+      <div class="icon-bar">
+        <a href="Newword.html"> <img height="50px" style="margin-right:12%" src="pics\add.png"></a>
+        <a href="daily-word.html"> <img height="50px" style="margin-top:5%" src="pics\word.png"></a>
+        <a href="wordcheck.html"> <img height="50px" style="margin-left:12%" src="pics\edit.png"></a>
+      </div>
+    </body>
 <script type="text/javascript">
 function showHint(input){
   //Eingabe vorhanden?
@@ -62,8 +69,5 @@ document.getElementById("txtHint").innerHTML = exwords;
   }
 
 </script>
-
-  <!-- <script src="/js/sendword.js" type="text/javascript"></script> -->
-
+<!-- <script src="/js/sendword.js" type="text/javascript"></script> -->
 </html>
-style

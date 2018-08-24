@@ -24,7 +24,7 @@
       <div>
         <input type="checkbox" class="last" id="check" value="check" checked> <label for="check" class="text">Remeber me? </label>
       </div>
-      <button type="submit" class="button" name="anmelden" onclick="datenSammeln()">
+      <button type="submit" class="button" name="anmelden" onclick="datenSammeln(1)">
         Log-In
       </button>
       <br />
@@ -34,20 +34,21 @@
         </button>
       </a>
       <br />
+      <p id="wrong"></p>
     </div>
 
     <script type="text/javascript">
 
-    datenSammeln();
+    datenSammeln(0);
 
-    function datenSammeln(){
+    function datenSammeln(i){
 
-      if(checkCookie("username")&&checkCookie("password")){
+      if(i == 0 && checkCookie("username")&&checkCookie("password")){
 
         var username = getCookie("username");
         var pw = getCookie("password");
 
-      anmelden(username, password);
+      anmelden(username, pw);
 
       }
       else{
@@ -56,7 +57,7 @@
         var pw = document.getElementById("pw").value;
 
         if(pw!=""&&username!=""){
-          anmelden(username, password);
+          anmelden(username, pw);
         }
 
       }
@@ -67,8 +68,7 @@
 
       //Username wird als Cookie gespeiert
       setCookie("username", username);
-
-      var url = "http://wordshare.kaiseritea.de/server/functions/login.php?name=" + username + "&&pw=" + pw;
+      var url = "http://wordshare.kaiseritea.de/server/functions/login.php?name=" + username + "&&pw=" + password;
       var success = httpGet(url);
       console.log(success);
 
@@ -77,10 +77,10 @@
       }
 
       if(success == "1"){
-        location="https://www.bing.de";
+        location="daily-word.html";
       }
       else{
-        alert("Wrong Password or Username!");
+        document.getElementById('wrong').innerHTML = "Wrong Password or Username!";
       }
     }
 

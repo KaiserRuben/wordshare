@@ -12,6 +12,7 @@ body {
     padding: 15;
     border-radius: 20px;
     background-color: white;
+    color: #3f3f3f;
 
     -webkit-transition-duration: 1s;
     /* Safari */

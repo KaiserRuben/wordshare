@@ -70,8 +70,6 @@
     var url = "http://wordshare.kaiseritea.de/server/functions/register.php?username=" + username + "&&name=" + fname + "&&lastname=" + lname + "&&mail=" + mail + "&&age=" + age + "&&mt=" + mt + "&&nl=" + nl + "&&pw=" + pw + "&&homecity=" + city;
 
     if (username!='' && fname!='' && lname!='' && age!='' && city!='' && mail!='' && pw!='' && mt!='' && nl!=''){
-        console.log(url);
-        console.log("." + pw + "..");
         var success = httpGet(url);
         console.log(success);
         if(success == "1"){

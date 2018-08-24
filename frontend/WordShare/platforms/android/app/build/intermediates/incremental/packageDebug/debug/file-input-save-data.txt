@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Fri Aug 24 16:27:50 CEST 2018
+#Fri Aug 24 18:52:52 CEST 2018
 25.file=C\:\\Users\\Ruben\\Desktop\\wordshare\\frontend\\WordShare\\platforms\\android\\app\\build\\intermediates\\assets\\debug\\www\\css\\dropdown.css
 41.base=C\:\\Users\\Ruben\\Desktop\\wordshare\\frontend\\WordShare\\platforms\\android\\app\\build\\intermediates\\assets\\debug
 25.base=C\:\\Users\\Ruben\\Desktop\\wordshare\\frontend\\WordShare\\platforms\\android\\app\\build\\intermediates\\assets\\debug

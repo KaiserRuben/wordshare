@@ -7,6 +7,11 @@ $newword = $_GET['word'];
 $translation = $_GET['transword'];
 $user = $_GET['user'];
 
+
+if ($newword == "" || $translation == "") {
+die("This word is not new!");
+}
+
 #Datenbankverbindung
 require_once("../inc/db.php");
 

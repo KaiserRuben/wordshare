@@ -1,26 +1,3 @@
-function verify(val){
-
-    var username = getCookie("username");     //geht das so?
-    // var word = document.getElementById("word").value;
-    var word = getCookie('tempword')    //woher kommt das?
-
-    var url = "http://wordshare.kaiseritea.de/server/functions/word-verification.php?username=" + username + "&&validation=" + val + "&&word=" + word;
-
-    if (username!='' && word!=''){
-        console.log(url);
-        var success = httpGet(url);
-        console.log(success);
-        if(success == "1"){
-          location = "wordcheck.html";
-        }
-        else{
-          alert("Nein. Einfach nur nein.");
-        }
-    }
-    else{
-        alert("Nope");
-    }
-  }
 
 
 function httpGet(theUrl){

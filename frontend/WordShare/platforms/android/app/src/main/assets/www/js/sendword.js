@@ -8,10 +8,12 @@ var user = "1"
 var success = gethtml("http://wordshare.kaiseritea.de/server/functions/addWord.php?word=" + word + "&&transword=" + transword + "&&user=" + user);
 console.log(success);
 if (success == "1"){
-alert("Danke für dein Word. Es wird nun noch verifiziert.");
+  prompt("Thanks for your word, it will be varifyed soon.");
+
 
 } else {
-alert("Entweder es gibt dein Wort bereits, oder wir haben Mist gebaut.")
+  prompt("Your word is not new.");
+
 
 }
 }

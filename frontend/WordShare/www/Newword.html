@@ -56,10 +56,10 @@ document.getElementById("txtHint").innerHTML = exwords;
     var success = gethtml("http://wordshare.kaiseritea.de/server/functions/addWord.php?word=" + word + "&&transword=" + transword + "&&user=" + user);
     console.log(success);
     if (success == "1"){
-        prompt("Thanks for your word, it will be varifyed soon.");
+        alert("Thanks for your word, it will be varifyed soon.");
     }
     else {
-      prompt("Your word is not new.");
+      alert("Your word is not new.");
     }
   }
 

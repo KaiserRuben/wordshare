@@ -20,7 +20,7 @@ if (!$erg){
 $row = $erg->fetch_assoc();
 $creator_id = $row["id"];
 $w_code = $row["mt"];
-$t_code= $row["nl"];
+$t_code = $row["nl"];
 if (!$erg){
   die ($db->error);
 }
@@ -47,6 +47,18 @@ $erg = $db->query($sql);
     else{
       die ('Es gab ein Problem '.$db->error);
     }
+
+
+$sql = "INSERT INTO w_verification (word, translation, w_code, t_code, creator_id)
+        VALUES ('{$translation}', '{$newword}', '{$t_code}', '{$w_code}', '{$creator_id}')";
+$erg = $db->query($sql);
+if ($erg){
+  $success = true;
+}
+
+else{
+  die ('Es gab ein Problem '.$db->error);
+}
 
 
 #Erfolg?

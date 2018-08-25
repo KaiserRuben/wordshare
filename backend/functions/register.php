@@ -10,7 +10,6 @@ $pwhash = password_hash($_GET['pw'], PASSWORD_DEFAULT);
 $homecity = $_GET['homecity'];
 
 require_once("../inc/db.php");
-
 $db->query("SET NAMES 'utf8'");
 $sql = "INSERT INTO user (username, name, lastname, mail, age, mt, nl, pwhash, homecity)
 VALUES ('{$username}', '{$name}', '{$lastname}', '{$mail}', '{$age}', '{$mt}', '{$nl}', '{$pwhash}', '{$homecity}')";

@@ -29,6 +29,8 @@ $bekannteWorterArray = explode(";", $row["id_words"]);
 if($type == "word"){
   $sql = "SELECT * FROM words WHERE w_code='{$nl}' AND t_code='{$mt}' ORDER BY id DESC LIMIT 10";
 }elseif ($type=="verification") {
+  $mt = $row["nl"];
+  $nl = $row["mt"];
   $sql = "SELECT * FROM w_verification WHERE w_code='{$nl}' AND t_code='{$mt}' ORDER BY id LIMIT 1";
 }
 #Das führen wir dann mal aus...

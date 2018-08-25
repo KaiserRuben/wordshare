@@ -1,7 +1,8 @@
 
 .boxed {
   border: 1px solid white ;
-  height:100%;
+  text-align: center;
+  min-height:30%;
 }
 
 .title{

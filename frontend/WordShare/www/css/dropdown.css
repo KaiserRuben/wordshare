@@ -6,14 +6,14 @@
     font-size: 1em;
     border: none;
     cursor: pointer;
-    width: 227px;
+    width: 65%;
     background-color: #d4d8d8;
     position: relative;
     text-align: center;
     font-family: inherit;
     background-color: inherit;
     font-size: 1em;
-    margin: 0% 50px 0% 50px;
+    margin: 0% 15% 0% 20%;
 
     display: -webkit-box;
 
@@ -36,6 +36,7 @@
     margin-top: 0.2em;
     color: #707070; /*#4864fe*/
 }
+
 
 /* Dropdown button on hover & focus */
 .dropbtn:hover, .dropbtn:focus {

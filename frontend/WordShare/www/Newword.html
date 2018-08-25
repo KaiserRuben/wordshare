@@ -9,6 +9,8 @@
         <title>Word Share - New word</title>
         <link href="css/main.css" rel=stylesheet>
         <link href="css/newword.css" rel=stylesheet>
+        <script language="javascript" type="text/javascript" src="js/cookiefunctions.js"></script>
+        <script language="javascript" type="text/javascript" src="js/logincheck.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Ubuntu|Cabin|PT+Sans+Narrow" rel="stylesheet">
     </head>
 
@@ -16,7 +18,7 @@
 
       <h1 class="Name">Add a new word!</h1>
       <main>
-        <a class="text"> Please enter a word in your native languge to share it with the WordShare community! </a>
+        <a class="text"> Please enter a word in your native language to share it with the WordShare community! </a>
           <input type="text" id="word" class="input" placeholder="Word" onkeyup="showHint(this.value);" required>
           <input type="text" id="transword" class="input" placeholder="Translation" required> <br>
           <!--  <a href="daily-word.html"><p> <button onclick="js/sendword.js" type="submit" class="button" id="Hinzufügen"> Add </button></a>-->

@@ -83,7 +83,7 @@ input {
 
 
 .text {
-  font-size: 1.2em;
+  font-size: 1.4em;
   color: #62798f;
   text-align: center;
   /*display: -webkit-box;*/
@@ -99,7 +99,5 @@ input {
   width: 100%;
   padding-bottom: 30px;
   left: 0px;
-<<<<<<< HEAD
   background-image: linear-gradient(to top,#707070 10%,#3f3f3f 50%);
-=======
 }

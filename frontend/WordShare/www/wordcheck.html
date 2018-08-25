@@ -6,14 +6,18 @@
   <title>WordShare - New vocabulary</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <!--  CSS inplementierung in externer Datei-->
   <link rel="stylesheet" href="css/daily_word.css" type="text/css">
   <link rel="stylesheet" href="css/main.css" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Ubuntu|Cabin|PT+Sans+Narrow" rel="stylesheet">
+
   <script language="javascript" type="text/javascript" src="js/cookiefunctions.js"></script>
+  <script src="js/verification.js"></script>
 
 
   <!-- <script src="js/verification.js"></script> -->
+
 
   <!-- <script>
   // When the user clicks on <div>, open the popup
@@ -25,25 +29,24 @@
 </head>
 
 
-<body><footer>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<div class="icon-bar">
-  <a href="#"> <img height="50px" style="margin-right:12%" src="\pics\add.png"></a>
-  <a href="#"> <img height="50px" style="margin-top:5%" src="\pics\word.png"></a>
-  <a href="#"> <img height="50px" style="margin-left:12%" src="\pics\edit.png"></a>
-
-
-</div></footer>
+<body>
+  <footer>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <div class="icon-bar">
+      <a href="#"> <img height="50px" style="margin-right:12%" src="\pics\add.png"></a>
+      <a href="#"> <img height="50px" style="margin-top:5%" src="\pics\word.png"></a>
+      <a href="#"> <img height="50px" style="margin-left:12%" src="\pics\edit.png"></a>
+    </div>
+  </footer>
 
   <center>
-    <h1>Verify new vocabulary</h1><br>
+    <h1>Verify new words</h1><br>
     <h4><font color="white">Help our community by verifying new entries to the vocabulary.</font></h4>
   </center>
 
   <hr>
 
-  <div class="new_word">
+  <!--<div class="new_word">-->
     <div class="boxed">
       <center>
         <font color="white"><h1 id="word"></h1></font>
@@ -51,11 +54,12 @@
     </div>
     <div class="new_word_translated">
       <center>
+        <font color="white"><h2></h2><span id="word_trans"></span></font>
         <font color="white"><h2 id="translation"></h2></font>
       </center>
     </div>
     <br>
-  </div>
+<!--</div>-->
 
   <center>
     <div class="button-group">
@@ -82,35 +86,34 @@
 
 
 <script>
-/*
-Ja, ich weiß dass JS nicht hier integriert wird, aber es muss nach der implementierung sein.
-Einfach nicht fragen!!!
+  /*Ja, ich weiß dass JS nicht hier integriert wird, aber es muss nach der implementierung sein.
+  Einfach nicht fragen!!!*/
 
-newword() holt ein neues Wort und zeigt es an. Wird am Anfang einmal ausgeführt und jedes mal, wenn der Nutzer das Wort nicht kennt.
-*/
-document.getElementById('word').innerHTML ="loading...";
-newword();
+  //newword() holt ein neues Wort und zeigt es an.
+  //Wird am Anfang einmal ausgeführt und jedes mal, wenn der Nutzer das Wort nicht kennt.
+  document.getElementById('word').innerHTML ="loading...";
+  newword();
 
-function newword(){
-document.getElementById('word').innerHTML ="loading...";
+  function newword(){
+  document.getElementById('word').innerHTML ="loading...";
 
-  var url = "http://wordshare.kaiseritea.de/server/functions/getWord.php?username=" + getCookie("username") + "&&type=verification";
-  var response = httpGet(url);
-  var wordsJSON = JSON.parse(response);
+    var url = "http://wordshare.kaiseritea.de/server/functions/getWord.php?username=" + getCookie("username") + "&&type=verification";
+    var response = httpGet(url);
+    var wordsJSON = JSON.parse(response);
 
-  document.getElementById('word').innerHTML = wordsJSON[0].word;
-  document.getElementById('translation').innerHTML = wordsJSON[0].translation;
+    document.getElementById('word').innerHTML = wordsJSON[0].word;
+    document.getElementById('translation').innerHTML = wordsJSON[0].translation;
 
-  setCookie("tempword", wordsJSON[0].word);
+    setCookie("tempword", wordsJSON[0].word);
 
-}
+  }
 
-function httpGet(theUrl){
+  function httpGet(theUrl){
 
-  var xmlHttp = new XMLHttpRequest();
-  xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
-  xmlHttp.send( null );
-  return xmlHttp.responseText;
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
 
 }
 function verify(val){
@@ -127,6 +130,7 @@ function verify(val){
         console.log(success);
         if(success == "1"){
           location = "wordcheck.html";
+          newword();
         }
         else{
           alert("Nein. Einfach nur nein.");

@@ -15,50 +15,49 @@
 </head>
 
 <body>
-  <h1 class="Name">Register Now!</h1>
+  <h1 class="Name">Sign Up!</h1>
 
-  <input type="text" class="input" id = "uname" placeholder="Username"><br />
-  <input type="text" class="input" id = "fname" placeholder="First Name"><br />
-  <input type="text" class="input" id = "lname" placeholder="Last Name"><br />
-  <input type="number" class="input" id = "age" placeholder="Age"><br />
-  <input type="text" class="input" id = "city" placeholder="Home City"><br />
-
-  <div class="dropdown">
-  <button onclick="motherlanguageChoser()" class="dropbtn">Mother Language</button>
-    <div id="myDropdown" class="dropdown-content">
-      <a onclick="fmt('EN')">English</a>
-      <a onclick="fmt('DE')">German</a>
-      <a onclick="fmt('ES')">Spanish</a>
-    </div>
-  </div><br />
+  <input type="text" class="input" id = "uname" placeholder="Username" required><br />
+  <input type="text" class="input" id = "fname" placeholder="First Name" required><br />
+  <input type="text" class="input" id = "lname" placeholder="Last Name" required><br />
+  <input type="number" class="input" id = "age" placeholder="Age" required><br />
+  <input type="text" class="input" id = "city" placeholder="Home City" required><br />
 
   <div class="dropdown">
-  <button onclick="learninglanuageChoser()" class="dropbtn">Language I want to learn</button>
-    <div id="myDropdown2" class="dropdown-content" >
-      <a onclick="fnl('EN')">English</a>
-      <a onclick="fnl('DE')">German</a>
-      <a onclick="fnl('ES')">Spanish</a>
-    </div>
+      <select class="dropbtn" id="boxmuttersprache" required>
+          <div class="pls">
+          <option>Mother Tongue</option>
+          <option value='EN'>Englisch</option>
+          <option value='DE'>German</option>
+          <option value='ES'>Spanish</option>
+          </div>
+      </select> <br />
+    <select class="dropbtn" id="nl" required>
+          <option>Language to learn</option>
+          <option value='EN'>Englisch</option>
+          <option value='DE'>German</option>
+          <option value='ES'>Spanish</option>
+      </select>
   </div><br />
 
-  <input type="text" class="input" id = "mail" placeholder="eMail"><br />
-  <input type="password" class="input" id = "pw" placeholder="Password"><br />
-  <input type="password" class="input" placeholder="Repeat Password"><br />
-  <div class="text">  <input type="checkbox" class="agbcheckbox" id = "agb"> I agree to the terms of service </div> <br />
-  <button type="button" class="button" onclick = "registrieren()" name="registrieren">Register</button><br />
+  <input type="text" class="input" id = "mail" placeholder="eMail" required><br />
+  <input type="password" class="input" id = "pw" placeholder="Password" required><br />
+  <input type="password" class="input" placeholder="Repeat Password" required><br />
+  <div class="text">  <input type="checkbox" class="agbcheckbox" id = "agb"> I agree to the <a href="agb.html" style="color: #62798f"> terms of service</a> </div> <br />
+  <button type="button" class="button" onclick = "registrieren()" name="registrieren" style="width: 25%">Register</button><br />
 
 
 
   <script type="text/javascript">
-  var mt = "";
-  var nl = "";
-
-  function fmt(pmt){
-    mt = pmt;
-  }
-  function fnl(pnl){
-    nl = pnl;
-  }
+  // var mt = "";
+  // var nl = "";
+  // function fmt(pmt){
+  //   alert("ich bin da");
+  //   mt = pmt;
+  // }
+  // function fnl(pnl){
+  //   nl = pnl;
+  // }
   function registrieren(){
     var username = document.getElementById("uname").value;
     var fname = document.getElementById("fname").value;
@@ -67,15 +66,17 @@
     var city = document.getElementById("city").value;
     var mail= document.getElementById("mail").value;
     var pw = document.getElementById("pw").value;
+    var box1 = document.getElementById("boxmuttersprache");
+    var mt = box1.value;
+    var box2 = document.getElementById("nl");
+    var nl = box2.value;
     var url = "http://wordshare.kaiseritea.de/server/functions/register.php?username=" + username + "&&name=" + fname + "&&lastname=" + lname + "&&mail=" + mail + "&&age=" + age + "&&mt=" + mt + "&&nl=" + nl + "&&pw=" + pw + "&&homecity=" + city;
 
     if (username!='' && fname!='' && lname!='' && age!='' && city!='' && mail!='' && pw!='' && mt!='' && nl!=''){
-        console.log(url);
-        console.log("." + pw + "..");
         var success = httpGet(url);
         console.log(success);
         if(success == "1"){
-          location="/daily-word.html";
+          location="/login.html";
         }
         else{
           alert("Die Registrierung war leider nicht erfolgreich. Bitte versuchen sie es erneut.");
@@ -95,22 +96,14 @@
 
   </script>
 
-</body> <a href="login.html"><button type="button" class="button" name="registrieren">Sign Up</button></a>
+</body> <a href="login.html"><button type="button" class="button" name="registrieren" style="margin-top:5%; width:25%">Abort</button></a>
 <footer>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<div class="icon-bar">
-<word-spacing="1000px">  <a href="#"> <img height="50px" src="C:\Users\user\Desktop\wordshare\frontend\WordShare\www\pics\add.png"></a>
-  <a href="#"> <img height="50px" src="C:\Users\user\Desktop\wordshare\frontend\WordShare\www\pics\word.png"></a>
-  <a href="#"> <img height="50px" src="C:\Users\user\Desktop\wordshare\frontend\WordShare\www\pics\edit.png"></a></word-spacing>
-
-
-</div></footer>
 
 <script type="text/javascript">
 
   // Close the dropdown menu if the user clicks outside of it
-  window.onclick = function(event) {
+ /* window.onclick = function(event) {
     if (!event.target.matches('.dropbtn')) {
 
       var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -122,14 +115,8 @@
         }
       }
     }
-  }
+  } */
 
-  function learninglanuageChoser() {
-      document.getElementById("myDropdown2").classList.toggle("show");
-  }
-  function motherlanguageChoser() {
-      document.getElementById("myDropdown").classList.toggle("show");
-  }
 
 
   // Close the dropdown menu if the user clicks outside of it

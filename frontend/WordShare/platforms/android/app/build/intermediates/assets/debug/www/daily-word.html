@@ -1,39 +1,53 @@
 <!DOCTYPE html>
 <html>
 
-<head><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-
-
+<head>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
   <title>WordShare | Yor daily word to use</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--  CSS inplementierung in externer Datei-->
-    <link rel="stylesheet" href="css/daily_word.css" type="text/css">
-      <link rel="stylesheet" href="css/main.css" type="text/css">
-      <script language="javascript" type="text/javascript" src="js/cookiefunctions.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu|Cabin|PT+Sans+Narrow" rel="stylesheet">
-    <script>
-    // When the user clicks on <div>, open the popup
-    function myFunction() {
-        var popup = document.getElementById("myPopup");
-        popup.classList.toggle("show");
-    }
-    </script>
 
-  </head>
-<body><center>
-<h1> Daily word</h1><br>
-<h2>use your word in your quests</h2> <hr>
-</center><div class="daily_word">
-  <center><span id="word">loading...</span></center>
-  <center><span id="translation"></span></center>
-</div><br><center>
-<div class="popup" onclick="myFunction()"><i class= "white fa fa-info"></i>
-    <span class="popuptext" id="myPopup">Use the word "<span id="word2"></span>" in different contexts to improve your <span class="lang"></span> skills!
-</div></center>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--  CSS inplementierung in externer Datei-->
+  <link rel="stylesheet" href="css/daily_word.css" type="text/css">
+  <link rel="stylesheet" href="css/main.css" type="text/css">
+  <script language="javascript" type="text/javascript" src="js/cookiefunctions.js"></script>
+  <script language="javascript" type="text/javascript" src="js/logincheck.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu|Cabin|PT+Sans+Narrow" rel="stylesheet">
+  <script language="javascript" type="text/javascript" src="js/daily-word.js"></script>
+
+
+
+</head>
+<body>
+  <center>
+    <h1> Daily word</h1>
+    <br>
+    <div class="text">use your word in your quests</div>
+    <hr style=" border: 1px solid #62798f ">
+      <a href=settings.html> <img class="gears" src=pics/gears.png> </a>
+  </center>
+  <div class="daily_word">
+    <center><span id="word">loading...</span></center>
+    <center><span id="translation"></span></center>
+  </div>
+  <br>
+  <center>
+    <div class="popup" onclick="myFunction()"><i class= "white fa fa-info"></i>
+      <span class="popuptext" id="myPopup">Use the word "<span id="word"></span>" in different contexts to improve your <span class="lang"></span> skills!
+    </div>
+  </center>
 </body>
-<script>
 
+<footer>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <div class="icon-bar">
+    <a href="Newword.html"> <img height="50px" style="margin-right:12%" src="pics\add.png"></a>
+    <a href="daily-word.html"> <img height="50px" style="margin-top:5%" src="pics\word.png"></a>
+    <a href="wordcheck.html"> <img height="50px" style="margin-left:12%" src="pics\edit.png"></a>
+  </div>
+</footer>
+
+<script>
 var url = "http://wordshare.kaiseritea.de/server/functions/getWord.php?username=" + getCookie("username") + "&&type=word";
 var response = httpGet(url);
 var wordsJSON = JSON.parse(response);
@@ -43,14 +57,7 @@ console.log(wordsJSON);
 document.getElementById('word').innerHTML = wordsJSON[0].word;
 document.getElementById('translation').innerHTML = wordsJSON[0].translation;
 
-function httpGet(theUrl){
-  var xmlHttp = new XMLHttpRequest();
-  xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
-  xmlHttp.send( null );
-  return xmlHttp.responseText;
-}
 </script>
-</html>
-<footer><menu>
 
-</menu></footer>
+
+</html>

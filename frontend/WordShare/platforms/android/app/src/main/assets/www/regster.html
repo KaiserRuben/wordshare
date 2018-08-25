@@ -24,19 +24,19 @@
   <input type="text" class="input" id = "city" placeholder="Home City" required><br />
 
   <div class="dropdown">
-      <select class="dropbtn" required>
+      <select class="dropbtn" id="boxmuttersprache" required>
           <div class="pls">
           <option>Mother Tongue</option>
-          <option onclick="fnl('EN')">Englisch</option>
-          <option onclick="fnl('DE')">German</option>
-          <option onclick="fnl('ES')">Spanish</option>
+          <option value='EN'>Englisch</option>
+          <option value='DE'>German</option>
+          <option value='ES'>Spanish</option>
           </div>
       </select> <br />
-    <select class="dropbtn"  required>
+    <select class="dropbtn" id="nl" required>
           <option>Language to learn</option>
-          <option onclick="fnl('EN')">Englisch</option>
-          <option onclick="fnl('DE')">German</option>
-          <option onclick="fnl('ES')">Spanish</option>
+          <option value='EN'>Englisch</option>
+          <option value='DE'>German</option>
+          <option value='ES'>Spanish</option>
       </select>
   </div><br />
 
@@ -49,15 +49,15 @@
 
 
   <script type="text/javascript">
-  var mt = "";
-  var nl = "";
-
-  function fmt(pmt){
-    mt = pmt;
-  }
-  function fnl(pnl){
-    nl = pnl;
-  }
+  // var mt = "";
+  // var nl = "";
+  // function fmt(pmt){
+  //   alert("ich bin da");
+  //   mt = pmt;
+  // }
+  // function fnl(pnl){
+  //   nl = pnl;
+  // }
   function registrieren(){
     var username = document.getElementById("uname").value;
     var fname = document.getElementById("fname").value;
@@ -66,13 +66,17 @@
     var city = document.getElementById("city").value;
     var mail= document.getElementById("mail").value;
     var pw = document.getElementById("pw").value;
+    var box1 = document.getElementById("boxmuttersprache");
+    var mt = box1.value;
+    var box2 = document.getElementById("nl");
+    var nl = box2.value;
     var url = "http://wordshare.kaiseritea.de/server/functions/register.php?username=" + username + "&&name=" + fname + "&&lastname=" + lname + "&&mail=" + mail + "&&age=" + age + "&&mt=" + mt + "&&nl=" + nl + "&&pw=" + pw + "&&homecity=" + city;
 
     if (username!='' && fname!='' && lname!='' && age!='' && city!='' && mail!='' && pw!='' && mt!='' && nl!=''){
         var success = httpGet(url);
         console.log(success);
         if(success == "1"){
-          location="/daily-word.html";
+          location="/login.html";
         }
         else{
           alert("Die Registrierung war leider nicht erfolgreich. Bitte versuchen sie es erneut.");

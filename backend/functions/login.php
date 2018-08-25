@@ -20,6 +20,4 @@ $erg = $db->query($sql);
 #Validation
 if(password_verify($pw, $row["pwhash"])) print("1");
 else print("0");
-
-
- ?>
+?>

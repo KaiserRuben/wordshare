@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sat Aug 25 16:01:49 CEST 2018
+#Sat Aug 25 16:45:43 CEST 2018
 25.file=C\:\\Users\\Ruben\\Desktop\\wordshare\\frontend\\WordShare\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\drawable-port-xhdpi-v4\\screen.png
 41.base=C\:\\Users\\Ruben\\Desktop\\wordshare\\frontend\\WordShare\\platforms\\android\\app\\build\\intermediates\\assets\\debug
 25.base=C\:\\Users\\Ruben\\Desktop\\wordshare\\frontend\\WordShare\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_
@@ -70,7 +70,7 @@ count=46
 17.base=C\:\\Users\\Ruben\\Desktop\\wordshare\\frontend\\WordShare\\platforms\\android\\app\\build\\intermediates\\assets\\debug
 10.file=C\:\\Users\\Ruben\\Desktop\\wordshare\\frontend\\WordShare\\platforms\\android\\app\\build\\intermediates\\assets\\debug\\www\\login.html
 44.file=C\:\\Users\\Ruben\\Desktop\\wordshare\\frontend\\WordShare\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0\\classes.dex
-28.file=C\:\\Users\\Ruben\\Desktop\\wordshare\\frontend\\WordShare\\platforms\\android\\app\\build\\intermediates\\assets\\debug\\www\\js\\decline.png
+28.file=C\:\\Users\\Ruben\\Desktop\\wordshare\\frontend\\WordShare\\platforms\\android\\app\\build\\intermediates\\assets\\debug\\www\\pics\\decline.png
 10.base=C\:\\Users\\Ruben\\Desktop\\wordshare\\frontend\\WordShare\\platforms\\android\\app\\build\\intermediates\\assets\\debug
 44.base=C\:\\Users\\Ruben\\Desktop\\wordshare\\frontend\\WordShare\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 28.base=C\:\\Users\\Ruben\\Desktop\\wordshare\\frontend\\WordShare\\platforms\\android\\app\\build\\intermediates\\assets\\debug

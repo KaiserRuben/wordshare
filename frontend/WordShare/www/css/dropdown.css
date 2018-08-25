@@ -37,12 +37,6 @@
     color: #707070; /*#4864fe*/
 }
 
-.pls {
-    background-color: black;
-    
-}
-
-
 /* Dropdown button on hover & focus */
 .dropbtn:hover, .dropbtn:focus {
     background-color: #d4d8d8;

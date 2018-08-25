@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sat Aug 25 16:55:45 CEST 2018
+#Sat Aug 25 17:46:42 CEST 2018
 5.base=C\:\\Users\\Ruben\\Desktop\\wordshare\\frontend\\WordShare\\platforms\\android\\app\\build\\intermediates\\assets\\debug
 42.base=C\:\\Users\\Ruben\\Desktop\\wordshare\\frontend\\WordShare\\platforms\\android\\app\\build\\intermediates\\assets\\debug
 32.set=ASSET

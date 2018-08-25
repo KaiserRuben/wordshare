@@ -7,21 +7,25 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/main.css" rel=stylesheet>
         <link href="css/settings.css" rel=stylesheet>
-          <script language="javascript" type="text/javascript" src="js/cookiefunctions.js"></script>
+        <script language="javascript" type="text/javascript" src="js/cookiefunctions.js"></script>
 
         <script type="text/javascript">
-        function logoff(){
+            function logoff(){
 
-          setCookie("username", "");
-          setCookie("password", "");
-          location = "login.html";
+              setCookie("username", "");
+              setCookie("password", "");
+              location = "login.html";
 
-        }
+            }
         </script>
     </head>
 
     <body>
-        <h1 class="Name">Settings</h1> <br>
+      <a href="daily-word.html">
+        <img height="50px" class="homebtn" src="pics\home.png">
+      </a>
+        <h1 class="Name">Settings</h1>
+        <br>
         <button type="submit" class="button" onclick="logoff()"> Log-out </button>
     </body>
 

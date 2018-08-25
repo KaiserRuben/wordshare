@@ -28,6 +28,15 @@ body {
     margin-bottom: 7%;
 }
 
+.gears {
+    height: 7%;
+    float: right;
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    margin:2%;
+}
+
 .button:hover {
     background-color: #707070;
     color: white;
@@ -75,7 +84,7 @@ input {
 
 
 .text {
-  font-size: 1.2em;
+  font-size: 1.4em;
   color: #62798f;
   text-align: center;
   /*display: -webkit-box;*/
@@ -89,6 +98,7 @@ input {
   position: absolute;
   background-color: #707070;
   width: 100%;
-  padding-bottom: 10px;
+  padding-bottom: 30px;
   left: 0px;
+  background-image: linear-gradient(to top,#707070 10%,#3f3f3f 50%);
 }

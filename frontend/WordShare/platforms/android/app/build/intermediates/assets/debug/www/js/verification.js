@@ -1,87 +1,72 @@
 
-//Username wird als Cookie gespeiert
-setCookie("username", username);
 
-function validate(){
-  var username = document.getElementById("uname").value;
-  var val = document.getElementById("").value;
-  var word = document.getElementById("").value;
+function newword(){
 
-  var url = "http://wordshare.kaiseritea.de/server/functions/register.php?username=" + username + "&&validation=" + val + "&&word=" + word;
+  document.getElementById('mywords').innerHTML ="loading...";
+  document.getElementById('translation').innerHTML ="";
 
-  if (username!='' && val!='' && word!=''){
-      console.log(url);
-      var success = httpGet(url);
-      console.log(success);
-      if(success == "1"){
-        alert("Erfolg!")
-      }
-      else{
-        alert("Nein. Einfach nur nein.");
-      }
-    }
-    else{
-      alert("Nope");
-    }
-  }
+  var url = "http://wordshare.kaiseritea.de/server/functions/getWord.php?username=" + getCookie("username") + "&&type=verification";
+  var response = httpGet(url);
+  var wordsJSON = JSON.parse(response);
 
- function httpGet(theUrl){
+  document.getElementById('mywords').innerHTML = wordsJSON[0].word;
+  document.getElementById('translation').innerHTML = wordsJSON[0].translation;
+
+  setCookie("tempword", wordsJSON[0].word);
+
+}
+
+function httpGet(theUrl){
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
     xmlHttp.send( null );
     return xmlHttp.responseText;
-  }
+}
 
 
+function verify(val){
 
+    var username = getCookie("username");     //geht das so?
+    // var word = document.getElementById("word").value;
+    var word = getCookie('tempword')    //woher kommt das?
 
+    var url = "http://wordshare.kaiseritea.de/server/functions/word-verification.php?username=" + username + "&&validation=" + val + "&&word=" + word;
 
-
-
-
-
-  datenSammeln();
-
-  function datenSammeln(){
-
-    if(checkCookie("username")&&checkCookie("password")){
-
-      var username = getCookie("username");
-      var pw = getCookie("password");
-
-    anmelden(username, password);
-
+    if (username!='' && word!=''){
+        console.log(url);
+        var success = httpGet(url);
+        console.log(success);
+        if(success == "1"){
+          newword();
+        }
+        else{
+          alert("Nein. Einfach nur nein.");
+        }
     }
     else{
-
-      var username = document.getElementById("name").value;
-      var pw = document.getElementById("pw").value;
-
-      if(pw!=""&&username!=""){
-        anmelden(username, password);
-      }
-
+        alert("Nope");
     }
   }
 
 
-  function anmelden(username, password){
+  function setCookie(cname, cvalue) {
+    window.localStorage.setItem(cname, cvalue);
+  }
 
-    //Username wird als Cookie gespeiert
-    setCookie("username", username);
+  function getCookie(cname) {
+    return(window.localStorage.getItem(cname));
 
-    var url = "http://wordshare.kaiseritea.de/server/functions/login.php?name=" + username + "&&pw=" + pw;
-    var success = httpGet(url);
-    console.log(success);
+  }
 
-    if(document.getElementById("check").checked == true){
-      setCookie("password", pw);
-    }
+  function checkCookie(cname) {
+    var cookie = window.localStorage.getItem(cname);
+    if (cookie != "" && cookie != null) {
 
-    if(success == "1"){
-      location="https://www.bing.de";
-    }
-    else{
-      alert("Wrong Password or Username!");
+      return true;
+
+    } else {
+
+      return false;
+
     }
   }

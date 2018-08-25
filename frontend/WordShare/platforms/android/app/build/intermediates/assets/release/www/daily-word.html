@@ -22,18 +22,20 @@
   <center>
     <h1> Daily word</h1>
     <br>
-    <h2>use your word in your quests</h2>
-    <hr>
+    <div class="text">use your word in your quests</div>
+    <hr style=" border: 1px solid #62798f ">
+      <a href=settings.html> <img class="gears" src=pics/gears.png> </a>
   </center>
   <div class="daily_word">
     <center><span id="word">loading...</span></center>
-    <center><span id="translation">gghg</span></center>
+    <center><span id="translation"></span></center>
   </div>
   <br>
   <center>
-    <div class="popup" onclick="myFunction()"><i class= "white fa fa-info"></i>
-      <span class="popuptext" id="myPopup">Use the word "<span id="word2"></span>" in different contexts to improve your <span class="lang"></span> skills!
-    </div>
+    <!-- <div class="popup" onclick="myFunction()"><i class= "white fa fa-info"></i>
+      <span class="popuptext" id="myPopup">Use the word "<span id="word"></span>" in different contexts to improve your <span class="lang"></span> skills!
+    </div>--> <br>
+        <a href="game.html"> <button id="gamelink" class="button" type="button">Game</button> </a>
   </center>
 </body>
 
@@ -50,12 +52,9 @@
 var url = "http://wordshare.kaiseritea.de/server/functions/getWord.php?username=" + getCookie("username") + "&&type=word";
 var response = httpGet(url);
 var wordsJSON = JSON.parse(response);
-
 console.log(wordsJSON);
-
 document.getElementById('word').innerHTML = wordsJSON[0].word;
 document.getElementById('translation').innerHTML = wordsJSON[0].translation;
-
 </script>
 
 

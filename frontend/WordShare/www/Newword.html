@@ -24,8 +24,8 @@
           <input type="text" id="transword" class="input-newword" placeholder="Translation" onfocus="hideIconBar();" onfocusout="hideIconBar();" required> <br>
           <!--  <a href="daily-word.html"><p> <button onclick="js/sendword.js" type="submit" class="button" id="Hinzufügen"> Add </button></a>-->
           <button onclick="sendword();" type="submit" class="button" id="Hinzufügen"> Add </button>
-          <div class="exwords">
-            <p>Already existing: <span id="txtHint"></span></p>
+          <div>
+            <p class="text">Already existing: <span id="txtHint"></span></p>
           </div>
       </main>
       <div class="icon-bar" id="icon-bar">
@@ -70,11 +70,7 @@ document.getElementById("txtHint").innerHTML = exwords;
     xmlHttp.send( null );
    return xmlHttp.responseText;
   }
-
-</script>
-
-<script>
-
+  
   function hideIconBar() {
     console.log("neee grünes essen mog i ni");
       var x = document.getElementById("icon-bar");

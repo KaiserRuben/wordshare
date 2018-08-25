@@ -37,6 +37,11 @@
     color: #707070; /*#4864fe*/
 }
 
+.pls {
+    background-color: black;
+    
+}
+
 
 /* Dropdown button on hover & focus */
 .dropbtn:hover, .dropbtn:focus {
@@ -50,7 +55,6 @@
 .dropdown {
     position: relative;
     text-align: center;
-    
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -75,7 +79,7 @@
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd}
+.dropdown-content a:hover {background-color: #fff}
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}

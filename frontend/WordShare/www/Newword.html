@@ -39,7 +39,7 @@ function showHint(input){
         return;
 //Ausgabe der vorhandenen Worte
       }else{
-var exwords = gethtml("http://wordshare.kaiseritea.de/server/functions/exwords.php?=input" + input)
+var exwords = gethtml("http://wordshare.kaiseritea.de/server/functions/exwords.php?input=" + input);
 document.getElementById("txtHint").innerHTML = exwords;
 }
 }

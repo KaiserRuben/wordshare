@@ -8,27 +8,32 @@ require_once("../inc/db.php");
 $db->query("SET NAMES 'utf8'");
 $sql = "SELECT word FROM words";
 $erg = $db->query($sql);
-$words = $erg->fetch_array();
+$words = array();
+
+while ($row = $erg->fetch_assoc()) {
+  $words[] = $row;
+}
 
 # Worte zählen
-$wordnumber = mysql_num_rows($words);
-print($wordnumber);
-
-#$wordnumber = count ( $words );
+$wordnumber = count($words);
+#print($wordnumber);
 
 #Länge input
 $strlenght = strlen ( $input );
 
 #Worte mit selbem Anfang ermitteln
 $counter = 0;
-$result = " ";
+$result = "";
 while (!($counter == $wordnumber)){
-$w_beginn = substr ($words[$counter] , 0 , $strlenght);
-print ($words[$counter]);
+$w_beginn = substr ($words[$counter]["word"] , 0 , $strlenght);
+#print($words[$counter]["word"]);
 
 # Worte aneinander fügen
-if ( $w_beginn == $words[$counter]){
-  $result = $result + ", "+ $words[$counter];
+print(substr ($words[$counter]["word"] , 0 , $strlenght));
+print($input);
+if ($w_beginn == $input){
+  #die();
+  $result = $result + ", "+ $words[$counter]["word"];
 }
   $counter++;
 }

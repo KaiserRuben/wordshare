@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css?family=Ubuntu|Cabin|PT+Sans+Narrow" rel="stylesheet">
   <script language="javascript" type="text/javascript" src="js/cookiefunctions.js"></script>
   <script language="javascript" type="text/javascript" src="js/logincheck.js"></script>
-  <script src="js/verification.js"></script>
+  <!-- <script src="js/verification.js"></script> -->
 
 
   <!-- <script src="js/verification.js"></script> -->
@@ -116,6 +116,31 @@ function httpGet(theUrl){
   return xmlHttp.responseText;
 
 }
+
+function verify(val){
+
+    var username = getCookie("username");     //geht das so?
+    // var word = document.getElementById("word").value;
+    var word = getCookie('tempword')    //woher kommt das?
+
+    var url = "http://wordshare.kaiseritea.de/server/functions/word-verification.php?username=" + username + "&&validation=" + val + "&&word=" + word;
+
+    if (username!='' && word!=''){
+        console.log(url);
+        var success = httpGet(url);
+        console.log(success);
+        if(success == "1"){
+          location = "wordcheck.html";
+        }
+        else{
+          alert("Nein. Einfach nur nein.");
+        }
+    }
+    else{
+        alert("Nope");
+    }
+  }
+
 
 </script>
 

@@ -73,9 +73,6 @@ input {
     background-color: #d4d8d8;
 }
 
-.boxed {
-    border: 1px solid white ;
-  }
 
 .text {
   font-size: 1.2em;
@@ -87,6 +84,11 @@ input {
 }
 
 .icon-bar {
-  position:absolute;
-  bottom:0px;
+  bottom: 0px;
+  display: block;
+  position: absolute;
+  background-color: #707070;
+  width: 100%;
+  padding-bottom: 10px;
+  left: 0px;
 }

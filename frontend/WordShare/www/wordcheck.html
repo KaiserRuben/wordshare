@@ -3,7 +3,7 @@
 
 <head>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-  <title><br>Verification</title>
+  <title>Verification</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!--  CSS inplementierung in externer Datei-->
@@ -13,7 +13,10 @@
   <link href="https://fonts.googleapis.com/css?family=Ubuntu|Cabin|PT+Sans+Narrow" rel="stylesheet">
   <script language="javascript" type="text/javascript" src="js/cookiefunctions.js"></script>
   <script language="javascript" type="text/javascript" src="js/logincheck.js"></script>
+<<<<<<< HEAD
   <!--<script src="js/verification.js"></script> -->
+=======
+>>>>>>> f7f000f8a459e0ed5420b84866ff12881f20b452
 </head>
 
 
@@ -49,14 +52,6 @@
     <img src="/pics/accept.png" alt="accept" onclick="verify(1)" style="width:15%">
     <br>
 
-
-  <!-- Hier ist ein Info-Pop-Up
-  </div><br><center>
-    <div class="popup" onclick="myFunction()"><i class= "white fa fa-info"></i>
-      <span class="popuptext" id="myPopup">Swipe left or right to accept or decline a new entry. Use the middle button if you don't know a word.
-    </div>
-  </center>-->
-
 </body>
 
 
@@ -72,13 +67,14 @@ newword();
 
 function newword(){
 
-  document.getElementById('box').innerHTML ="loading...";
+  document.getElementById('word').innerHTML ="loading...";
+  document.getElementById('translation').innerHTML ="";
 
   var url = "http://wordshare.kaiseritea.de/server/functions/getWord.php?username=" + getCookie("username") + "&&type=verification";
   var response = httpGet(url);
   var wordsJSON = JSON.parse(response);
 
-  document.getElementById('box').innerHTML = wordsJSON[0].word;
+  document.getElementById('word').innerHTML = wordsJSON[0].word;
   document.getElementById('translation').innerHTML = wordsJSON[0].translation;
 
   setCookie("tempword", wordsJSON[0].word);

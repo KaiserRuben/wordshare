@@ -24,7 +24,7 @@
           <!--  <a href="daily-word.html"><p> <button onclick="js/sendword.js" type="submit" class="button" id="Hinzufügen"> Add </button></a>-->
           <button onclick="sendword();" type="submit" class="button" id="Hinzufügen"> Add </button>
           <div class="exwords">
-<p>Already existing: <span id="txtHint"></span></p>
+<p><span id="txtHint"></span></p>
           </div>
       </main>
       <div class="icon-bar">
@@ -42,7 +42,7 @@ function showHint(input){
 //Ausgabe der vorhandenen Worte
       }else{
 var exwords = gethtml("http://wordshare.kaiseritea.de/server/functions/exwords.php?input=" + input);
-document.getElementById("txtHint").innerHTML = exwords;
+document.getElementById("txtHint").innerHTML = "Already existing:" + exwords;
 }
 }
 

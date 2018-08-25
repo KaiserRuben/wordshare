@@ -33,7 +33,8 @@ $w_beginn = substr ($words[$counter]["word"] , 0 , $strlenght);
 // print($input);
 if ($w_beginn == $input){
   #die();
-  $result = $result + ", "+ $words[$counter]["word"];
+  // $result = $result + ", "+ $words[$counter]["word"];
+  $result = $words[$counter]["word"];
 }
   $counter++;
 }

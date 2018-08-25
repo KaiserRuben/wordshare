@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sat Aug 25 15:58:32 CEST 2018
+#Sat Aug 25 16:01:49 CEST 2018
 25.file=C\:\\Users\\Ruben\\Desktop\\wordshare\\frontend\\WordShare\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\drawable-port-xhdpi-v4\\screen.png
 41.base=C\:\\Users\\Ruben\\Desktop\\wordshare\\frontend\\WordShare\\platforms\\android\\app\\build\\intermediates\\assets\\debug
 25.base=C\:\\Users\\Ruben\\Desktop\\wordshare\\frontend\\WordShare\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_

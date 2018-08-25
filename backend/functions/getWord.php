@@ -11,6 +11,7 @@ Windows ist wie ein U-Boot,sobalt man ein Fenster öffnet,fangen die Probleme an
  #Variablen initialisieren
 $username = $_GET['username'];
 $type = $_GET['type'];
+$mode = $_GET['mode'];
  #Datenbankverbindung
 require_once("../inc/db.php");
  #Nutzerdaten holen
@@ -31,7 +32,11 @@ if($type == "word"){
 }elseif ($type=="verification") {
   $mt = $row["nl"];
   $nl = $row["mt"];
+  if ($mode == "0") {
   $sql = "SELECT * FROM w_verification WHERE w_code='{$nl}' AND t_code='{$mt}' ORDER BY id LIMIT 1";
+}else{
+  $sql = "SELECT * FROM w_verification WHERE w_code='{$nl}' AND t_code='{$mt}' ORDER BY RAND() LIMIT 1";
+}
 }
 #Das führen wir dann mal aus...
 $db->query("SET NAMES 'utf8'");

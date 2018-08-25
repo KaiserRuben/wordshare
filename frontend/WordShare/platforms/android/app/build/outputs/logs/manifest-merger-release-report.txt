@@ -9,19 +9,19 @@ INJECTED from C:\Users\Ruben\Desktop\wordshare\frontend\WordShare\platforms\andr
 INJECTED from C:\Users\Ruben\Desktop\wordshare\frontend\WordShare\platforms\android\app\src\main\AndroidManifest.xml:2:1-14:12
 INJECTED from C:\Users\Ruben\Desktop\wordshare\frontend\WordShare\platforms\android\app\src\main\AndroidManifest.xml:2:1-14:12
 	package
-		ADDED from C:\Users\Ruben\Desktop\wordshare\frontend\WordShare\platforms\android\app\src\main\AndroidManifest.xml:2:98-131
+		ADDED from C:\Users\Ruben\Desktop\wordshare\frontend\WordShare\platforms\android\app\src\main\AndroidManifest.xml:2:100-133
 		INJECTED from C:\Users\Ruben\Desktop\wordshare\frontend\WordShare\platforms\android\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Ruben\Desktop\wordshare\frontend\WordShare\platforms\android\app\src\main\AndroidManifest.xml
 	android:versionName
-		ADDED from C:\Users\Ruben\Desktop\wordshare\frontend\WordShare\platforms\android\app\src\main\AndroidManifest.xml:2:70-97
+		ADDED from C:\Users\Ruben\Desktop\wordshare\frontend\WordShare\platforms\android\app\src\main\AndroidManifest.xml:2:72-99
 		INJECTED from C:\Users\Ruben\Desktop\wordshare\frontend\WordShare\platforms\android\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Ruben\Desktop\wordshare\frontend\WordShare\platforms\android\app\src\main\AndroidManifest.xml
 	android:hardwareAccelerated
 		ADDED from C:\Users\Ruben\Desktop\wordshare\frontend\WordShare\platforms\android\app\src\main\AndroidManifest.xml:2:11-45
 	xmlns:android
-		ADDED from C:\Users\Ruben\Desktop\wordshare\frontend\WordShare\platforms\android\app\src\main\AndroidManifest.xml:2:132-190
+		ADDED from C:\Users\Ruben\Desktop\wordshare\frontend\WordShare\platforms\android\app\src\main\AndroidManifest.xml:2:134-192
 	android:versionCode
-		ADDED from C:\Users\Ruben\Desktop\wordshare\frontend\WordShare\platforms\android\app\src\main\AndroidManifest.xml:2:46-69
+		ADDED from C:\Users\Ruben\Desktop\wordshare\frontend\WordShare\platforms\android\app\src\main\AndroidManifest.xml:2:46-71
 		INJECTED from C:\Users\Ruben\Desktop\wordshare\frontend\WordShare\platforms\android\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Ruben\Desktop\wordshare\frontend\WordShare\platforms\android\app\src\main\AndroidManifest.xml
 supports-screens

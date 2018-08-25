@@ -5,8 +5,6 @@
 }
 
 h2 {
-    color: white;
-    font-size: 1.4em;
     margin-top: 6%;
     margin-bottom: 3%;
 }
@@ -70,7 +68,18 @@ h2 {
     font-size: 3em;
     text-align: center;
     position: relative;
-    margin: 150px 0px 0p 0px;
+    margin: 150px 0px 0px 0px;
+}
+
+#gamelink {
+    font-size: 1.4em;
+    color: #3f3f3f;
+    background-color: #29a7ff;
+    border-radius: 5em;
+    width: 25%;
+    position:absolute;
+    top: 60%;
+    left: 38%;
 }
 
 #translation {

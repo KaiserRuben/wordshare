@@ -24,10 +24,11 @@
 
 }
 
-.input {
+.input-login {
     font-size: 1em;
-    margin: 0% 50px 0% 50px;
+    margin: 0% 15% 0% 15%;
     text-align: center;
+    width:60%;
 
     display: -webkit-box;
 

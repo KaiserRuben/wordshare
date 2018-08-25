@@ -8,7 +8,7 @@
 
         <title>Word Share - New word</title>
         <link href="css/main.css" rel=stylesheet>
-        <link href="css/newword.css" rel=stylesheet>
+        <link href="css/Newword.css" rel=stylesheet>
         <script language="javascript" type="text/javascript" src="js/cookiefunctions.js"></script>
         <script language="javascript" type="text/javascript" src="js/logincheck.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Ubuntu|Cabin|PT+Sans+Narrow" rel="stylesheet">
@@ -19,13 +19,19 @@
 
       <h1 class="Name">Add a new word!</h1>
       <main>
+<<<<<<< HEAD
         <a class="text"> Please enter a word in your native language to share it with the WordShare community! </a>
           <input type="text" id="word" class="input" placeholder="Word" onkeyup="showHint(this.value);" onfocus="hideIconBar();" onfocusout="hideIconBar();" required>
           <input type="text" id="transword" class="input" placeholder="Translation" onfocus="hideIconBar();" onfocusout="hideIconBar();" required> <br>
+=======
+        <a class="text"> Please enter a word in your native language to share it with the WordShare community! </a> <br>
+          <input type="text" id="word" class="input-newword" placeholder="Word" onkeyup="showHint(this.value);" required>
+          <input type="text" id="transword" class="input-newword" placeholder="Translation" required> <br>
+>>>>>>> ed9f9eb31f58f0c07f3c1ac1a161f842996818f0
           <!--  <a href="daily-word.html"><p> <button onclick="js/sendword.js" type="submit" class="button" id="Hinzufügen"> Add </button></a>-->
           <button onclick="sendword();" type="submit" class="button" id="Hinzufügen"> Add </button>
           <div class="exwords">
-<p>Already existing: <span id="txtHint"></span></p>
+            <p>Already existing: <span id="txtHint"></span></p>
           </div>
       </main>
       <div class="icon-bar" id="icon-bar">
@@ -52,16 +58,15 @@ document.getElementById("txtHint").innerHTML = exwords;
     //get Eingaben des Benutzers
     var word  = document.getElementById('word').value;
     var transword  = document.getElementById('transword').value;
-    //  var user = getCookie("username");
-    var user = "1"
+    var user = getCookie("username");
     //sende Daten an addWord  function httpGet(theUrl){
     var success = gethtml("http://wordshare.kaiseritea.de/server/functions/addWord.php?word=" + word + "&&transword=" + transword + "&&user=" + user);
     console.log(success);
     if (success == "1"){
-        alert("Danke für dein Word. Es wird nun noch verifiziert.");
+        alert("Thanks for your word, it will be varifyed soon.");
     }
     else {
-      alert("Entweder es gibt dein Wort bereits, oder wir haben Mist gebaut.")
+      alert("Your word is not new.");
     }
   }
 

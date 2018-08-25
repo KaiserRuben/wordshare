@@ -13,6 +13,7 @@
   <link href="https://fonts.googleapis.com/css?family=Ubuntu|Cabin|PT+Sans+Narrow" rel="stylesheet">
   <script language="javascript" type="text/javascript" src="js/cookiefunctions.js"></script>
   <script language="javascript" type="text/javascript" src="js/logincheck.js"></script>
+  <script language="javascript" type="text/javascript" src="js/verification.js"></script>
 </head>
 
 
@@ -39,7 +40,7 @@
 
     <div class="boxed" id="box">
       <center>
-        <div class="myword" id="word"></div>
+        <div class="myword" id="mywords"></div>
         <div class="mytranslation" id="translation"></div>
         <br>
         <img src="/pics/decline.png" alt="decline" onclick="verify(0)" style="width:12%"> &emsp;
@@ -54,64 +55,13 @@
 
 
 <script>
-/*
-Ja, ich weiß dass JS nicht hier integriert wird, aber es muss nach der implementierung sein.
-Einfach nicht fragen!!!
+    /*
+    Ja, ich weiß dass JS nicht hier integriert wird, aber es muss nach der implementierung sein.
+    Einfach nicht fragen!!!
 
-newword() holt ein neues Wort und zeigt es an. Wird am Anfang einmal ausgeführt und jedes mal, wenn der Nutzer das Wort nicht kennt.
-*/
-newword();
-
-function newword(){
-
-  document.getElementById('word').innerHTML ="loading...";
-  document.getElementById('translation').innerHTML ="";
-
-  var url = "http://wordshare.kaiseritea.de/server/functions/getWord.php?username=" + getCookie("username") + "&&type=verification";
-  var response = httpGet(url);
-  var wordsJSON = JSON.parse(response);
-
-  document.getElementById('word').innerHTML = wordsJSON[0].word;
-  document.getElementById('translation').innerHTML = wordsJSON[0].translation;
-
-  setCookie("tempword", wordsJSON[0].word);
-
-}
-
-function httpGet(theUrl){
-
-  var xmlHttp = new XMLHttpRequest();
-  xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
-  xmlHttp.send( null );
-  return xmlHttp.responseText;
-
-}
-
-function verify(val){
-
-    var username = getCookie("username");     //geht das so?
-    // var word = document.getElementById("word").value;
-    var word = getCookie('tempword')    //woher kommt das?
-
-    var url = "http://wordshare.kaiseritea.de/server/functions/word-verification.php?username=" + username + "&&validation=" + val + "&&word=" + word;
-
-    if (username!='' && word!=''){
-        console.log(url);
-        var success = httpGet(url);
-        console.log(success);
-        if(success == "1"){
-          newword();
-        }
-        else{
-          alert("Nein. Einfach nur nein.");
-        }
-    }
-    else{
-        alert("Nope");
-    }
-  }
-
-
+    newword() holt ein neues Wort und zeigt es an. Wird am Anfang einmal ausgeführt und jedes mal, wenn der Nutzer das Wort nicht kennt.
+    */
+    newword();
 </script>
 
 

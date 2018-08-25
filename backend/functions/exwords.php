@@ -1,34 +1,41 @@
 <?php
 #Variablen initialisieren
 $input = $_GET['input'];
-
 #Datenbankverbindung
 require_once("../inc/db.php");
 
 #Datenbanken nach existierenden Worten durchsuchen
 $db->query("SET NAMES 'utf8'");
-$sql = "SELECT word FROM words WHERE *";
+$sql = "SELECT word FROM words";
 $erg = $db->query($sql);
-$words = $erg->fetch_assoc();
+$words = array();
 
-// Worte zählen
-$wordnumber = count ( $words );
+while ($row = $erg->fetch_assoc()) {
+  $words[] = $row;
+}
 
-//Länge input
+# Worte zählen
+$wordnumber = count($words);
+#print($wordnumber);
+
+#Länge input
 $strlenght = strlen ( $input );
 
-//Worte mit selbem Anfang ermitteln
+#Worte mit selbem Anfang ermitteln
 $counter = 0;
-$result = " ";
-while (!$counter == $wordnumber){
-$w_beginn = substr ($words[$counter] , 0 , $strlenght);
+$result = "";
+while (!($counter == $wordnumber)){
+$w_beginn = substr ($words[$counter]["word"] , 0 , $strlenght);
+#print($words[$counter]["word"]);
 
-// Worte aneinander fügen
-if ( $w_beginn == $words[$counter]){
-  $result = $result + ", "+ $words[$counter];
-  $counter = $counter + 1;
+# Worte aneinander fügen
+print(substr ($words[$counter]["word"] , 0 , $strlenght));
+print($input);
+if ($w_beginn == $input){
+  #die();
+  $result = $result + ", "+ $words[$counter]["word"];
 }
+  $counter++;
 }
 print ($result);
-
 ?>

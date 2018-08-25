@@ -3,12 +3,13 @@
 
 <head>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-  <title>WordShare - New vocabulary</title>
+  <title><br>Verification</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!--  CSS inplementierung in externer Datei-->
-  <link rel="stylesheet" href="css/daily_word.css" type="text/css">
+  <!--<link rel="stylesheet" href="css/daily_word.css" type="text/css">-->
   <link rel="stylesheet" href="css/main.css" type="text/css">
+  <link rel="stylesheet" href="css/verification.css" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Ubuntu|Cabin|PT+Sans+Narrow" rel="stylesheet">
   <script language="javascript" type="text/javascript" src="js/cookiefunctions.js"></script>
   <script language="javascript" type="text/javascript" src="js/logincheck.js"></script>
@@ -27,51 +28,37 @@
 </head>
 
 
-<body><footer>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<div class="icon-bar">
-  <a href="#"> <img height="50px" style="margin-right:12%" src="\pics\add.png"></a>
-  <a href="#"> <img height="50px" style="margin-top:5%" src="\pics\word.png"></a>
-  <a href="#"> <img height="50px" style="margin-left:12%" src="\pics\edit.png"></a>
-
-
-</div></footer>
-
+<body>
+  <footer>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <div class="icon-bar">
+      <a href="#"> <img height="50px" style="margin-right:12%" src="\pics\add.png"></a>
+      <a href="#"> <img height="50px" style="margin-top:5%" src="\pics\word.png"></a>
+      <a href="#"> <img height="50px" style="margin-left:12%" src="\pics\edit.png"></a>
+    </div>
+  </footer>
+  <br>
   <center>
-    <h1>Verify new vocabulary</h1><br>
+    <span class="title">Verify new words</span>
     <h4><font color="white">Help our community by verifying new entries to the vocabulary.</font></h4>
   </center>
 
   <hr>
+  <br>
+  <br>
+  <br>
 
-  <div class="new_word">
-    <div class="boxed">
+    <div class="boxed" id="box">
       <center>
-        <font color="white"><h1 id="word"></h1></font>
-      </center>
-    </div>
-    <div class="new_word_translated">
-      <center>
-        <font color="white"><h2></h2><span id="word_trans"></span></font>
+        <font color="black"><h1 id="word"></h1></font>
         <font color="white"><h2 id="translation"></h2></font>
       </center>
     </div>
+    <img src="/pics/decline.png" alt="decline" onclick="verify(0)" style="width:15%"> &emsp;
+    <img src="/pics/unknown.png" alt="unknown" onclick="newword()" style="width:15%"> &emsp;
+    <img src="/pics/accept.png" alt="accept" onclick="verify(1)" style="width:15%">
     <br>
-  </div>
 
-  <center>
-    <div class="button-group">
-        <img src="/pics/decline.png" alt="decline" onclick="verify(0)" style="width:25%"> &emsp;
-        <img src="/pics/unknown.png" alt="unknown" onclick="newword()" style="width:25%"> &emsp;
-        <img src="/pics/accept.png" alt="accept" onclick="verify(1)" style="width:25%">
-    </div>
-  </center>
-
-  <!-- Hier sind die ursprünglichen Buttons
-  <div class="button-group">
-    <button type="button" class="button" name="decline">Decline</button><button type="button" class="button" name="accept">Accept</button><br />
-  </div>-->
 
   <!-- Hier ist ein Info-Pop-Up
   </div><br><center>
@@ -91,17 +78,17 @@ Einfach nicht fragen!!!
 
 newword() holt ein neues Wort und zeigt es an. Wird am Anfang einmal ausgeführt und jedes mal, wenn der Nutzer das Wort nicht kennt.
 */
-document.getElementById('word').innerHTML ="loading...";
 newword();
 
 function newword(){
-document.getElementById('word').innerHTML ="loading...";
+
+  document.getElementById('box').innerHTML ="loading...";
 
   var url = "http://wordshare.kaiseritea.de/server/functions/getWord.php?username=" + getCookie("username") + "&&type=verification";
   var response = httpGet(url);
   var wordsJSON = JSON.parse(response);
 
-  document.getElementById('word').innerHTML = wordsJSON[0].word;
+  document.getElementById('box').innerHTML = wordsJSON[0].word;
   document.getElementById('translation').innerHTML = wordsJSON[0].translation;
 
   setCookie("tempword", wordsJSON[0].word);
@@ -130,7 +117,7 @@ function verify(val){
         var success = httpGet(url);
         console.log(success);
         if(success == "1"){
-          location = "wordcheck.html";
+          newword();
         }
         else{
           alert("Nein. Einfach nur nein.");

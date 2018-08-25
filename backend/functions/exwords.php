@@ -29,8 +29,8 @@ $w_beginn = substr ($words[$counter]["word"] , 0 , $strlenght);
 #print($words[$counter]["word"]);
 
 # Worte aneinander fügen
-print(substr ($words[$counter]["word"] , 0 , $strlenght));
-print($input);
+// print(substr ($words[$counter]["word"] , 0 , $strlenght));
+// print($input);
 if ($w_beginn == $input){
   #die();
   $result = $result + ", "+ $words[$counter]["word"];

@@ -29,12 +29,11 @@ body {
 }
 
 .gears {
-    height: 7%;
+    height: 5%;
     float: right;
     position: absolute;
-    top: 2%;
-    right: 2%;
-    margin:2%;
+    top: 3%;
+    right: 3%;
 }
 
 .button:hover {
@@ -84,7 +83,7 @@ input {
 
 
 .text {
-  font-size: 1.4em;
+  font-size: 1.2em;
   color: #62798f;
   text-align: center;
   /*display: -webkit-box;*/
@@ -101,4 +100,3 @@ input {
   padding-bottom: 30px;
   left: 0px;
   background-image: linear-gradient(to top,#707070 10%,#3f3f3f 50%);
-}

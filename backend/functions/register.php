@@ -10,13 +10,15 @@ $pwhash = password_hash($_GET['pw'], PASSWORD_DEFAULT);
 $homecity = $_GET['homecity'];
 
 require_once("../inc/db.php");
-
 $db->query("SET NAMES 'utf8'");
 $sql = "INSERT INTO user (username, name, lastname, mail, age, mt, nl, pwhash, homecity)
 VALUES ('{$username}', '{$name}', '{$lastname}', '{$mail}', '{$age}', '{$mt}', '{$nl}', '{$pwhash}', '{$homecity}')";
 $erg = $db->query($sql);
     if (!$erg){
     die ('Etwas stimmte mit der Abfrage nicht: '.$db->error);
+  }
+  else{
+    $success = true;
   }
 
   $empfaenger = $mail;

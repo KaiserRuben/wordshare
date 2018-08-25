@@ -8,35 +8,57 @@
 
         <title>Word Share - New word</title>
         <link href="css/main.css" rel=stylesheet>
-        <link href="css/newword.css" rel=stylesheet>
+        <link href="css/Newword.css" rel=stylesheet>
+        <script language="javascript" type="text/javascript" src="js/cookiefunctions.js"></script>
+        <script language="javascript" type="text/javascript" src="js/logincheck.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Ubuntu|Cabin|PT+Sans+Narrow" rel="stylesheet">
     </head>
-  <body>
+
+    <body>
+
       <h1 class="Name">Add a new word!</h1>
       <main>
-        <a class="text"> Please enter a word in your native languge to share it with the WordShare community! </a>
-          <input type="text" id="word" class="input" placeholder="Word" required>
-          <input type="text" id="transword" class="input" placeholder="Translation" required> <br>
+        <a class="text"> Please enter a word in your native language to share it with the WordShare community! </a> <br>
+          <input type="text" id="word" class="input-newword" placeholder="Word" onkeyup="showHint(this.value);" required>
+          <input type="text" id="transword" class="input-newword" placeholder="Translation" required> <br>
           <!--  <a href="daily-word.html"><p> <button onclick="js/sendword.js" type="submit" class="button" id="Hinzufügen"> Add </button></a>-->
           <button onclick="sendword();" type="submit" class="button" id="Hinzufügen"> Add </button>
+          <div class="exwords">
+<p><span id="txtHint"></span></p>
+          </div>
       </main>
-  </body>
+      <div class="icon-bar">
+        <a href="Newword.html"> <img height="50px" style="margin-right:12%" src="pics\add.png"></a>
+        <a href="daily-word.html"> <img height="50px" style="margin-top:5%" src="pics\word.png"></a>
+        <a href="wordcheck.html"> <img height="50px" style="margin-left:12%" src="pics\edit.png"></a>
+      </div>
+    </body>
 <script type="text/javascript">
+function showHint(input){
+  //Eingabe vorhanden?
+  if (input.length == 0) {
+        document.getElementById("txtHint").innerHTML = "";
+        return;
+//Ausgabe der vorhandenen Worte
+      }else{
+var exwords = gethtml("http://wordshare.kaiseritea.de/server/functions/exwords.php?input=" + input);
+document.getElementById("txtHint").innerHTML = "Already existing:" + exwords;
+}
+}
 
   function sendword() {
     //get Eingaben des Benutzers
     var word  = document.getElementById('word').value;
     var transword  = document.getElementById('transword').value;
-    //  var user = getCookie("username");
-    var user = "1"
+    var user = getCookie("username");
     //sende Daten an addWord  function httpGet(theUrl){
     var success = gethtml("http://wordshare.kaiseritea.de/server/functions/addWord.php?word=" + word + "&&transword=" + transword + "&&user=" + user);
     console.log(success);
     if (success == "1"){
-        alert("Danke für dein Word. Es wird nun noch verifiziert.");
+        alert("Thanks for your word, it will be varifyed soon.");
     }
     else {
-      alert("Entweder es gibt dein Wort bereits, oder wir haben Mist gebaut.")
+      alert("Your word is not new.");
     }
   }
 
@@ -44,12 +66,9 @@
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", theU, false ); // false for synchronous request
     xmlHttp.send( null );
-    return xmlHttp.responseText;
+   return xmlHttp.responseText;
   }
 
 </script>
-
-  <!-- <script src="/js/sendword.js" type="text/javascript"></script> -->
-
+<!-- <script src="/js/sendword.js" type="text/javascript"></script> -->
 </html>
-style

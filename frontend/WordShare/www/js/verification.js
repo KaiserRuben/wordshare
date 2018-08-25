@@ -1,15 +1,18 @@
 
 
-function newword(){
+function newword(mode){
 
   document.getElementById('mywords').innerHTML ="loading...";
   document.getElementById('translation').innerHTML ="";
-
-  var url = "http://wordshare.kaiseritea.de/server/functions/getWord.php?username=" + getCookie("username") + "&&type=verification";
+  if (mode == "0") {
+    var url = "http://wordshare.kaiseritea.de/server/functions/getWord.php?mode=0&&username=" + getCookie("username") + "&&type=verification";
+  }else{
+    var url = "http://wordshare.kaiseritea.de/server/functions/getWord.php?mode=1&&username=" + getCookie("username") + "&&type=verification";
+  }
   var response = httpGet(url);
   var wordsJSON = JSON.parse(response);
 
-  document.getElementById('word').innerHTML = wordsJSON[0].word;
+  document.getElementById('mywords').innerHTML = wordsJSON[0].word;
   document.getElementById('translation').innerHTML = wordsJSON[0].translation;
 
   setCookie("tempword", wordsJSON[0].word);
@@ -47,13 +50,6 @@ function verify(val){
         alert("Nope");
     }
   }
-
-
-
-
-
-
-
 
 
   function setCookie(cname, cvalue) {

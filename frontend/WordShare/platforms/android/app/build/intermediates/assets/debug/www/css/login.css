@@ -6,14 +6,14 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    margin: 40% 15% 0% 15%;
+    margin: 20% 15% 0% 15%;
     width: 70%
 }
 
-img {
-    margin-top: 15%;
+/*img {
+    margin-top: 10%;
     margin-bottom:10%;
-}
+}*/
 
 .button {
 
@@ -24,10 +24,11 @@ img {
 
 }
 
-.input {
+.input-login {
     font-size: 1em;
-    margin: 0% 50px 0% 50px;
+    margin: 0% 15% 0% 15%;
     text-align: center;
+    width:60%;
 
     display: -webkit-box;
 
@@ -56,5 +57,5 @@ img {
 }
 
 .last{
-  margin-bottom:30%;
+  margin-bottom:10%;
 }

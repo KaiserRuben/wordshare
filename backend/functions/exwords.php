@@ -31,13 +31,12 @@ $w_beginn = substr ($words[$counter]["word"] , 0 , $strlenght);
 #print($words[$counter]["word"]);
 
 # Worte aneinander fügen
+// print(substr ($words[$counter]["word"] , 0 , $strlenght));
+// print($input);
 if ($w_beginn == $input){
-  #Kommasetzung
-  if ($komma > 0){
-      $result = $result." ,";
-  }
-$komma = 1;
-  $result = $result.$words[$counter]["word"];
+  #die();
+  // $result = $result + ", "+ $words[$counter]["word"];
+  $result = $words[$counter]["word"];
 }
   $counter++;
 }

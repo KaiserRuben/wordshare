@@ -16,24 +16,26 @@
 
     <body>
 
+
       <h1 class="Name">Add a new word!</h1>
       <main>
         <a class="text"> Please enter a word in your native language to share it with the WordShare community! </a>
-          <input type="text" id="word" class="input" placeholder="Word" onkeyup="showHint(this.value);" required>
-          <input type="text" id="transword" class="input" placeholder="Translation" required> <br>
+          <input type="text" id="word" class="input" placeholder="Word" onkeyup="showHint(this.value);" onfocus="hideIconBar();" onfocusout="hideIconBar();" required>
+          <input type="text" id="transword" class="input" placeholder="Translation" onfocus="hideIconBar();" onfocusout="hideIconBar();" required> <br>
           <!--  <a href="daily-word.html"><p> <button onclick="js/sendword.js" type="submit" class="button" id="Hinzufügen"> Add </button></a>-->
           <button onclick="sendword();" type="submit" class="button" id="Hinzufügen"> Add </button>
           <div class="exwords">
 <p>Already existing: <span id="txtHint"></span></p>
           </div>
       </main>
-      <div class="icon-bar">
+      <div class="icon-bar" id="icon-bar">
         <a href="Newword.html"> <img height="50px" style="margin-right:12%" src="pics\add.png"></a>
         <a href="daily-word.html"> <img height="50px" style="margin-top:5%" src="pics\word.png"></a>
         <a href="wordcheck.html"> <img height="50px" style="margin-left:12%" src="pics\edit.png"></a>
       </div>
     </body>
 <script type="text/javascript">
+
 function showHint(input){
   //Eingabe vorhanden?
   if (input.length == 0) {
@@ -71,5 +73,24 @@ document.getElementById("txtHint").innerHTML = exwords;
   }
 
 </script>
+
+<script>
+
+  function hideIconBar() {
+    console.log("neee grünes essen mog i ni");
+      var x = document.getElementById("icon-bar");
+      var y = document.getElementById("word");
+      var z = document.getElementById("transword");
+      if (y === document.activeElement || z === document.activeElement){
+           x.style.display = "none";
+           console.log("Funktion wird aufgerufen");
+      }
+      else{
+      x.style.display = "block";
+      }
+    //icon-bar.style.visibility="hidden";
+    //console.log("Funktion wird aufgerufen!");
+  }
+  </script>
 <!-- <script src="/js/sendword.js" type="text/javascript"></script> -->
 </html>

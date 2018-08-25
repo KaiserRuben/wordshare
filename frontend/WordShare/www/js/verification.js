@@ -9,7 +9,7 @@ function newword(){
   var response = httpGet(url);
   var wordsJSON = JSON.parse(response);
 
-  document.getElementById('word').innerHTML = wordsJSON[0].word;
+  document.getElementById('mywords').innerHTML = wordsJSON[0].word;
   document.getElementById('translation').innerHTML = wordsJSON[0].translation;
 
   setCookie("tempword", wordsJSON[0].word);
@@ -47,13 +47,6 @@ function verify(val){
         alert("Nope");
     }
   }
-
-
-
-
-
-
-
 
 
   function setCookie(cname, cvalue) {

@@ -1,0 +1,12 @@
+
+.boxed {
+  border: 1px solid white ;
+  text-align: center;
+  min-height:30%;
+}
+
+.title{
+  color: #29a7ff;
+  font-size: 3em;
+  text-align: center;
+}

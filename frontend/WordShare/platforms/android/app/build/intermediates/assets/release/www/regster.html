@@ -15,7 +15,7 @@
 </head>
 
 <body>
-  <h1 class="Name">Register Now!</h1>
+  <h1 class="Name">Sign Up!</h1>
 
   <input type="text" class="input" id = "uname" placeholder="Username"><br />
   <input type="text" class="input" id = "fname" placeholder="First Name"><br />
@@ -24,7 +24,7 @@
   <input type="text" class="input" id = "city" placeholder="Home City"><br />
 
   <div class="dropdown">
-  <button onclick="motherlanguageChoser()" class="dropbtn">Mother Language</button>
+  <button onclick="motherlanguageChoser()" class="dropbtn">Mother Tongue</button>
     <div id="myDropdown" class="dropdown-content">
       <a onclick="fmt('EN')">English</a>
       <a onclick="fmt('DE')">German</a>
@@ -44,8 +44,8 @@
   <input type="text" class="input" id = "mail" placeholder="eMail"><br />
   <input type="password" class="input" id = "pw" placeholder="Password"><br />
   <input type="password" class="input" placeholder="Repeat Password"><br />
-  <input type="checkbox" class="agbcheckbox" id = "agb">I agree to the terms of service<br />
-  <button type="button" class="button" onclick = "registrieren()" name="registrieren">Register</button><br />
+  <div class="text">  <input type="checkbox" class="agbcheckbox" id = "agb"> I agree to the terms of service </div> <br />
+  <button type="button" class="button" onclick = "registrieren()" name="registrieren" style="width: 25%">Register</button><br />
 
 
 
@@ -70,8 +70,6 @@
     var url = "http://wordshare.kaiseritea.de/server/functions/register.php?username=" + username + "&&name=" + fname + "&&lastname=" + lname + "&&mail=" + mail + "&&age=" + age + "&&mt=" + mt + "&&nl=" + nl + "&&pw=" + pw + "&&homecity=" + city;
 
     if (username!='' && fname!='' && lname!='' && age!='' && city!='' && mail!='' && pw!='' && mt!='' && nl!=''){
-        console.log(url);
-        console.log("." + pw + "..");
         var success = httpGet(url);
         console.log(success);
         if(success == "1"){
@@ -95,17 +93,9 @@
 
   </script>
 
-</body> <a href="login.html"><button type="button" class="button" name="registrieren">Sign Up</button></a>
+</body> <a href="login.html"><button type="button" class="button" name="registrieren" style="margin-top:5%; width:25%">Abort</button></a>
 <footer>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<div class="icon-bar">
-<word-spacing="1000px">  <a href="#"> <img height="50px" src="C:\Users\user\Desktop\wordshare\frontend\WordShare\www\pics\add.png"></a>
-  <a href="#"> <img height="50px" src="C:\Users\user\Desktop\wordshare\frontend\WordShare\www\pics\word.png"></a>
-  <a href="#"> <img height="50px" src="C:\Users\user\Desktop\wordshare\frontend\WordShare\www\pics\edit.png"></a></word-spacing>
-
-
-</div></footer>
 
 <script type="text/javascript">
 

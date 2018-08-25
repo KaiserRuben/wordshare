@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/daily_word.css" type="text/css">
       <link rel="stylesheet" href="css/main.css" type="text/css">
       <script language="javascript" type="text/javascript" src="js/cookiefunctions.js"></script>
+      <script language="javascript" type="text/javascript" src="js/logincheck.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu|Cabin|PT+Sans+Narrow" rel="stylesheet">
     <script>
     // When the user clicks on <div>, open the popup
@@ -26,12 +27,23 @@
 <h2>use your word in your quests</h2> <hr>
 </center><div class="daily_word">
   <center><span id="word">loading...</span></center>
-  <center><span id="translation"></span></center>
+  <center><span id="translation">gghg</span></center>
 </div><br><center>
 <div class="popup" onclick="myFunction()"><i class= "white fa fa-info"></i>
     <span class="popuptext" id="myPopup">Use the word "<span id="word2"></span>" in different contexts to improve your <span class="lang"></span> skills!
 </div></center>
-</body>
+</body> <footer>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="icon-bar">
+  <a href="Newword.html"> <img height="50px" style="margin-right:12%" src="pics\add.png"></a>
+  <a href="daily-word.html"> <img height="50px" style="margin-top:5%" src="pics\word.png"></a>
+  <a href="wordcheck.html"> <img height="50px" style="margin-left:12%" src="pics\edit.png"></a>
+</div>
+
+
+</div></footer>
+
 <script>
 
 var url = "http://wordshare.kaiseritea.de/server/functions/getWord.php?username=" + getCookie("username") + "&&type=word";

@@ -12,12 +12,18 @@ require_once("../inc/db.php");
 
 #id des users herausfinden
 $db->query("SET NAMES 'utf8'");
-$sql = "SELECT * FROM user WHERE name='{$user}'";
+$sql = "SELECT * FROM user WHERE username='{$user}'";
 $erg = $db->query($sql);
+if (!$erg){
+  die ($db->error);
+}
 $row = $erg->fetch_assoc();
 $creator_id = $row["id"];
-$w_code = $row["w_code"];
-$t_code= $row["t_code"];
+$w_code = $row["mt"];
+$t_code= $row["nl"];
+if (!$erg){
+  die ($db->error);
+}
 
 #Prüfe, ob Wort bereits existiert
 $db->query("SET NAMES 'utf8'");

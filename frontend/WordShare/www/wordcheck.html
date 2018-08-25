@@ -3,16 +3,17 @@
 
 <head>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-  <title>WordShare - New vocabulary</title>
+  <title><br>Verification</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!--  CSS inplementierung in externer Datei-->
-  <link rel="stylesheet" href="css/daily_word.css" type="text/css">
+  <!--<link rel="stylesheet" href="css/daily_word.css" type="text/css">-->
   <link rel="stylesheet" href="css/main.css" type="text/css">
+  <link rel="stylesheet" href="css/verification.css" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Ubuntu|Cabin|PT+Sans+Narrow" rel="stylesheet">
 
-  <script language="javascript" type="text/javascript" src="js/cookiefunctions.js"></script>
+  <script src="js/cookiefunctions.js"></script>
   <script src="js/verification.js"></script>
 
 
@@ -40,21 +41,19 @@
   </footer>
 
   <center>
-    <h1>Verify new words</h1><br>
+    <span class="title">Verify new words</span>
     <h4><font color="white">Help our community by verifying new entries to the vocabulary.</font></h4>
   </center>
 
   <hr>
+<br>
+<br>
+<br>
 
   <!--<div class="new_word">-->
-    <div class="boxed">
+    <div class="boxedi">
       <center>
-        <font color="white"><h1 id="word"></h1></font>
-      </center>
-    </div>
-    <div class="new_word_translated">
-      <center>
-        <font color="white"><h2></h2><span id="word_trans"></span></font>
+        <font color="black"><h1 id="word"></h1></font>
         <font color="white"><h2 id="translation"></h2></font>
       </center>
     </div>
@@ -129,7 +128,6 @@ function verify(val){
         var success = httpGet(url);
         console.log(success);
         if(success == "1"){
-          location = "wordcheck.html";
           newword();
         }
         else{

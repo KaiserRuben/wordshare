@@ -28,6 +28,14 @@ body {
     margin-bottom: 7%;
 }
 
+.gears {
+    height: 7%;
+    float: right;
+    position: absolute;
+    top: 3%;
+    right: 3%;
+}
+
 .button:hover {
     background-color: #707070;
     color: white;
@@ -91,4 +99,8 @@ input {
   width: 100%;
   padding-bottom: 10px;
   left: 0px;
+}
+
+.h{
+  color: #62798f;
 }

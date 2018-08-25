@@ -1,5 +1,5 @@
 
-function varify(val){
+function verify(val){
 
     var username = getCookie("username");     //geht das so?
     var word = document.getElementById('word').value;             //woher kommt das?

@@ -2,3 +2,9 @@
 a {
   text-align: left;
 }
+
+.home-button {
+    position: absolute;
+    left: 5%;
+    top: 5%;
+}

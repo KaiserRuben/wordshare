@@ -16,8 +16,8 @@ $sql = "SELECT * FROM user WHERE name='{$user}'";
 $erg = $db->query($sql);
 $row = $erg->fetch_assoc();
 $creator_id = $row["id"];
-$w_code = $row["w_code"];
-$t_code= $row["t_code"];
+$w_code = $row["mt"];
+$t_code= $row["nl"];
 
 #Prüfe, ob Wort bereits existiert
 $db->query("SET NAMES 'utf8'");

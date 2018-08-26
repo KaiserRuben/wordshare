@@ -50,12 +50,13 @@ input {
 }
 .input {
     font-size: 1em;
-    margin: 0% 5% 0% 5%;
-    width: 60%;
+    margin-left: 25%;
+    margin-right: 25%;
+    width: 50%;
     position: relative;
     text-align: center;
 
-    display: -webkit-box;
+    /*display: -webkit-box;
 
     display: -ms-flexbox;
 
@@ -68,7 +69,7 @@ input {
         -ms-flex-pack: start;
             justify-content: flex-start;
     -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
+        flex-wrap: nowrap;*/
 
     border: 1px solid #62798f;
     border-radius: 5px;

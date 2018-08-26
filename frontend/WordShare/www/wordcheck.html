@@ -1,9 +1,55 @@
 <!DOCTYPE html>
 <html>
 
-<head><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+<head>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <title>Verification</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--  CSS inplementierung in externer Datei-->
+  <!--<link rel="stylesheet" href="css/daily_word.css" type="text/css">-->
+  <link rel="stylesheet" href="css/main.css" type="text/css">
+  <link rel="stylesheet" href="css/verification.css" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu|Cabin|PT+Sans+Narrow" rel="stylesheet">
+  <script language="javascript" type="text/javascript" src="js/cookiefunctions.js"></script>
+  <script language="javascript" type="text/javascript" src="js/logincheck.js"></script>
+</head>
 
 
+<body>
+  <footer>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <div class="icon-bar">
+      <a href="Newword.html"> <img height="50px" style="margin-right:12%" src="pics\add.png"></a>
+      <a href="daily-word.html"> <img height="50px" style="margin-top:5%" src="pics\word.png"></a>
+      <a href="#"> <img height="50px" style="margin-left:12%" src="pics\edit.png"></a>
+    </div>
+  </footer>
+  <br>
+  <center>
+    <br>
+    <span class="Name">Verify new words</span>
+    <h4><font class="text">Help our community by verifying new entries to the vocabulary.</font></h4>
+  </center>
+
+  <hr style=" border: 1px solid #62798f">
+  <br>
+  <br>
+  <br>
+
+    <div class="boxed" id="box">
+      <center>
+        <div class="myword" id="mywords"></div>
+        <div class="mytranslation" id="translation"></div>
+        <br>
+        <img src="pics/decline.png" alt="decline" onclick="verify(0)" style="width:12%"> &emsp;
+        <img src="pics/unknown.png" alt="unknown" onclick="newword(1)" style="width:12%"> &emsp;
+        <img src="pics/accept.png" alt="accept" onclick="verify(1)" style="width:12%">
+      </center>
+    </div>
+
+
+<<<<<<< HEAD
   <title>WordShare - New vocabulary</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -55,19 +101,22 @@
         <span class="popuptext" id="myPopup">Swipe left or right to accept or decline a new entry. Use the middle button if you don't know a word.
       </div></center>
     -->
+=======
+>>>>>>> eed47591e31a89dd4541aa0fc85e270bb2966f4e
 </body>
 
+
+<script language="javascript" type="text/javascript" src="js/verification.js"></script>
 <script>
-/*
-Ja, ich weiß dass JS nicht hier intergireiert wird, aber es muss nach der implemention sein.
-Einfach nicht fragen!
-
-
-Funktion verify gibt mit getHttp benötigte Daten weiter an word-verify.php.
-Funktion newword holt ein neues Word aus der datenbank. Hierzu habe ich eine Idee, das kann ich recht schnell machen (Ruben).
-*/
-
+    /*
+    Ja, ich weiß dass JS nicht hier integriert wird, aber es muss nach der implementierung sein.
+    Einfach nicht fragen!!!
+    newword() holt ein neues Wort und zeigt es an. Wird am Anfang einmal ausgeführt und jedes mal, wenn der Nutzer das Wort nicht kennt.
+    */
+    newword(0);
 </script>
+
+
 
 
 </html>

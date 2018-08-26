@@ -37,6 +37,8 @@ if($type == "word"){
 }else{
   $sql = "SELECT * FROM w_verification WHERE w_code='{$nl}' AND t_code='{$mt}' ORDER BY RAND() LIMIT 1";
 }
+}elseif ($type == "game") {
+  $sql = "SELECT * FROM words WHERE w_code='{$nl}' AND t_code='{$mt}' ORDER BY id DESC LIMIT 6";
 }
 #Das führen wir dann mal aus...
 $db->query("SET NAMES 'utf8'");

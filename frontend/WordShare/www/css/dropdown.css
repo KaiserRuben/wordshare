@@ -1,7 +1,7 @@
 /* Dropdown Button */
 .dropbtn {
     background-color: inherit;
-    color: #BCBCBC;
+    color: #707070;
     padding: 16px;
     font-size: 1em;
     border: none;
@@ -34,7 +34,7 @@
     border-radius: 5px;
     padding: 0.5em;
     margin-top: 0.2em;
-    color: #BCBCBC; /*#4864fe*/
+    color: #707070; /*#4864fe*/
 }
 
 /* Dropdown button on hover & focus */

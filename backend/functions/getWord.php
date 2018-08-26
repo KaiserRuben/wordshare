@@ -36,15 +36,13 @@ if($type == "word"){
 elseif ($type=="verification") {
   $mt = $row["nl"];
   $nl = $row["mt"];
-}
-if ($mode == "0"){
-  $sql = "SELECT * FROM w_verification WHERE w_code='{$nl}' AND t_code='{$mt}' ORDER BY id LIMIT 1";
-}
-else{
-  $sql = "SELECT * FROM w_verification WHERE w_code='{$nl}' AND t_code='{$mt}' ORDER BY RAND() LIMIT 1";
-}
-if ($type == "game") {
-    $sql = "SELECT * FROM words WHERE w_code='{$nl}' AND t_code='{$mt}' ORDER BY RAND() LIMIT 6";
+  if ($mode == "0") {
+    $sql = "SELECT * FROM w_verification WHERE w_code='{$nl}' AND t_code='{$mt}' ORDER BY id LIMIT 1";
+  }else{
+    $sql = "SELECT * FROM w_verification WHERE w_code='{$nl}' AND t_code='{$mt}' ORDER BY RAND() LIMIT 1";
+  }
+}elseif ($type == "game") {
+  $sql = "SELECT * FROM words WHERE w_code='{$nl}' AND t_code='{$mt}' ORDER BY id DESC LIMIT 6";
 }
 
 #Das führen wir dann mal aus...

@@ -16,7 +16,7 @@
 
 .input-newword {
     font-size: 1em;
-    margin: 0% 15% 0% 17%;
+    margin: 0% 15% 0% 15%;
     width: 60%;
     position: relative;
     text-align: center;
@@ -44,7 +44,7 @@
 }
 
 h1 {
-    margin: 30% 15% 0% 15%;
+    margin: 3% 15% 0% 15%;
     width: 70%
 }
 

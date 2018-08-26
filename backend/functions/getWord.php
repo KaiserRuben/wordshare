@@ -51,7 +51,7 @@ if ($type == "game") {
 $db->query("SET NAMES 'utf8'");
 $erg = $db->query($sql);
   if (!$erg){
-    die ('Nutzer ist wahrscheinlich nicht in der Datenbank: '.$db->error);
+  die ('Nutzer ist wahrscheinlich nicht in der Datenbank: '.$db->error);
 }
 
 #Der Array ist mehrdimensional (hat mich n bisschen Zeit gekostet to realise it) daher müssen wir ihn stufenweisen hinzufügen

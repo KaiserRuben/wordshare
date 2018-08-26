@@ -5,8 +5,8 @@ var url = "http://wordshare.kaiseritea.de/server/functions/getWord.php?username=
 var response = httpGet(url);
 var wordsJSON = JSON.parse(response);
 console.log(wordsJSON);
-document.getElementById('word').innerHTML = wordsJSON[0].word;
-document.getElementById('translation').innerHTML = wordsJSON[0].translation;
+//document.getElementById('word').innerHTML = wordsJSON[0].word;
+//document.getElementById('translation').innerHTML = wordsJSON[0].translation;
 
 
 document.getElementById("box1").innerHTML = wordsJSON[0].word;

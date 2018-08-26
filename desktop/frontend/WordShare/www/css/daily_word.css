@@ -5,8 +5,8 @@
 }
 
 h2 {
-    margin-top: 6%;
-    margin-bottom: 3%;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .white {
@@ -23,7 +23,7 @@ h2 {
 }
 
 .white fa fa-info {
-    margin-left: 80%;
+    margin-left: auto;
 }
 
 /* The actual popup (appears on top) */
@@ -39,7 +39,7 @@ h2 {
     z-index: 1;
     bottom: 125%;
     left: 50%;
-    margin-left: -80px;
+    margin-left: auto;
 }
 
 /* Popup arrow */
@@ -48,8 +48,8 @@ h2 {
     position: absolute;
     top: 100%;
     left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
+    margin-left: auto;
+    border-width: auto;
     border-style: solid;
     border-color: #555 transparent transparent transparent;
 }
@@ -58,8 +58,8 @@ h2 {
     border: 1px solid #62798f;
     border-radius: 5px;
     padding: 0.5em;
-    margin-top: 20%;
-    margin-left: 8%;
+    margin-top: 6%;
+    margin-left: 9%;
     width: 80%;
 }
 
@@ -68,7 +68,7 @@ h2 {
     font-size: 3em;
     text-align: center;
     position: relative;
-    margin: 150px 0px 0px 0px;
+    margin: auto;
 }
 
 #gamelink {
@@ -79,7 +79,7 @@ h2 {
     width: 25%;
     position:absolute;
     top: 60%;
-    left: 38%;
+    left: 37%;
 }
 
 #translation {

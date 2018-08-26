@@ -42,7 +42,7 @@ elseif ($type=="verification") {
     $sql = "SELECT * FROM w_verification WHERE w_code='{$nl}' AND t_code='{$mt}' ORDER BY RAND() LIMIT 1";
   }
 }elseif ($type == "game") {
-  $sql = "SELECT * FROM words WHERE w_code='{$nl}' AND t_code='{$mt}' ORDER BY id DESC LIMIT 6";
+  $sql = "SELECT * FROM words WHERE w_code='{$nl}' AND t_code='{$mt}' ORDER BY RAND() LIMIT 6";
 }
 
 #Das führen wir dann mal aus...

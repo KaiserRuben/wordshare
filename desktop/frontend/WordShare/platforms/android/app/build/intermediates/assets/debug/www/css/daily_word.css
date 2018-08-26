@@ -1,0 +1,106 @@
+.daily-word , h1 {
+    color: #29a7ff;
+    font-size: 2.5em;
+    margin-bottom: 0px;
+}
+
+h2 {
+    margin-top: 6%;
+    margin-bottom: 3%;
+}
+
+.white {
+    color: white;
+}
+
+
+
+/* Popup container */
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.white fa fa-info {
+    margin-left: 80%;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.daily_word {
+    border: 1px solid #62798f;
+    border-radius: 5px;
+    padding: 0.5em;
+    margin-top: 20%;
+    margin-left: 8%;
+    width: 80%;
+}
+
+#word {
+    color: #29a7ff;
+    font-size: 3em;
+    text-align: center;
+    position: relative;
+    margin: 150px 0px 0px 0px;
+}
+
+#gamelink {
+    font-size: 1.4em;
+    color: #3f3f3f;
+    background-color: #29a7ff;
+    border-radius: 5em;
+    width: 25%;
+    position:absolute;
+    top: 60%;
+    left: 38%;
+}
+
+#translation {
+    color: white;
+    font-size: 2em;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!--  CSS inplementierung in externer Datei-->
+  <link rel="stylesheet" href="css/dropdown.css" type="text/css">
+  <link rel="stylesheet" href="css/main.css" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu|Cabin|PT+Sans+Narrow" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <title>WordShare - Register</title>
+</head>
+
+<body>
+  <h1 class="Name">Sign Up!</h1>
+
+  <input type="text" class="input-register" id = "uname" placeholder="Username" required><br />
+  <input type="text" class="input-register" id = "fname" placeholder="First Name" required><br />
+  <input type="text" class="input-register" id = "lname" placeholder="Last Name" required><br />
+  <input type="number" class="input-register" id = "age" placeholder="Age" required><br />
+  <input type="text" class="input-register" id = "city" placeholder="Home City" required><br />
+
+  <div class="dropdown">
+      <select class="dropbtn" id="boxmuttersprache" required>
+          <div class="pls">
+          <option>Mother Tongue</option>
+          <option value='EN'>Englisch</option>
+          <option value='DE'>German</option>
+          <option value='ES'>Spanish</option>
+          </div>
+      </select> <br />
+    <select class="dropbtn" id="nl" required>
+          <option>Language to learn</option>
+          <option value='EN'>Englisch</option>
+          <option value='DE'>German</option>
+          <option value='ES'>Spanish</option>
+      </select>
+  </div><br />
+
+  <input type="text" class="input-register" id = "mail" placeholder="eMail" required><br />
+  <input type="password" class="input-register" id = "pw" placeholder="Password" required><br />
+  <input type="password" class="input-register" placeholder="Repeat Password" required><br />
+  <div class="text">  <input type="checkbox" class="agbcheckbox" id = "agb"> I agree to the <a href="agb.html" style="color: #62798f"> terms of service</a> </div> <br />
+  <button type="button" class="button" onclick = "registrieren()" name="registrieren" style="width: 25%">Register</button><br />
+
+
+
+  <script type="text/javascript">
+  // var mt = "";
+  // var nl = "";
+  // function fmt(pmt){
+  //   alert("ich bin da");
+  //   mt = pmt;
+  // }
+  // function fnl(pnl){
+  //   nl = pnl;
+  // }
+  function registrieren(){
+    var username = document.getElementById("uname").value;
+    var fname = document.getElementById("fname").value;
+    var lname = document.getElementById("lname").value;
+    var age = document.getElementById("age").value;
+    var city = document.getElementById("city").value;
+    var mail= document.getElementById("mail").value;
+    var pw = document.getElementById("pw").value;
+    var box1 = document.getElementById("boxmuttersprache");
+    var mt = box1.value;
+    var box2 = document.getElementById("nl");
+    var nl = box2.value;
+    var url = "http://wordshare.kaiseritea.de/server/functions/register.php?username=" + username + "&&name=" + fname + "&&lastname=" + lname + "&&mail=" + mail + "&&age=" + age + "&&mt=" + mt + "&&nl=" + nl + "&&pw=" + pw + "&&homecity=" + city;
+
+    if (username!='' && fname!='' && lname!='' && age!='' && city!='' && mail!='' && pw!='' && mt!='' && nl!=''){
+        var success = httpGet(url);
+        console.log(success);
+        if(success == "1"){
+          location="/login.html";
+        }
+        else{
+          prompt("Your registration was not successful, please try again.");
+        }
+      }
+      else{
+        alert("Your registration was not successful, please try again.");
+      }
+    }
+
+   function httpGet(theUrl){
+      var xmlHttp = new XMLHttpRequest();
+      xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+      xmlHttp.send( null );
+      return xmlHttp.responseText;
+    }
+
+  </script>
+
+</body> <a href="login.html"><button type="button" class="button" name="registrieren" style="margin-top:5%; width:25%">Abort</button></a>
+<footer>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script type="text/javascript">
+
+  // Close the dropdown menu if the user clicks outside of it
+ /* window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  } */
+
+
+
+  // Close the dropdown menu if the user clicks outside of it
+  /*window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }*/
+
+  // Close the dropdown menu if the user clicks outside of it
+  window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+     var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+  }
+  function learninglanuageChoser() {
+    document.getElementById("myDropdown2").classList.toggle("show");
+  }
+</script>
+
+<!--</s>
+a href="daily-word.html"><button type="button" class="button" name="registrieren">Sign Up</button></a>-->
+<!-- >>>>>>> 9dcab7f8c7369fabc332bb24466c56764a0f3e86 -->

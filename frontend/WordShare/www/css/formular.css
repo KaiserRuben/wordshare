@@ -42,7 +42,7 @@
 .popup {
     position: absolute;
     left:50%;
-    bottom: 23.5%;
+    bottom: 21%;
     display: inline-block;
     cursor: pointer;
 }
@@ -67,8 +67,6 @@
 .popup .popuptext::after {
     content: "";
     position: absolute;
-    top: 100%;
-    left: 50%;
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;

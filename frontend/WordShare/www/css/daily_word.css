@@ -58,8 +58,8 @@ h2 {
     border: 1px solid #62798f;
     border-radius: 5px;
     padding: 0.5em;
-    margin-top: 20%;
-    margin-left: 8%;
+    margin: auto;
+    margin-top: 15%;
     width: 80%;
 }
 
@@ -77,9 +77,8 @@ h2 {
     background-color: #29a7ff;
     border-radius: 5em;
     width: 25%;
-    position:absolute;
-    top: 60%;
-    left: 38%;
+    margin: auto;
+    margin-top: 15%;
 }
 
 #translation {

@@ -8,12 +8,11 @@
     cursor: pointer;
     width: 65%;
     background-color: #d4d8d8;
-    position: relative;
     text-align: center;
     font-family: inherit;
     background-color: inherit;
     font-size: 1em;
-    margin: 0% 15% 0% 20%;
+    margin: auto;
 
     display: -webkit-box;
 
@@ -53,7 +52,7 @@
 
 .input-register {
     font-size: 1em;
-    margin: 0% 15% 0% 20%;
+    margin: auto;
     width: 60%;
     position: relative;
     text-align: center;

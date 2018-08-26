@@ -16,19 +16,16 @@
 }*/
 
 .button {
-
+    margin:auto;
     width: 40%;
-    margin-left: 30%;
-    margin-right: 30%;
     height: 1.6em;
-
 }
 
 .input-login {
     font-size: 1em;
-    margin: 0% 15% 0% 15%;
     text-align: center;
     width:60%;
+    margin: auto;
 
     display: -webkit-box;
 

@@ -7,12 +7,15 @@
 
 }
 .grid-item{
+  color: #3f3f3f;
   background-color: #29a7ff;
   width: 32%;
   margin: 2px;
   padding-top: 15%;
   padding-bottom: 15%;
   font-size: inherit;
+  border: 0em solid;
+  border-radius: 0.3em;
 }
 
 /* .grid-container{

@@ -8,12 +8,11 @@
     cursor: pointer;
     width: 65%;
     background-color: #d4d8d8;
-    position: relative;
     text-align: center;
     font-family: inherit;
     background-color: inherit;
     font-size: 1em;
-    margin: 0% 15% 0% 20%;
+    margin: auto;
 
     display: -webkit-box;
 
@@ -53,10 +52,11 @@
 
 .input-register {
     font-size: 1em;
-    margin: 0% 15% 0% 20%;
+    margin: auto;
     width: 60%;
     position: relative;
     text-align: center;
+    color: #BCBCBC;
 
     display: -webkit-box;
 
@@ -82,19 +82,19 @@
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
-    border:1px solid #555;
+    border:1px solid #BCBCBC;
     border-radius:0px 0px 5px 5px;
     display: none;
     position: relative;
     margin: -1% 20% 0% 20%;
-    background-color: #555;
+    background-color: #BCBCBC;
     min-width: 64%;
     z-index: 1;
 }
 
 /* Links inside the dropdown */
 .dropdown-content a {
-    color: #fff;
+    color: #3F3F3F;
     padding: 8px 16px; 
     text-decoration: none;
     display: block;
@@ -102,7 +102,7 @@
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #fff}
+.dropdown-content a:hover {background-color: #3F3F3F
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}

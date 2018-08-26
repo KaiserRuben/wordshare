@@ -47,7 +47,6 @@ if ($type == "game") {
     $sql = "SELECT * FROM words WHERE w_code='{$nl}' AND t_code='{$mt}' ORDER BY RAND() LIMIT 6";
 }
 
-}
 #Das führen wir dann mal aus...
 $db->query("SET NAMES 'utf8'");
 $erg = $db->query($sql);

@@ -6,14 +6,12 @@
   "config_munge": {
     "files": {}
   },
-  "installed_plugins": {},
+  "installed_plugins": {
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.wordshare.WordShare"
+    }
+  },
   "dependent_plugins": {
-    "com.cordova.plugins.cookiemaster": {
-      "PACKAGE_NAME": "com.wordshare.WordShare"
-    },
-    "cordova-plugin-cookieemperor": {
-      "PACKAGE_NAME": "com.wordshare.WordShare"
-    },
     "cordova-plugin-statusbar": {
       "PACKAGE_NAME": "com.wordshare.WordShare"
     },

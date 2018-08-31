@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--  CSS inplementierung in externer Datei-->
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link rel="stylesheet" href="css/login.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu|Cabin|PT+Sans+Narrow" rel="stylesheet">
+
+    <script language="javascript" type="text/javascript" src="js/cookiefunctions.js"></script>
+
+    <title>WordShare - Login</title>
+</head>
+
+<body>
+
+    <div class="content">
+      <img src="pics/icon.PNG" class="logo"/>
+      <h1 class="Name">WordShare</h1>
+      <input type="text" class="input-login" id="name" placeholder="Username" required><br />
+      <input type="password" class="input-login" id="pw" placeholder="Password" required><br />
+      <div>
+        <input type="checkbox" class="last" id="check" value="check" checked> <label for="check" class="text">Remeber me? </label>
+      </div>
+      <button type="submit" class="button" name="anmelden" onclick="datenSammeln(1)">
+        Log-In
+      </button>
+      <br />
+      <a href="regster.html">
+        <button type="button" class="button" name="registrieren">
+          Sign Up
+        </button>
+      </a>
+      <br />
+      <p id="wrong"></p>
+    </div>
+
+    <script type="text/javascript">
+
+    datenSammeln(0);
+
+    function datenSammeln(i){
+
+      if(i == 0 && checkCookie("username")&&checkCookie("password")){
+
+        var username = getCookie("username");
+        var pw = getCookie("password");
+
+      anmelden(username, pw);
+
+      }
+      else{
+
+        var username = document.getElementById("name").value;
+        var pw = document.getElementById("pw").value;
+
+        if(pw!=""&&username!=""){
+          anmelden(username, pw);
+        }
+
+      }
+    }
+
+
+    function anmelden(username, password){
+
+      //Username wird als Cookie gespeiert
+      setCookie("username", username);
+      var url = "http://wordshare.kaiseritea.de/server/functions/login.php?name=" + username + "&&pw=" + password;
+      var success = httpGet(url);
+      console.log(success);
+
+      if(document.getElementById("check").checked == true){
+        setCookie("password", password);
+      }
+
+      if(success == "1"){
+        location="daily-word.html";
+      }
+      else{
+        document.getElementById('wrong').innerHTML = "Wrong Password or Username!";
+      }
+    }
+
+    function httpGet(theUrl){
+      var xmlHttp = new XMLHttpRequest();
+      xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+      xmlHttp.send( null );
+      return xmlHttp.responseText;
+    }
+
+  </script>
+</body>
+
+</html>

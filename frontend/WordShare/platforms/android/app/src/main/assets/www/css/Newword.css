@@ -9,9 +9,14 @@
     color: #4864fe;
 }*/
 
+#word {
+    margin-top: 4%;
+    margin-bottom: 3%;
+}
+
 .input-newword {
     font-size: 1em;
-    margin: 0% 15% 0% 17%;
+    margin: auto;
     width: 60%;
     position: relative;
     text-align: center;
@@ -43,10 +48,10 @@ h1 {
     width: 70%
 }
 
-.text {
+/*.text {
   display: -ms-flexbox;
   display: -webkit-box;
-}
+}*/
 
 /*.button {
     width: 30%;

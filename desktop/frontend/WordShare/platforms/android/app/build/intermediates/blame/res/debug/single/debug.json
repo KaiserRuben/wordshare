@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "C:\\Users\\Ruben\\Desktop\\wordshare\\frontend\\WordShare\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\xml_config.xml.flat",
+        "source": "C:\\Users\\Ruben\\Desktop\\wordshare\\frontend\\WordShare\\platforms\\android\\app\\src\\main\\res\\xml\\config.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ruben\\Desktop\\wordshare\\frontend\\WordShare\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-port-xhdpi_screen.png.flat",
+        "source": "C:\\Users\\Ruben\\Desktop\\wordshare\\frontend\\WordShare\\platforms\\android\\app\\src\\main\\res\\drawable-port-xhdpi\\screen.png"
+    },
+    {
+        "merged": "C:\\Users\\Ruben\\Desktop\\wordshare\\frontend\\WordShare\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_icon.png.flat",
+        "source": "C:\\Users\\Ruben\\Desktop\\wordshare\\frontend\\WordShare\\platforms\\android\\app\\src\\main\\res\\mipmap-mdpi\\icon.png"
+    }
+]

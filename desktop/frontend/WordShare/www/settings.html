@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/main.css" rel=stylesheet>
+        <link href="css/settings.css" rel=stylesheet>
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu|Cabin|PT+Sans+Narrow" rel="stylesheet">
+        <script language="javascript" type="text/javascript" src="js/cookiefunctions.js"></script>
+
+        <script type="text/javascript">
+            function logoff(){
+
+              setCookie("username", "");
+              setCookie("password", "");
+              location = "login.html";
+
+            }
+        </script>
+    </head>
+
+    <body>
+          <a href="daily-word.html">
+            <img height="50px" class="home-button"src=pics\home.png>
+          </a>
+        <h1 class="Name">Settings</h1>
+        <br>
+        <button type="submit" class="button" onclick="logoff()"> Log-out </button> <br> <br>
+        <a href="formular.html"> <button type="button" class="button"> Contact </button> </a>
+
+    </body>
+
+</html>

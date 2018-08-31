@@ -1,4 +1,10 @@
-.homebtn{
 
-  margin-left: 10%;
+a {
+  text-align: left;
+}
+
+.home-button {
+    position: absolute;
+    left: 5%;
+    top: 3.5%;
 }

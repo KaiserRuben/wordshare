@@ -21,7 +21,7 @@
   <input type="text" class="input-register" id = "fname" placeholder="First Name" required><br />
   <input type="text" class="input-register" id = "lname" placeholder="Last Name" required><br />
   <input type="number" class="input-register" id = "age" placeholder="Age" required><br />
-  <input type="text" class="input-register" id = "city" placeholder="Home City" required><br />
+  <input type="text" class="input-register" id = "city" placeholder="Home Town" required><br />
 
   <div class="dropdown">
       <select class="dropbtn" id="boxmuttersprache" required>
@@ -40,7 +40,7 @@
       </select>
   </div><br />
 
-  <input type="text" class="input-register" id = "mail" placeholder="eMail" required><br />
+  <input type="text" class="input-register" id = "mail" placeholder="Email" required><br />
   <input type="password" class="input-register" id = "pw" placeholder="Password" required><br />
   <input type="password" class="input-register" placeholder="Repeat Password" required><br />
   <div class="text">  <input type="checkbox" class="agbcheckbox" id = "agb"> I agree to the <a href="agb.html" style="color: #62798f"> terms of service</a> </div> <br />
@@ -76,7 +76,7 @@
         var success = httpGet(url);
         console.log(success);
         if(success == "1"){
-          location="/login.html";
+          location="login.html";
         }
         else{
           prompt("Your registration was not successful, please try again.");

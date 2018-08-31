@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.wordshare.WordShare" version="0.1.8" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>WordShare</name>
+    <description>
+       	An App, that helps you lern new Words in diffent languages.
+    </description>
+    <author email="rk@rubenkaiser.de" href="http://wordshare.kaiseritea.de">
+        WordShare Team
+    </author>
+    <content src="index.htm" />
+    <icon src="res/icon.png" />
+    <access origin="*" />
+    <allow-navigation href="http://*/*" />
+    <allow-navigation href="https://*/*" />
+    <allow-navigation href="data:*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
+    <plugin name="cordova-plugin-statusbar" spec="^2.4.1" />
+    <platform name="android">
+        <splash density="port-xhdpi" src="res/splash.png" />
+    </platform>
+    <engine name="android" spec="^7.0.0" />
+    <engine name="ios" spec="~4.5.5" />
+</widget>

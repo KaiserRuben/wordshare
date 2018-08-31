@@ -19,24 +19,18 @@
 
       <h1 class="Name">Add a new word!</h1>
       <main>
-<<<<<<< HEAD
-        <a class="text"> Please enter a word in your native language to share it with the WordShare community! </a>
-          <input type="text" id="word" class="input" placeholder="Word" onkeyup="showHint(this.value);" onfocus="hideIconBar();" onfocusout="hideIconBar();" required>
-          <input type="text" id="transword" class="input" placeholder="Translation" onfocus="hideIconBar();" onfocusout="hideIconBar();" required> <br>
-=======
-        <a class="text"> Please enter a word in your native language to share it with the WordShare community! </a> <br>
-          <input type="text" id="word" class="input-newword" placeholder="Word" onkeyup="showHint(this.value);" required>
-          <input type="text" id="transword" class="input-newword" placeholder="Translation" required> <br>
->>>>>>> ed9f9eb31f58f0c07f3c1ac1a161f842996818f0
+        <a class="text"> Please enter a word in your native language to share it with the WordShare community!</a> 
+          <input type="text" id="word" class="input-newword" placeholder="Word" onkeyup="showHint(this.value);" onfocus="hideIconBar();" onfocusout="hideIconBar();" required> 
+          <input type="text" id="transword" class="input-newword" placeholder="Translation" onfocus="hideIconBar();" onfocusout="hideIconBar();" required> <br>
           <!--  <a href="daily-word.html"><p> <button onclick="js/sendword.js" type="submit" class="button" id="Hinzufügen"> Add </button></a>-->
           <button onclick="sendword();" type="submit" class="button" id="Hinzufügen"> Add </button>
-          <div class="exwords">
-            <p>Already existing: <span id="txtHint"></span></p>
+          <div>
+            <p class="text">Already existing: <span id="txtHint"></span></p>
           </div>
       </main>
       <div class="icon-bar" id="icon-bar">
         <a href="Newword.html"> <img height="50px" style="margin-right:12%" src="pics\add.png"></a>
-        <a href="daily-word.html"> <img height="50px" style="margin-top:5%" src="pics\word.png"></a>
+        <a href="daily-word.html"> <img height="50px" style="margin-top:5%" src="pics\home.png"></a>
         <a href="wordcheck.html"> <img height="50px" style="margin-left:12%" src="pics\edit.png"></a>
       </div>
     </body>
@@ -63,7 +57,7 @@ document.getElementById("txtHint").innerHTML = exwords;
     var success = gethtml("http://wordshare.kaiseritea.de/server/functions/addWord.php?word=" + word + "&&transword=" + transword + "&&user=" + user);
     console.log(success);
     if (success == "1"){
-        alert("Thanks for your word, it will be varifyed soon.");
+        alert("Thanks for your word, it will be verified soon.");
     }
     else {
       alert("Your word is not new.");
@@ -76,11 +70,7 @@ document.getElementById("txtHint").innerHTML = exwords;
     xmlHttp.send( null );
    return xmlHttp.responseText;
   }
-
-</script>
-
-<script>
-
+  
   function hideIconBar() {
     console.log("neee grünes essen mog i ni");
       var x = document.getElementById("icon-bar");

@@ -8,6 +8,7 @@ body {
 .button {
     font-size: 100%;
     font-family: inherit;
+    margin: auto;
     border: 0;
     padding: 15;
     border-radius: 20px;
@@ -25,11 +26,11 @@ body {
 .Name {
     color: #29a7ff;
     font-size: 2.5em;
-    margin-bottom: 7%;
+    margin-bottom: 6%;
 }
 
 .gears {
-    height: 5%;
+    height: 7%;
     float: right;
     position: absolute;
     top: 3%;
@@ -37,7 +38,7 @@ body {
 }
 
 .button:hover {
-    background-color: #707070;
+    background-color: #BCBCBC;
     color: white;
 }
 
@@ -95,8 +96,9 @@ input {
   bottom: 0px;
   /*display: block;*/
   position: absolute;
-  background-color: #707070;
+  background-color: #3F3F3F;
   width: 100%;
   padding-bottom: 30px;
   left: 0px;
   background-image: linear-gradient(to top,#707070 10%,#3f3f3f 50%);
+}

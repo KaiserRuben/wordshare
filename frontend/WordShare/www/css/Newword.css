@@ -9,9 +9,14 @@
     color: #4864fe;
 }*/
 
+#word {
+    margin-top: 4%;
+    margin-bottom: 3%;
+}
+
 .input-newword {
     font-size: 1em;
-    margin: 0% 15% 0% 17%;
+    margin: auto;
     width: 60%;
     position: relative;
     text-align: center;
